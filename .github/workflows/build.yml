@@ -61,7 +61,7 @@ jobs:
         uses: actions/upload-artifact@v2.2.4
         with:
           name: Java-JDK${{ matrix.java }}
-          path: Advocatus-Proxy/module/cmd-alert/target/cmd_send.jar
+          path: Advocatus-Proxy/module/cmd-send/target/cmd_send.jar
       # cmd_server.jar
       - name: Upload Artifact Advocatus cmd_server
         uses: actions/upload-artifact@v2.2.4
