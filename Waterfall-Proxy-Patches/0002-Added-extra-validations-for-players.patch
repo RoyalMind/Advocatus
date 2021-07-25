@@ -1,0 +1,98 @@
+From 7a39a5d860cfe72077428d055b106737404dee04 Mon Sep 17 00:00:00 2001
+From: Carlos Gallegos <charlyzest@gmail.com>
+Date: Sun, 25 Jul 2021 06:51:22 -0500
+Subject: [PATCH] Added extra validations for players
+
+
+diff --git a/api/src/main/java/net/md_5/bungee/api/CommandSender.java b/api/src/main/java/net/md_5/bungee/api/CommandSender.java
+index d5888311..af0636de 100644
+--- a/api/src/main/java/net/md_5/bungee/api/CommandSender.java
++++ b/api/src/main/java/net/md_5/bungee/api/CommandSender.java
+@@ -89,4 +89,14 @@ public interface CommandSender
+      * permissions
+      */
+     public Collection<String> getPermissions();
++
++    // Advocatus Start
++
++    /**
++     * Check if the executor is a player.
++     * @return If he is a player.
++     */
++    public boolean isPlayer();
++
++    // Advocatus End
+ }
+diff --git a/api/src/main/java/net/md_5/bungee/api/connection/ProxiedPlayer.java b/api/src/main/java/net/md_5/bungee/api/connection/ProxiedPlayer.java
+index 3dc32801..57ec44b8 100644
+--- a/api/src/main/java/net/md_5/bungee/api/connection/ProxiedPlayer.java
++++ b/api/src/main/java/net/md_5/bungee/api/connection/ProxiedPlayer.java
+@@ -387,4 +387,19 @@ public interface ProxiedPlayer extends Connection, CommandSender
+      * @return this player's {@link Scoreboard}
+      */
+     Scoreboard getScoreboard();
++
++    // Advocatus Start
++
++    /**
++     * Gets the version of the minecraft protocol used for a player connection.
++     * @return protocol version number.
++     */
++    int getVersion();
++
++    /**
++     * Evaluates whether or not the player can support messages with RGB colors, for this it verifies the version of the minecraft protocol used by the connection.
++     * @return if a player uses a version with RGB support.
++     */
++    boolean supportRGB();
++    // Advocatus End
+ }
+diff --git a/api/src/main/java/net/md_5/bungee/api/plugin/Command.java b/api/src/main/java/net/md_5/bungee/api/plugin/Command.java
+index b4566327..e43a0b30 100644
+--- a/api/src/main/java/net/md_5/bungee/api/plugin/Command.java
++++ b/api/src/main/java/net/md_5/bungee/api/plugin/Command.java
+@@ -66,4 +66,8 @@ public abstract class Command
+     {
+         return permission == null || permission.isEmpty() || sender.hasPermission( permission );
+     }
++
++    // Advocatus Start
++    public boolean isPlayer(CommandSender sender) { return sender instanceof net.md_5.bungee.api.connection.ProxiedPlayer; }
++    // Advocatus End
+ }
+diff --git a/proxy/src/main/java/net/md_5/bungee/UserConnection.java b/proxy/src/main/java/net/md_5/bungee/UserConnection.java
+index fc98b4b1..0193e769 100644
+--- a/proxy/src/main/java/net/md_5/bungee/UserConnection.java
++++ b/proxy/src/main/java/net/md_5/bungee/UserConnection.java
+@@ -774,4 +774,12 @@ public final class UserConnection implements ProxiedPlayer
+         return entityRewrite == net.md_5.bungee.entitymap.EntityMap_Dummy.INSTANCE;
+     }
+     // Waterfall end
++
++    // Advocatus start
++
++    public int getVersion() { return this.getPendingConnection().getVersion(); }
++    public boolean supportRGB() { return this.getVersion() >= 735; }
++    public boolean isPlayer() { return true; }
++
++    // Advocatus end
+ }
+diff --git a/proxy/src/main/java/net/md_5/bungee/command/ConsoleCommandSender.java b/proxy/src/main/java/net/md_5/bungee/command/ConsoleCommandSender.java
+index 33d7e5bb..03fc7b54 100644
+--- a/proxy/src/main/java/net/md_5/bungee/command/ConsoleCommandSender.java
++++ b/proxy/src/main/java/net/md_5/bungee/command/ConsoleCommandSender.java
+@@ -87,4 +87,11 @@ public final class ConsoleCommandSender implements CommandSender
+     {
+         return Collections.emptySet();
+     }
++
++    // Advocatus Start
++
++    @Override
++    public boolean isPlayer() { return false; }
++
++    // Advocatus End
+ }
+-- 
+2.24.1.windows.2
+
