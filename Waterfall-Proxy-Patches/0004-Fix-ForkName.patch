@@ -1,0 +1,22 @@
+From 97d235638901eb65f19d1b42494132bd083bb505 Mon Sep 17 00:00:00 2001
+From: Carlos Gallegos <charlyzest@gmail.com>
+Date: Mon, 26 Jul 2021 00:54:57 -0500
+Subject: [PATCH] Fix ForkName
+
+
+diff --git a/proxy/src/main/java/net/md_5/bungee/BungeeCord.java b/proxy/src/main/java/net/md_5/bungee/BungeeCord.java
+index 8690e342..15775e26 100644
+--- a/proxy/src/main/java/net/md_5/bungee/BungeeCord.java
++++ b/proxy/src/main/java/net/md_5/bungee/BungeeCord.java
+@@ -539,7 +539,7 @@ public class BungeeCord extends ProxyServer
+     @Override
+     public String getName()
+     {
+-        return "Waterfall";
++        return "Advocatus";
+     }
+ 
+     @Override
+-- 
+2.24.1.windows.2
+

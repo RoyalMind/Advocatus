@@ -1,0 +1,593 @@
+From b50a4b64e2640a898471dd340ae0f832a059c096 Mon Sep 17 00:00:00 2001
+From: Carlos Gallegos <charlyzest@gmail.com>
+Date: Sun, 25 Jul 2021 23:24:28 -0500
+Subject: [PATCH] Changed GroupId to improve package structure
+
+
+diff --git a/api/pom.xml b/api/pom.xml
+index d19bbeb0..53438d6c 100644
+--- a/api/pom.xml
++++ b/api/pom.xml
+@@ -4,13 +4,13 @@
+     <modelVersion>4.0.0</modelVersion>
+ 
+     <parent>
+-        <groupId>net.royalmind.minecraft.advocatus</groupId>
++        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+         <version>1.17-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+-    <groupId>net.royalmind.minecraft.advocatus</groupId>
++    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+     <artifactId>advocatus-api</artifactId>
+     <version>1.17-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+@@ -20,25 +20,25 @@
+ 
+     <dependencies>
+         <dependency>
+-            <groupId>net.royalmind.minecraft.advocatus</groupId>
++            <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+             <artifactId>advocatus-chat</artifactId>
+             <version>${project.version}</version>
+             <scope>compile</scope>
+         </dependency>
+         <dependency>
+-            <groupId>net.royalmind.minecraft.advocatus</groupId>
++            <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+             <artifactId>advocatus-config</artifactId>
+             <version>${project.version}</version>
+             <scope>compile</scope>
+         </dependency>
+         <dependency>
+-            <groupId>net.royalmind.minecraft.advocatus</groupId>
++            <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+             <artifactId>advocatus-event</artifactId>
+             <version>${project.version}</version>
+             <scope>compile</scope>
+         </dependency>
+         <dependency>
+-            <groupId>net.royalmind.minecraft.advocatus</groupId>
++            <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+             <artifactId>advocatus-protocol</artifactId>
+             <version>${project.version}</version>
+             <scope>compile</scope>
+diff --git a/bootstrap/pom.xml b/bootstrap/pom.xml
+index 6d08e619..5c6ac0e6 100644
+--- a/bootstrap/pom.xml
++++ b/bootstrap/pom.xml
+@@ -4,13 +4,13 @@
+     <modelVersion>4.0.0</modelVersion>
+ 
+     <parent>
+-        <groupId>net.royalmind.minecraft.advocatus</groupId>
++        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+         <version>1.17-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+-    <groupId>net.royalmind.minecraft.advocatus</groupId>
++    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+     <artifactId>advocatus-bootstrap</artifactId>
+     <version>1.17-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+@@ -29,7 +29,7 @@
+ 
+     <dependencies>
+         <dependency>
+-            <groupId>net.royalmind.minecraft.advocatus</groupId>
++            <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+             <artifactId>advocatus-proxy</artifactId>
+             <version>${project.version}</version>
+             <scope>compile</scope>
+diff --git a/chat/pom.xml b/chat/pom.xml
+index 1c8dfcef..32d6675c 100644
+--- a/chat/pom.xml
++++ b/chat/pom.xml
+@@ -4,13 +4,13 @@
+     <modelVersion>4.0.0</modelVersion>
+ 
+     <parent>
+-        <groupId>net.royalmind.minecraft.advocatus</groupId>
++        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+         <version>1.17-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+-    <groupId>net.royalmind.minecraft.advocatus</groupId>
++    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+     <artifactId>advocatus-chat</artifactId>
+     <version>1.17-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+diff --git a/config/pom.xml b/config/pom.xml
+index f0c58219..bfe30db5 100644
+--- a/config/pom.xml
++++ b/config/pom.xml
+@@ -4,13 +4,13 @@
+     <modelVersion>4.0.0</modelVersion>
+ 
+     <parent>
+-        <groupId>net.royalmind.minecraft.advocatus</groupId>
++        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+         <version>1.17-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+-    <groupId>net.royalmind.minecraft.advocatus</groupId>
++    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+     <artifactId>advocatus-config</artifactId>
+     <version>1.17-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+diff --git a/event/pom.xml b/event/pom.xml
+index f046257c..79615ba1 100644
+--- a/event/pom.xml
++++ b/event/pom.xml
+@@ -4,13 +4,13 @@
+     <modelVersion>4.0.0</modelVersion>
+ 
+     <parent>
+-        <groupId>net.royalmind.minecraft.advocatus</groupId>
++        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+         <version>1.17-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+-    <groupId>net.royalmind.minecraft.advocatus</groupId>
++    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+     <artifactId>advocatus-event</artifactId>
+     <version>1.17-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+diff --git a/log/pom.xml b/log/pom.xml
+index 9d86dd38..16f3de2d 100644
+--- a/log/pom.xml
++++ b/log/pom.xml
+@@ -4,13 +4,13 @@
+     <modelVersion>4.0.0</modelVersion>
+ 
+     <parent>
+-        <groupId>net.royalmind.minecraft.advocatus</groupId>
++        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+         <version>1.17-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+-    <groupId>net.royalmind.minecraft.advocatus</groupId>
++    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+     <artifactId>advocatus-log</artifactId>
+     <version>1.17-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+@@ -26,7 +26,7 @@
+             <scope>compile</scope>
+         </dependency>
+         <dependency>
+-            <groupId>net.royalmind.minecraft.advocatus</groupId>
++            <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+             <artifactId>advocatus-chat</artifactId>
+             <version>${project.version}</version>
+             <scope>compile</scope>
+diff --git a/log4j/pom.xml b/log4j/pom.xml
+index e599d983..f7c1c130 100644
+--- a/log4j/pom.xml
++++ b/log4j/pom.xml
+@@ -3,13 +3,13 @@
+     <modelVersion>4.0.0</modelVersion>
+ 
+     <parent>
+-        <groupId>net.royalmind.minecraft.advocatus</groupId>
++        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+         <version>1.17-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+-    <groupId>net.royalmind.minecraft.advocatus</groupId>
++    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+     <artifactId>advocatus-log4j</artifactId>
+     <version>1.17-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+diff --git a/module/cmd-alert/pom.xml b/module/cmd-alert/pom.xml
+index e89129d8..c1961adf 100644
+--- a/module/cmd-alert/pom.xml
++++ b/module/cmd-alert/pom.xml
+@@ -4,13 +4,13 @@
+     <modelVersion>4.0.0</modelVersion>
+ 
+     <parent>
+-        <groupId>net.royalmind.minecraft.advocatus</groupId>
++        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+         <artifactId>advocatus-module</artifactId>
+         <version>1.17-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+-    <groupId>net.royalmind.minecraft.advocatus</groupId>
++    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+     <artifactId>advocatus-module-cmd-alert</artifactId>
+     <version>1.17-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+diff --git a/module/cmd-find/pom.xml b/module/cmd-find/pom.xml
+index d91b3dbb..42b883e9 100644
+--- a/module/cmd-find/pom.xml
++++ b/module/cmd-find/pom.xml
+@@ -4,13 +4,13 @@
+     <modelVersion>4.0.0</modelVersion>
+ 
+     <parent>
+-        <groupId>net.royalmind.minecraft.advocatus</groupId>
++        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+         <artifactId>advocatus-module</artifactId>
+         <version>1.17-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+-    <groupId>net.royalmind.minecraft.advocatus</groupId>
++    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+     <artifactId>advocatus-module-cmd-find</artifactId>
+     <version>1.17-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+diff --git a/module/cmd-list/pom.xml b/module/cmd-list/pom.xml
+index 7c51e35f..c7605b88 100644
+--- a/module/cmd-list/pom.xml
++++ b/module/cmd-list/pom.xml
+@@ -4,13 +4,13 @@
+     <modelVersion>4.0.0</modelVersion>
+ 
+     <parent>
+-        <groupId>net.royalmind.minecraft.advocatus</groupId>
++        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+         <artifactId>advocatus-module</artifactId>
+         <version>1.17-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+-    <groupId>net.royalmind.minecraft.advocatus</groupId>
++    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+     <artifactId>advocatus-module-cmd-list</artifactId>
+     <version>1.17-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+diff --git a/module/cmd-send/pom.xml b/module/cmd-send/pom.xml
+index bd3221ab..06c5b623 100644
+--- a/module/cmd-send/pom.xml
++++ b/module/cmd-send/pom.xml
+@@ -4,13 +4,13 @@
+     <modelVersion>4.0.0</modelVersion>
+ 
+     <parent>
+-        <groupId>net.royalmind.minecraft.advocatus</groupId>
++        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+         <artifactId>advocatus-module</artifactId>
+         <version>1.17-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+-    <groupId>net.royalmind.minecraft.advocatus</groupId>
++    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+     <artifactId>advocatus-module-cmd-send</artifactId>
+     <version>1.17-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+diff --git a/module/cmd-server/pom.xml b/module/cmd-server/pom.xml
+index ea0f1c43..8ecd1846 100644
+--- a/module/cmd-server/pom.xml
++++ b/module/cmd-server/pom.xml
+@@ -4,13 +4,13 @@
+     <modelVersion>4.0.0</modelVersion>
+ 
+     <parent>
+-        <groupId>net.royalmind.minecraft.advocatus</groupId>
++        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+         <artifactId>advocatus-module</artifactId>
+         <version>1.17-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+-    <groupId>net.royalmind.minecraft.advocatus</groupId>
++    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+     <artifactId>advocatus-module-cmd-server</artifactId>
+     <version>1.17-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+diff --git a/module/pom.xml b/module/pom.xml
+index 11a0c593..363539d6 100644
+--- a/module/pom.xml
++++ b/module/pom.xml
+@@ -4,13 +4,13 @@
+     <modelVersion>4.0.0</modelVersion>
+ 
+     <parent>
+-        <groupId>net.royalmind.minecraft.advocatus</groupId>
++        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+         <version>1.17-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+-    <groupId>net.royalmind.minecraft.advocatus</groupId>
++    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+     <artifactId>advocatus-module</artifactId>
+     <version>1.17-R0.1-SNAPSHOT</version>
+     <packaging>pom</packaging>
+@@ -35,7 +35,7 @@
+ 
+     <dependencies>
+         <dependency>
+-            <groupId>net.royalmind.minecraft.advocatus</groupId>
++            <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+             <artifactId>advocatus-api</artifactId>
+             <version>${project.version}</version>
+             <scope>compile</scope>
+diff --git a/module/reconnect-yaml/pom.xml b/module/reconnect-yaml/pom.xml
+index f42a6910..1a5f8aed 100644
+--- a/module/reconnect-yaml/pom.xml
++++ b/module/reconnect-yaml/pom.xml
+@@ -4,13 +4,13 @@
+     <modelVersion>4.0.0</modelVersion>
+ 
+     <parent>
+-        <groupId>net.royalmind.minecraft.advocatus</groupId>
++        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+         <artifactId>advocatus-module</artifactId>
+         <version>1.17-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+-    <groupId>net.royalmind.minecraft.advocatus</groupId>
++    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+     <artifactId>advocatus-module-reconnect-yaml</artifactId>
+     <version>1.17-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+diff --git a/native/pom.xml b/native/pom.xml
+index 1e44df04..e455bf52 100644
+--- a/native/pom.xml
++++ b/native/pom.xml
+@@ -4,13 +4,13 @@
+     <modelVersion>4.0.0</modelVersion>
+ 
+     <parent>
+-        <groupId>net.royalmind.minecraft.advocatus</groupId>
++        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+         <version>1.17-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+-    <groupId>net.royalmind.minecraft.advocatus</groupId>
++    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+     <artifactId>advocatus-native</artifactId>
+     <version>1.17-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+diff --git a/pom.xml b/pom.xml
+index d576b254..22e72d28 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -4,48 +4,39 @@
+     <modelVersion>4.0.0</modelVersion>
+ 
+     <parent>
+-        <groupId>net.royalmind.minecraft.advocatus</groupId>
++        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+         <artifactId>advocatus-super</artifactId>
+         <version>dev-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+-    <groupId>net.royalmind.minecraft.advocatus</groupId>
++    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+     <artifactId>advocatus-parent</artifactId>
+     <version>1.17-R0.1-SNAPSHOT</version>
+     <packaging>pom</packaging>
+ 
+     <name>Advocatus-Parent</name>
+     <description>Parent project for all Advocatus modules.</description>
+-    <url>https://github.com/WaterfallMC/Waterfall</url>
+-    <inceptionYear>2015</inceptionYear>
++    <url>https://github.com/RoyalMind/Advocatus</url>
++    <inceptionYear>2021</inceptionYear>
+     <organization>
+-        <name>AdvocatusMC</name>
+-        <url>https://github.com/WaterfallMC</url>
++        <name>Advocatus</name>
++        <url>https://github.com/RoyalMind/Advocatus</url>
+     </organization>
+     <licenses>
+         <license>
+-            <name>Modified BSD 3-Clause License</name>
+-            <url>https://github.com/SpigotMC/BungeeCord/blob/master/LICENSE</url>
++            <name>MIT License</name>
++            <url>https://github.com/RoyalMind/Advocatus/blob/main/LICENSE</url>
+             <distribution>repo</distribution>
+         </license>
+     </licenses>
+ 
+     <developers>
+         <developer>
+-            <id>Tux</id>
++            <id>CharlyZest</id>
+         </developer>
+         <developer>
+-            <id>Techcable</id>
+-        </developer>
+-        <developer>
+-            <id>kashike</id>
+-        </developer>
+-        <developer>
+-            <id>jamierocks</id>
+-        </developer>
+-        <developer>
+-            <id>fuzzybot</id>
++            <id>ImSrPanda</id>
+         </developer>
+     </developers>
+ 
+@@ -66,23 +57,23 @@
+     </modules>
+ 
+     <scm>
+-        <connection>scm:git:git@github.com:com:WaterfallMC/Waterfall.git</connection>
+-        <developerConnection>scm:git:git@github.com:WaterfallMC/Waterfall.git</developerConnection>
+-        <url>git@github.com:WaterfallMC/Waterfall.git</url>
++        <connection>scm:git:git@github.com:com:RoyalMind/Advocatus.git</connection>
++        <developerConnection>scm:git:git@github.com:RoyalMind/Advocatus.git</developerConnection>
++        <url>git@github.com:RoyalMind/Advocatus.git</url>
+     </scm>
+     <issueManagement>
+         <system>GitHub</system>
+-        <url>https://github.com/PaperMC/Waterfall/issues</url>
++        <url>https://github.com/RoyalMind/Advocatus/issues</url>
+     </issueManagement>
+ 
+     <distributionManagement>
+         <repository>
+-            <id>papermc-releases</id>
+-            <url>https://papermc.io/repo/repository/maven-releases/</url>
++            <id>royalmind-releases</id>
++            <url>http://repo.royalmind.net:8081/repository/maven-releases/</url>
+         </repository>
+         <snapshotRepository>
+-            <id>papermc-snapshots</id>
+-            <url>https://papermc.io/repo/repository/maven-snapshots/</url>
++            <id>royalmind-snapshots</id>
++            <url>http://repo.royalmind.net:8081/repository/maven-snapshots/</url>
+         </snapshotRepository>
+     </distributionManagement>
+ 
+@@ -348,7 +339,7 @@
+                 </plugins>
+             </build>
+         </profile>
+-        <!-- Advocatus Start -->
++        <!-- Waterfall Start -->
+         <profile>
+             <id>deployment</id>
+             <build>
+@@ -430,6 +421,6 @@
+                 </plugins>
+             </build>
+         </profile>
+-        <!-- Advocatus end -->
++        <!-- Waterfall end -->
+     </profiles>
+ </project>
+diff --git a/protocol/pom.xml b/protocol/pom.xml
+index c0ee677a..495e0e20 100644
+--- a/protocol/pom.xml
++++ b/protocol/pom.xml
+@@ -4,13 +4,13 @@
+     <modelVersion>4.0.0</modelVersion>
+ 
+     <parent>
+-        <groupId>net.royalmind.minecraft.advocatus</groupId>
++        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+         <version>1.17-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+-    <groupId>net.royalmind.minecraft.advocatus</groupId>
++    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+     <artifactId>advocatus-protocol</artifactId>
+     <version>1.17-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+@@ -41,7 +41,7 @@
+             <scope>compile</scope>
+         </dependency>
+         <dependency>
+-            <groupId>net.royalmind.minecraft.advocatus</groupId>
++            <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+             <artifactId>advocatus-chat</artifactId>
+             <version>${project.version}</version>
+             <scope>compile</scope>
+diff --git a/proxy/pom.xml b/proxy/pom.xml
+index 5036f2d1..badc3aec 100644
+--- a/proxy/pom.xml
++++ b/proxy/pom.xml
+@@ -4,13 +4,13 @@
+     <modelVersion>4.0.0</modelVersion>
+ 
+     <parent>
+-        <groupId>net.royalmind.minecraft.advocatus</groupId>
++        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+         <version>1.17-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+-    <groupId>net.royalmind.minecraft.advocatus</groupId>
++    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+     <artifactId>advocatus-proxy</artifactId>
+     <version>1.17-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+@@ -64,31 +64,31 @@
+             <scope>compile</scope>
+         </dependency>
+         <dependency>
+-            <groupId>net.royalmind.minecraft.advocatus</groupId>
++            <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+             <artifactId>advocatus-api</artifactId>
+             <version>${project.version}</version>
+             <scope>compile</scope>
+         </dependency>
+         <dependency>
+-            <groupId>net.royalmind.minecraft.advocatus</groupId>
++            <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+             <artifactId>advocatus-log4j</artifactId>
+             <version>${project.version}</version>
+             <scope>compile</scope>
+         </dependency>
+         <dependency>
+-            <groupId>net.royalmind.minecraft.advocatus</groupId>
++            <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+             <artifactId>advocatus-native</artifactId>
+             <version>${project.version}</version>
+             <scope>compile</scope>
+         </dependency>
+         <dependency>
+-            <groupId>net.royalmind.minecraft.advocatus</groupId>
++            <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+             <artifactId>advocatus-protocol</artifactId>
+             <version>${project.version}</version>
+             <scope>compile</scope>
+         </dependency>
+         <dependency>
+-            <groupId>net.royalmind.minecraft.advocatus</groupId>
++            <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+             <artifactId>advocatus-query</artifactId>
+             <version>${project.version}</version>
+             <scope>compile</scope>
+diff --git a/query/pom.xml b/query/pom.xml
+index 8a26ad03..34131f0e 100644
+--- a/query/pom.xml
++++ b/query/pom.xml
+@@ -4,13 +4,13 @@
+     <modelVersion>4.0.0</modelVersion>
+ 
+     <parent>
+-        <groupId>net.royalmind.minecraft.advocatus</groupId>
++        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+         <version>1.17-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+-    <groupId>net.royalmind.minecraft.advocatus</groupId>
++    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+     <artifactId>advocatus-query</artifactId>
+     <version>1.17-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+@@ -26,7 +26,7 @@
+             <scope>compile</scope>
+         </dependency>
+         <dependency>
+-            <groupId>net.royalmind.minecraft.advocatus</groupId>
++            <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+             <artifactId>advocatus-api</artifactId>
+             <version>${project.version}</version>
+             <scope>compile</scope>
+-- 
+2.24.1.windows.2
+
