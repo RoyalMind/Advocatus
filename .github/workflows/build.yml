@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: [8,16]
+        java: [16]
       fail-fast: true
     steps:
       - uses: actions/checkout@v2
