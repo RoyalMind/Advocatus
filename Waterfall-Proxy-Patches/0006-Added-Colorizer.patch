@@ -13,7 +13,7 @@ index 22e72d28..777d4c37 100644
              <scope>provided</scope>
          </dependency>
 +        <dependency>
-+            <groupId>net.royalmind.minecraft.library.Colorizer</groupId>
++            <groupId>net.royalmind.minecraft.library</groupId>
 +            <artifactId>Colorizer</artifactId>
 +            <version>1.0-SNAPSHOT</version>
 +            <scope>compile</scope>
