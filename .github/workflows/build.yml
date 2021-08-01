@@ -2,6 +2,7 @@ name: Advocatus Build
 on:
   push:
     branches:
+      - indev
       - beta
       - main
   pull_request:
@@ -12,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: [11,16]
+        java: [11]
       fail-fast: true
     steps:
       - uses: actions/checkout@v2
@@ -32,9 +33,16 @@ jobs:
         with:
           servers: |
             [{
-                "id": "royalmind-snapshots",
-                "username": "${{ secrets.PACKAGES_USERNAME }}",
-                "password": "${{ secrets.PACKAGES_PASSWORD }}"
+              "id": "royalmind-snapshots",
+              "username": "${{ secrets.PACKAGES_USERNAME }}",
+              "password": "${{ secrets.PACKAGES_PASSWORD }}"
+            }]
+          mirrors: |
+            [{
+              "id": "royalmind-snapshots-mirror",
+              "name":"rms",
+              "mirrorOf":"royalmind-snapshots",
+              "url":"http://ns529965.ip-149-56-107.net:8081/repository/maven-snapshots/"
             }]
       - name: patch for Java ${{ matrix.java }}
         run: ./advocatus p
