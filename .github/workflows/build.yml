@@ -2,7 +2,6 @@ name: Advocatus Build
 on:
   push:
     branches:
-      - indev
       - beta
       - main
   pull_request:

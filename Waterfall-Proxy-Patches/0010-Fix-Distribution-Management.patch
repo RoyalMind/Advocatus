@@ -1,0 +1,27 @@
+From 7b81e78c47eeff9e4921c7b4d24f0fa4afe7b56a Mon Sep 17 00:00:00 2001
+From: Carlos Gallegos <charlyzest@gmail.com>
+Date: Sun, 1 Aug 2021 03:00:12 -0500
+Subject: [PATCH] Fix Distribution Management
+
+
+diff --git a/pom.xml b/pom.xml
+index 9d5aa9f2..94c8905b 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -67,12 +67,8 @@
+     </issueManagement>
+ 
+     <distributionManagement>
+-        <repository>
+-            <id>royalmind-releases</id>
+-            <url>http://repo.royalmind.net:8081/repository/maven-releases/</url>
+-        </repository>
+         <snapshotRepository>
+-            <id>royalmind-snapshots</id>
++            <id>royalmind</id>
+             <url>http://repo.royalmind.net:8081/repository/maven-snapshots/</url>
+         </snapshotRepository>
+     </distributionManagement>
+-- 
+2.24.1.windows.2
+
