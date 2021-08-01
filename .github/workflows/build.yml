@@ -32,19 +32,14 @@ jobs:
         with:
           servers: |
             [{
-                "id": "royalmind-releases",
-                "username": "${{ secrets.PACKAGES_USERNAME}}",
-                "password": "${{ secrets.PACKAGES_PASSWORD }}"
-            },
-            {
                 "id": "royalmind-snapshots",
-                "username": "${{ secrets.PACKAGES_USERNAME}}",
+                "username": "${{ secrets.PACKAGES_USERNAME }}",
                 "password": "${{ secrets.PACKAGES_PASSWORD }}"
             }]
       - name: patch for Java ${{ matrix.java }}
         run: ./advocatus p
       - name: build for Java ${{ matrix.java }}
-        run: mvn clean javadoc:javadoc package "-Dbuild.number=${{ github.run_number }}"
+        run: mvn -X clean javadoc:javadoc package "-Dbuild.number=${{ github.run_number }}"
       - name: deploy for Java ${{ matrix.java }}
         run: mvn deploy "-Dbuild.number=${{ github.run_number }}"
       # An artifact is generated in a compressed file according to each JDK build version.

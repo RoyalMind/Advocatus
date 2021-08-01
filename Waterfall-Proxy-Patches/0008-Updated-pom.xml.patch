@@ -1,0 +1,27 @@
+From 188880eea14d5d447a62321ae62a1728f992e36d Mon Sep 17 00:00:00 2001
+From: Carlos Gallegos <charlyzest@gmail.com>
+Date: Sun, 1 Aug 2021 00:57:45 -0500
+Subject: [PATCH] Updated pom.xml
+
+
+diff --git a/pom.xml b/pom.xml
+index d906194d..17b3dad2 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -86,6 +86,13 @@
+         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+     </properties>
+ 
++    <repositories>
++        <repository>
++            <id>royalmind</id>
++            <url>http://packages.royalmind.net:8081/repository/maven-public/</url>
++        </repository>
++    </repositories>
++
+     <dependencies>
+         <dependency>
+             <groupId>junit</groupId>
+-- 
+2.24.1.windows.2
+
