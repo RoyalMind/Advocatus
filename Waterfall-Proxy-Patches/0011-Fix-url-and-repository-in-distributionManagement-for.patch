@@ -1,0 +1,33 @@
+From ffba12f4b08a79ae26708c25d076254765d534cc Mon Sep 17 00:00:00 2001
+From: Carlos Gallegos <charlyzest@gmail.com>
+Date: Sun, 1 Aug 2021 03:10:35 -0500
+Subject: [PATCH] Fix url and repository in distributionManagement for pom.xml
+
+
+diff --git a/pom.xml b/pom.xml
+index 94c8905b..7ed4ad5f 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -67,6 +67,10 @@
+     </issueManagement>
+ 
+     <distributionManagement>
++        <repository>
++            <id>royalmind</id>
++            <url>http://repo.royalmind.net:8081/repository/maven-public/</url>
++        </repository>
+         <snapshotRepository>
+             <id>royalmind</id>
+             <url>http://repo.royalmind.net:8081/repository/maven-snapshots/</url>
+@@ -85,7 +89,7 @@
+     <repositories>
+         <repository>
+             <id>royalmind</id>
+-            <url>http://packages.royalmind.net:8081/repository/maven-public/</url>
++            <url>http://packages.royalmind.net:8081/repository/maven-snapshots/</url>
+         </repository>
+     </repositories>
+ 
+-- 
+2.24.1.windows.2
+
