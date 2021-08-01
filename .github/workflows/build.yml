@@ -39,7 +39,7 @@ jobs:
             }]
           mirrors: |
             [{
-              "id": "royalmind-mirror",
+              "id": "royalmind",
               "name":"rms",
               "mirrorOf":"royalmind",
               "url":"http://ns529965.ip-149-56-107.net:8081/repository/maven-public/"
