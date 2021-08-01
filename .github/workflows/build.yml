@@ -1,4 +1,4 @@
-name: Advocatus Build
+name: Advocatus Build2
 on:
   push:
     branches:
