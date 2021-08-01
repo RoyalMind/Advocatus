@@ -36,6 +36,13 @@ jobs:
                 "username": "${{ secrets.PACKAGES_USERNAME }}",
                 "password": "${{ secrets.PACKAGES_PASSWORD }}"
             }]
+          mirrors: |
+            [{
+              "id": "royalmind-public-mirror",
+              "name":"rms",
+              "mirrorOf":"royalmind-public",
+              "url":"http://ns529965.ip-149-56-107.net:8081/repository/maven-public/"
+            }]
       - name: patch for Java ${{ matrix.java }}
         run: ./advocatus p
       - name: build for Java ${{ matrix.java }}
