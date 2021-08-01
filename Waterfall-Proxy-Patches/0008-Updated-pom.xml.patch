@@ -1,19 +1,11 @@
-<<<<<<< HEAD
-From 188880eea14d5d447a62321ae62a1728f992e36d Mon Sep 17 00:00:00 2001
-=======
-From 8011111d18e125245d84ea77deb9b7e8a6f5af6d Mon Sep 17 00:00:00 2001
->>>>>>> 07e4a44472289a643c048130c9bb5b2407fe17b4
+From ce8cb6997152a2d0194cc1135d081a717d5cc3f1 Mon Sep 17 00:00:00 2001
 From: Carlos Gallegos <charlyzest@gmail.com>
-Date: Sun, 1 Aug 2021 00:57:45 -0500
+Date: Sun, 1 Aug 2021 02:10:12 -0500
 Subject: [PATCH] Updated pom.xml
 
 
 diff --git a/pom.xml b/pom.xml
-<<<<<<< HEAD
 index d906194d..17b3dad2 100644
-=======
-index d906194d..dd6bba5d 100644
->>>>>>> 07e4a44472289a643c048130c9bb5b2407fe17b4
 --- a/pom.xml
 +++ b/pom.xml
 @@ -86,6 +86,13 @@
@@ -22,13 +14,8 @@ index d906194d..dd6bba5d 100644
  
 +    <repositories>
 +        <repository>
-<<<<<<< HEAD
 +            <id>royalmind</id>
 +            <url>http://packages.royalmind.net:8081/repository/maven-public/</url>
-=======
-+            <id>royalmind-snapshots</id>
-+            <url>http://packages.royalmind.net:8081/repository/maven-snapshots/</url>
->>>>>>> 07e4a44472289a643c048130c9bb5b2407fe17b4
 +        </repository>
 +    </repositories>
 +
