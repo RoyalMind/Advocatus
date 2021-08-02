@@ -1,0 +1,308 @@
+From f5b99e5af105208244173b6d5c079696d66a1adc Mon Sep 17 00:00:00 2001
+From: Carlos Gallegos <charlyzest@gmail.com>
+Date: Sun, 1 Aug 2021 20:08:15 -0500
+Subject: [PATCH] Fixed Translations and read method
+
+
+diff --git a/proxy/pom.xml b/proxy/pom.xml
+index badc3aec..806e118f 100644
+--- a/proxy/pom.xml
++++ b/proxy/pom.xml
+@@ -18,6 +18,13 @@
+     <name>Advocatus-Proxy</name>
+     <description>Proxy component of the Elastic Portal Suite</description>
+ 
++    <repositories>
++        <repository>
++            <id>jitpack.io</id>
++            <url>https://jitpack.io</url>
++        </repository>
++    </repositories>
++
+     <properties>
+         <maven.deploy.skip>true</maven.deploy.skip>
+         <maven.javadoc.skip>true</maven.javadoc.skip>
+@@ -149,6 +156,12 @@
+             <version>3.12.1</version>
+             <scope>runtime</scope>
+         </dependency>
++        <dependency>
++            <groupId>com.github.simplix-softworks</groupId>
++            <artifactId>simplixstorage</artifactId>
++            <version>3.2.3</version>
++            <scope>compile</scope>
++        </dependency>
+         <!-- Advocatus end -->
+     </dependencies>
+ 
+diff --git a/proxy/src/main/java/net/md_5/bungee/BungeeCord.java b/proxy/src/main/java/net/md_5/bungee/BungeeCord.java
+index 2a26d8e2..aefe16a6 100644
+--- a/proxy/src/main/java/net/md_5/bungee/BungeeCord.java
++++ b/proxy/src/main/java/net/md_5/bungee/BungeeCord.java
+@@ -9,6 +9,7 @@ import com.google.common.collect.Sets;
+ import com.google.common.util.concurrent.ThreadFactoryBuilder;
+ import com.google.gson.Gson;
+ import com.google.gson.GsonBuilder;
++import de.leonhard.storage.Yaml;
+ import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+ import io.github.waterfallmc.waterfall.conf.WaterfallConfiguration;
+ import io.github.waterfallmc.waterfall.event.ProxyExceptionEvent;
+@@ -21,26 +22,12 @@ import io.netty.channel.ChannelFutureListener;
+ import io.netty.channel.ChannelOption;
+ import io.netty.channel.EventLoopGroup;
+ import io.netty.util.ResourceLeakDetector;
+-import java.io.File;
+-import java.io.FileReader;
+-import java.io.IOException;
+-import java.io.PrintStream;
++
++import java.io.*;
+ import java.net.InetSocketAddress;
+ import java.net.SocketAddress;
+ import java.text.MessageFormat;
+-import java.util.ArrayList;
+-import java.util.Collection;
+-import java.util.Collections;
+-import java.util.HashMap;
+-import java.util.HashSet;
+-import java.util.Locale;
+-import java.util.Map;
+-import java.util.MissingResourceException;
+-import java.util.PropertyResourceBundle;
+-import java.util.ResourceBundle;
+-import java.util.Timer;
+-import java.util.TimerTask;
+-import java.util.UUID;
++import java.util.*;
+ import java.util.concurrent.TimeUnit;
+ import java.util.concurrent.locks.ReadWriteLock;
+ import java.util.concurrent.locks.ReentrantLock;
+@@ -114,7 +101,6 @@ public class BungeeCord extends ProxyServer
+      * Localization bundle.
+      */
+     private ResourceBundle baseBundle;
+-    private ResourceBundle customBundle;
+     public EventLoopGroup bossEventLoopGroup, workerEventLoopGroup;
+     /**
+      * locations.yml save thread.
+@@ -173,6 +159,14 @@ public class BungeeCord extends ProxyServer
+             .registerTypeAdapter( Favicon.class, Favicon.getFaviconTypeAdapter() ).create();
+     @Getter
+     private ConnectionThrottle connectionThrottle;
++
++    /* Advocatus Start */
++
++    public final String baseConfigDir = "Advocatus/";
++    private Yaml customBundle;
++
++    /* Advocatus End */
++
+     private final ModuleManager moduleManager = new ModuleManager();
+ 
+     {
+@@ -551,17 +545,29 @@ public class BungeeCord extends ProxyServer
+ 
+     public void reloadMessages()
+     {
+-        File file = new File( "messages.properties" );
+-        if ( file.isFile() )
++        try
+         {
+-            try ( FileReader rd = new FileReader( file ) )
++            File file = new File( baseConfigDir, "messages.yml" );
++            customBundle = new Yaml(file.getName(), baseConfigDir);
++            if (!file.exists())
+             {
+-                customBundle = new PropertyResourceBundle( rd );
+-            } catch ( IOException ex )
+-            {
+-                getLogger().log( Level.SEVERE, "Could not load custom messages.properties", ex );
++                try
++                {
++                    file.mkdir();
++                    final Enumeration<String> keys = baseBundle.getKeys();
++                    while (keys.hasMoreElements())
++                    {
++                        final String key = keys.nextElement();
++                        customBundle.set(key, baseBundle.getString(key));
++                    }
++                }
++                catch (Exception ex) { ex.printStackTrace(); }
+             }
+         }
++        catch (Exception ex)
++        {
++            getLogger().log( Level.SEVERE, "Could not load custom messages.properties", ex );
++        }
+     }
+ 
+     @Override
+@@ -570,7 +576,7 @@ public class BungeeCord extends ProxyServer
+         String translation = "<falta traducción: '" + name + "'>";
+         try
+         {
+-            final String string = customBundle != null && customBundle.containsKey( name ) ? customBundle.getString( name ) : baseBundle.getString( name );
++            final String string = customBundle != null && customBundle.contains( name ) ? customBundle.getString( name ) : baseBundle.getString( name );
+ 
+             translation = ( args.length == 0 ) ? string : MessageFormat.format( string, args );
+         }
+@@ -594,10 +600,7 @@ public class BungeeCord extends ProxyServer
+     }
+ 
+     @Override
+-    public int getOnlineCount()
+-    {
+-        return connections.size();
+-    }
++    public int getOnlineCount() { return connections.size(); }
+ 
+     @Override
+     public ProxiedPlayer getPlayer(String name)
+@@ -643,45 +646,27 @@ public class BungeeCord extends ProxyServer
+     }
+ 
+     @Override
+-    public Map<String, ServerInfo> getServers()
+-    {
+-        return config.getServers();
+-    }
++    public Map<String, ServerInfo> getServers() { return config.getServers(); }
+ 
+     // Waterfall start
+     @Override
+-    public Map<String, ServerInfo> getServersCopy()
+-    {
+-        return config.getServersCopy();
+-    }
++    public Map<String, ServerInfo> getServersCopy() { return config.getServersCopy(); }
+     // Waterfall end
+ 
+     @Override
+-    public ServerInfo getServerInfo(String name)
+-    {
+-        return config.getServerInfo( name ); // Waterfall
+-    }
++    public ServerInfo getServerInfo(String name) { return config.getServerInfo( name ); } // Waterfall
+ 
+     @Override
+     @Synchronized("pluginChannels")
+-    public void registerChannel(String channel)
+-    {
+-        pluginChannels.add( channel );
+-    }
++    public void registerChannel(String channel) { pluginChannels.add( channel ); }
+ 
+     @Override
+     @Synchronized("pluginChannels")
+-    public void unregisterChannel(String channel)
+-    {
+-        pluginChannels.remove( channel );
+-    }
++    public void unregisterChannel(String channel) { pluginChannels.remove( channel ); }
+ 
+     @Override
+     @Synchronized("pluginChannels")
+-    public Collection<String> getChannels()
+-    {
+-        return Collections.unmodifiableCollection( pluginChannels );
+-    }
++    public Collection<String> getChannels() { return Collections.unmodifiableCollection( pluginChannels ); }
+ 
+     public PluginMessage registerChannels(int protocolVersion)
+     {
+@@ -694,40 +679,22 @@ public class BungeeCord extends ProxyServer
+     }
+ 
+     @Override
+-    public int getProtocolVersion()
+-    {
+-        return ProtocolConstants.SUPPORTED_VERSION_IDS.get( ProtocolConstants.SUPPORTED_VERSION_IDS.size() - 1 );
+-    }
++    public int getProtocolVersion() { return ProtocolConstants.SUPPORTED_VERSION_IDS.get( ProtocolConstants.SUPPORTED_VERSION_IDS.size() - 1 ); }
+ 
+     @Override
+-    public String getGameVersion()
+-    {
+-        return getConfig().getGameVersion(); // Waterfall
+-    }
++    public String getGameVersion() { return getConfig().getGameVersion(); } // Waterfall
+ 
+     @Override
+-    public ServerInfo constructServerInfo(String name, InetSocketAddress address, String motd, boolean restricted)
+-    {
+-        return constructServerInfo( name, (SocketAddress) address, motd, restricted );
+-    }
++    public ServerInfo constructServerInfo(String name, InetSocketAddress address, String motd, boolean restricted) { return constructServerInfo( name, (SocketAddress) address, motd, restricted ); }
+ 
+     @Override
+-    public ServerInfo constructServerInfo(String name, SocketAddress address, String motd, boolean restricted)
+-    {
+-        return new BungeeServerInfo( name, address, motd, restricted );
+-    }
++    public ServerInfo constructServerInfo(String name, SocketAddress address, String motd, boolean restricted) { return new BungeeServerInfo( name, address, motd, restricted ); }
+ 
+     @Override
+-    public CommandSender getConsole()
+-    {
+-        return ConsoleCommandSender.getInstance();
+-    }
++    public CommandSender getConsole() { return ConsoleCommandSender.getInstance(); }
+ 
+     @Override
+-    public void broadcast(String message)
+-    {
+-        broadcast( TextComponent.fromLegacyText( message ) );
+-    }
++    public void broadcast(String message) { broadcast( TextComponent.fromLegacyText( message ) ); }
+ 
+     @Override
+     public void broadcast(BaseComponent... message)
+@@ -782,10 +749,7 @@ public class BungeeCord extends ProxyServer
+     }
+ 
+     @Override
+-    public Collection<String> getDisabledCommands()
+-    {
+-        return config.getDisabledCommands();
+-    }
++    public Collection<String> getDisabledCommands() { return config.getDisabledCommands(); }
+ 
+     @Override
+     public Collection<ProxiedPlayer> matchPlayer(final String partialName)
+@@ -810,8 +774,5 @@ public class BungeeCord extends ProxyServer
+     }
+ 
+     @Override
+-    public Title createTitle()
+-    {
+-        return new BungeeTitle();
+-    }
++    public Title createTitle() { return new BungeeTitle(); }
+ }
+diff --git a/proxy/src/main/resources/messages.properties b/proxy/src/main/resources/messages.properties
+index a259b0bb..ba26484d 100644
+--- a/proxy/src/main/resources/messages.properties
++++ b/proxy/src/main/resources/messages.properties
+@@ -20,7 +20,7 @@ restart=&r[&e&lRoyal&6&lMind &f&lNetwork&r] Reiniciando network
+ server_kick=[Expulsado] 
+ server_list=&6Puede conectarse a los siguientes servidores en este momento: 
+ server_went_down=&cEl servidor en el que estaba anteriormente se cay\00F3, se ha conectado a un servidor de reserva
+-total_players=Total de jugadores en l\00EDnea: {0}
++total_players=Total de jugadores en linea: {0}
+ name_invalid=Nombre de usuario contiene caracteres inv\u00E1lidos.
+ ping_cannot_connect=&r[&e&lRoyal&6&lMind &f&lNetwork&r] &cNo se puede conectar al servidor.
+ offline_mode_player=Cuenta no autenticada con Minecraft.net
+@@ -29,8 +29,8 @@ error_occurred_player=&cSe produjo un error al analizar su mensaje. (Coloca el c
+ error_occurred_console=&cSe produjo un error al analizar su mensaje: {0}
+ click_to_connect=Haga clic para conectarse al servidor
+ username_needed=&cSiga este comando con un nombre de usuario.
+-user_not_online=&cEse usuario no est\u00E1 en l\00EDnea.
+-user_online_at=&a{0} &rest\u00E1 en l\00EDnea en {1}
++user_not_online=&cEse usuario no est\u00E1 en linea.
++user_online_at=&a{0} &rest\u00E1 en linea en {1}
+ send_cmd_usage=&cNo hay suficientes argumentos, uso: /send <servidor|jugador|all|current> <servidor objetivo>
+ player_only=&cSolo en el juego los jugadores pueden usar este comando.
+ successfully_summoned=&aJugador(es) transportado con \00E9xito
+-- 
+2.24.1.windows.2
+
