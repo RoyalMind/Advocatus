@@ -51,9 +51,9 @@ jobs:
       - name: patch for Java ${{ matrix.java }}
         run: ./advocatus p
       - name: build for Java ${{ matrix.java }}
-        run: mvn clean javadoc:javadoc package "-Dbuild.number=${{ github.run_number }}" -B
-      #      - name: deploy for Java ${{ matrix.java }}
-      #        run: mvn clean deploy "-Dbuild.number=${{ github.run_number }}" -DaltDeploymentRepository=royalmind::default::http://ns529965.ip-149-56-107.net:8081/repository/maven-public/
+        run: mvn clean javadoc:javadoc package -B -Dbuild.number=${{ github.run_number }}
+            - name: deploy for Java ${{ matrix.java }}
+              run: mvn deploy -B -Dbuild.number=${{ github.run_number }}
       # An artifact is generated in a compressed file according to each JDK build version.
       - name: Upload Artifact Advocatus Proxy for Java ${{ matrix.java }}
         uses: actions/upload-artifact@v2.2.4
