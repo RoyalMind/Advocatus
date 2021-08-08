@@ -53,7 +53,7 @@ jobs:
       - name: build for Java ${{ matrix.java }}
         run: mvn clean javadoc:javadoc package -Dbuild.number=${{ github.run_number }} -B
       - name: deploy for Java ${{ matrix.java }}
-        run: mvn deploy -Dbuild.number=${{ github.run_number }} -B -PPROD
+        run: mvn deploy -Dbuild.number=${{ github.run_number }} -B -DaltDeploymentRepository=royalmind::default::https://packages.royalmind.net/repository/maven-snapshots/
       # An artifact is generated in a compressed file according to each JDK build version.
       - name: Upload Artifact Advocatus Proxy for Java ${{ matrix.java }}
         uses: actions/upload-artifact@v2.2.4
