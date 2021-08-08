@@ -35,6 +35,11 @@ jobs:
               "id": "royalmind",
               "username": "${{ secrets.PACKAGES_USERNAME }}",
               "password": "${{ secrets.PACKAGES_PASSWORD }}"
+            },
+            {
+              "id": "royalmind-snapshots",
+              "username": "${{ secrets.PACKAGES_USERNAME }}",
+              "password": "${{ secrets.PACKAGES_PASSWORD }}"
             }]
       #          mirrors: |
       #            [{
