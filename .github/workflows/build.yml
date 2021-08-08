@@ -36,19 +36,19 @@ jobs:
               "username": "${{ secrets.PACKAGES_USERNAME }}",
               "password": "${{ secrets.PACKAGES_PASSWORD }}"
             }]
-          mirrors: |
-            [{
-              "id": "royalmind",
-              "name":"rms",
-              "mirrorOf":"royalmind",
-              "url":"http://ns529965.ip-149-56-107.net:8081/repository/maven-public/"
-            }]
+      #          mirrors: |
+      #            [{
+      #              "id": "royalmind",
+      #              "name":"rms",
+      #              "mirrorOf":"royalmind",
+      #              "url":"https://packages.royalmind.net/repository/maven-releases/"
+      #            }]
       - name: patch for Java ${{ matrix.java }}
         run: ./advocatus p
       - name: build for Java ${{ matrix.java }}
         run: mvn clean javadoc:javadoc package "-Dbuild.number=${{ github.run_number }}" -B
-#      - name: deploy for Java ${{ matrix.java }}
-#        run: mvn clean deploy "-Dbuild.number=${{ github.run_number }}" -DaltDeploymentRepository=royalmind::default::http://ns529965.ip-149-56-107.net:8081/repository/maven-public/
+      #      - name: deploy for Java ${{ matrix.java }}
+      #        run: mvn clean deploy "-Dbuild.number=${{ github.run_number }}" -DaltDeploymentRepository=royalmind::default::http://ns529965.ip-149-56-107.net:8081/repository/maven-public/
       # An artifact is generated in a compressed file according to each JDK build version.
       - name: Upload Artifact Advocatus Proxy for Java ${{ matrix.java }}
         uses: actions/upload-artifact@v2.2.4
@@ -59,35 +59,35 @@ jobs:
       - name: Upload Artifact Advocatus cmd-alert for Java ${{ matrix.java }}
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: Java-JDK${{ matrix.java }} modules Build ${{ github.run_number }}
+          name: Java-JDK${{ matrix.java }} Advocatus modules Build ${{ github.run_number }}
           path: Advocatus-Proxy/module/cmd-alert/target/cmd_alert.jar
       # cmd_find.jar
       - name: Upload Artifact Advocatus cmd_find for Java ${{ matrix.java }}
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: Java-JDK${{ matrix.java }} modules Build ${{ github.run_number }}
+          name: Java-JDK${{ matrix.java }} Advocatus modules Build ${{ github.run_number }}
           path: Advocatus-Proxy/module/cmd-find/target/cmd_find.jar
       # cmd_list.jar
       - name: Upload Artifact Advocatus cmd-list for Java ${{ matrix.java }}
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: Java-JDK${{ matrix.java }} modules Build ${{ github.run_number }}
+          name: Java-JDK${{ matrix.java }} Advocatus modules Build ${{ github.run_number }}
           path: Advocatus-Proxy/module/cmd-list/target/cmd_list.jar
       # cmd_send.jar
       - name: Upload Artifact Advocatus cmd-send for Java ${{ matrix.java }}
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: Java-JDK${{ matrix.java }} modules Build ${{ github.run_number }}
+          name: Java-JDK${{ matrix.java }} Advocatus modules Build ${{ github.run_number }}
           path: Advocatus-Proxy/module/cmd-send/target/cmd_send.jar
       # cmd_server.jar
       - name: Upload Artifact Advocatus cmd_server for Java ${{ matrix.java }}
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: Java-JDK${{ matrix.java }} modules Build ${{ github.run_number }}
+          name: Java-JDK${{ matrix.java }} Advocatus modules Build ${{ github.run_number }}
           path: Advocatus-Proxy/module/cmd-server/target/cmd_server.jar
       # reconnect_yaml.jar
       - name: Upload Artifact Advocatus reconnect_yaml for Java ${{ matrix.java }}
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: Java-JDK${{ matrix.java }} modules Build ${{ github.run_number }}
+          name: Java-JDK${{ matrix.java }} Advocatus modules Build ${{ github.run_number }}
           path: Advocatus-Proxy/module/reconnect-yaml/target/reconnect_yaml.jar
