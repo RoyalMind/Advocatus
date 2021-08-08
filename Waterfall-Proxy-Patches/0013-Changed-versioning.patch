@@ -1,4 +1,4 @@
-From d4783adbbc202567ff2f6f4fab1618ca655332bd Mon Sep 17 00:00:00 2001
+From d4a8094117c3e061dad5b9d31d3181ba377240c9 Mon Sep 17 00:00:00 2001
 From: Carlos Gallegos <40046747+CharlyZest@users.noreply.github.com>
 Date: Sat, 7 Aug 2021 21:21:27 -0500
 Subject: [PATCH] Changed versioning
@@ -305,10 +305,15 @@ index e455bf52..16e98db8 100644
  
      <name>Advocatus-Native</name>
 diff --git a/pom.xml b/pom.xml
-index 7ed4ad5f..5ffe671a 100644
+index 7ed4ad5f..bd102c49 100644
 --- a/pom.xml
 +++ b/pom.xml
-@@ -12,7 +12,7 @@
+@@ -1,4 +1,3 @@
+-
+ <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+     <modelVersion>4.0.0</modelVersion>
+@@ -12,7 +11,7 @@
  
      <groupId>net.royalmind.minecraft.software.advocatus</groupId>
      <artifactId>advocatus-parent</artifactId>
@@ -317,13 +322,18 @@ index 7ed4ad5f..5ffe671a 100644
      <packaging>pom</packaging>
  
      <name>Advocatus-Parent</name>
-@@ -69,11 +69,11 @@
+@@ -67,13 +66,13 @@
+     </issueManagement>
+ 
      <distributionManagement>
-         <repository>
-             <id>royalmind</id>
+-        <repository>
+-            <id>royalmind</id>
 -            <url>http://repo.royalmind.net:8081/repository/maven-public/</url>
-+            <url>https://packages.royalmind.net/repository/maven-public/</url>
-         </repository>
+-        </repository>
++<!--        <repository>-->
++<!--            <id>royalmind</id>-->
++<!--            <url>https://packages.royalmind.net/repository/maven-public/</url>-->
++<!--        </repository>-->
          <snapshotRepository>
 -            <id>royalmind</id>
 -            <url>http://repo.royalmind.net:8081/repository/maven-snapshots/</url>
@@ -332,7 +342,7 @@ index 7ed4ad5f..5ffe671a 100644
          </snapshotRepository>
      </distributionManagement>
  
-@@ -88,8 +88,8 @@
+@@ -88,8 +87,8 @@
  
      <repositories>
          <repository>
@@ -343,7 +353,7 @@ index 7ed4ad5f..5ffe671a 100644
          </repository>
      </repositories>
  
-@@ -121,7 +121,7 @@
+@@ -121,7 +120,7 @@
          <dependency>
              <groupId>net.royalmind.minecraft.library</groupId>
              <artifactId>Colorizer</artifactId>
