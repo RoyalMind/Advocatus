@@ -1,0 +1,24 @@
+From fc36f79faf7225eccb50f1eed3e77d4b3141d729 Mon Sep 17 00:00:00 2001
+From: Carlos Gallegos <40046747+CharlyZest@users.noreply.github.com>
+Date: Mon, 16 Aug 2021 20:50:21 -0500
+Subject: [PATCH] Added method to validate if connection support RGB messages
+
+
+diff --git a/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java b/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java
+index 0f1716c0..82bcd964 100644
+--- a/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java
++++ b/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java
+@@ -674,4 +674,10 @@ public class InitialHandler extends PacketHandler implements PendingConnection
+     {
+         return !ch.isClosed();
+     }
++
++    // Advocatus start
++
++    public boolean supportRGB() { return this.getVersion() >= 735; }
++
++    // Advocatus end
+ }
+-- 
+2.32.0.windows.2
+
