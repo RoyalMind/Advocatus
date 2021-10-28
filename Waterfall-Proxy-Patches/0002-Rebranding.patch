@@ -1,0 +1,318 @@
+From 924f0c838746c44a17886e21158076f6bc623c9f Mon Sep 17 00:00:00 2001
+From: Carlos Gallegos <40046747+CharlyZest@users.noreply.github.com>
+Date: Thu, 28 Oct 2021 03:34:01 -0500
+Subject: [PATCH] Rebranding
+
+
+diff --git a/api/src/main/java/net/md_5/bungee/api/CommandSender.java b/api/src/main/java/net/md_5/bungee/api/CommandSender.java
+index d5888311..af0636de 100644
+--- a/api/src/main/java/net/md_5/bungee/api/CommandSender.java
++++ b/api/src/main/java/net/md_5/bungee/api/CommandSender.java
+@@ -89,4 +89,14 @@ public interface CommandSender
+      * permissions
+      */
+     public Collection<String> getPermissions();
++
++    // Advocatus Start
++
++    /**
++     * Check if the executor is a player.
++     * @return If he is a player.
++     */
++    public boolean isPlayer();
++
++    // Advocatus End
+ }
+diff --git a/api/src/main/java/net/md_5/bungee/api/connection/ProxiedPlayer.java b/api/src/main/java/net/md_5/bungee/api/connection/ProxiedPlayer.java
+index 3dc32801..712ed3e6 100644
+--- a/api/src/main/java/net/md_5/bungee/api/connection/ProxiedPlayer.java
++++ b/api/src/main/java/net/md_5/bungee/api/connection/ProxiedPlayer.java
+@@ -387,4 +387,20 @@ public interface ProxiedPlayer extends Connection, CommandSender
+      * @return this player's {@link Scoreboard}
+      */
+     Scoreboard getScoreboard();
++
++    // Advocatus Start
++
++    /**
++     * Gets the version of the minecraft protocol used for a player connection.
++     * @return protocol version number.
++     */
++    int getVersion();
++
++    /**
++     * Evaluates whether or not the player can support messages with RGB colors, for this it verifies the version of the minecraft protocol used by the connection.
++     * @return if a player uses a version with RGB support.
++     */
++    boolean supportsRGB();
++
++    // Advocatus End
+ }
+diff --git a/api/src/main/java/net/md_5/bungee/api/plugin/Command.java b/api/src/main/java/net/md_5/bungee/api/plugin/Command.java
+index b4566327..cc176c24 100644
+--- a/api/src/main/java/net/md_5/bungee/api/plugin/Command.java
++++ b/api/src/main/java/net/md_5/bungee/api/plugin/Command.java
+@@ -66,4 +66,16 @@ public abstract class Command
+     {
+         return permission == null || permission.isEmpty() || sender.hasPermission( permission );
+     }
++
++    // Advocatus Start
++
++    /**
++     * Check if sender is player.
++     *
++     * @param sender the sender to check
++     * @return if is player or not.
++     * */
++    public boolean isPlayer(CommandSender sender) { return sender instanceof net.md_5.bungee.api.connection.ProxiedPlayer; }
++
++    // Advocatus End
+ }
+diff --git a/bootstrap/src/main/java/net/md_5/bungee/Bootstrap.java b/bootstrap/src/main/java/net/md_5/bungee/Bootstrap.java
+index a4516ed9..bdca20ac 100644
+--- a/bootstrap/src/main/java/net/md_5/bungee/Bootstrap.java
++++ b/bootstrap/src/main/java/net/md_5/bungee/Bootstrap.java
+@@ -7,7 +7,7 @@ public class Bootstrap
+     {
+         if ( Float.parseFloat( System.getProperty( "java.class.version" ) ) < 52.0 )
+         {
+-            System.err.println( "*** ERROR *** Waterfall requires Java 8 or above to function! Please download and install it!" );
++            System.err.println( "*** ERROR *** Advocatus requires Java 8 or above to function! Please download and install it!" );
+             System.out.println( "You can check your Java version with the command: java -version" );
+             return;
+         }
+diff --git a/native/compile-native.sh b/native/compile-native.sh
+index a50b52bf..dd6727d7 100755
+--- a/native/compile-native.sh
++++ b/native/compile-native.sh
+@@ -8,7 +8,7 @@ echo "Compiling mbedtls"
+ echo "Compiling zlib"
+ (cd zlib && CFLAGS=-fPIC ./configure --static && make)
+ 
+-# Waterfall - rewrite below to extend platform support
++# Advocatus - rewrite below to extend platform support
+ 
+ if [[ "$OSTYPE" == "darwin"* ]]; then
+   PREFIX="osx-"
+diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/DefinedPacket.java b/protocol/src/main/java/net/md_5/bungee/protocol/DefinedPacket.java
+index 31a95495..012e1d0e 100644
+--- a/protocol/src/main/java/net/md_5/bungee/protocol/DefinedPacket.java
++++ b/protocol/src/main/java/net/md_5/bungee/protocol/DefinedPacket.java
+@@ -290,10 +290,10 @@ public abstract class DefinedPacket
+     // Waterfall start: Additional DoS mitigations, courtesy of Velocity
+     private static final OverflowPacketException STRING_TOO_LONG_EXCEPTION
+             = new OverflowPacketException("A string was longer than allowed. For more "
+-            + "information, launch Waterfall with -Dwaterfall.packet-decode-logging=true");
++            + "information, launch Advocatus with -Dwaterfall.packet-decode-logging=true");
+     private static final OverflowPacketException STRING_TOO_MANY_BYTES_EXCEPTION
+             = new OverflowPacketException("A string had more data than allowed. For more "
+-            + "information, launch Waterfall with -Dwaterfall.packet-decode-logging=true");
++            + "information, launch Advocatus with -Dwaterfall.packet-decode-logging=true");
+ 
+     public int expectedMaxLength(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion) {
+         return -1;
+diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/MinecraftDecoder.java b/protocol/src/main/java/net/md_5/bungee/protocol/MinecraftDecoder.java
+index 01d35f41..d67acd55 100644
+--- a/protocol/src/main/java/net/md_5/bungee/protocol/MinecraftDecoder.java
++++ b/protocol/src/main/java/net/md_5/bungee/protocol/MinecraftDecoder.java
+@@ -105,13 +105,13 @@ public class MinecraftDecoder extends MessageToMessageDecoder<ByteBuf>
+     // Cached Exceptions:
+     private static final CorruptedFrameException PACKET_LENGTH_OVERSIZED =
+             new CorruptedFrameException("A packet could not be decoded because it was too large. For more "
+-                    + "information, launch Waterfall with -Dwaterfall.packet-decode-logging=true");
++                    + "information, launch Advocatus with -Dwaterfall.packet-decode-logging=true");
+     private static final CorruptedFrameException PACKET_LENGTH_UNDERSIZED =
+             new CorruptedFrameException("A packet could not be decoded because it was smaller than allowed. For more "
+-                    + "information, launch Waterfall with -Dwaterfall.packet-decode-logging=true");
++                    + "information, launch Advocatus with -Dwaterfall.packet-decode-logging=true");
+     private static final BadPacketException PACKET_NOT_READ_TO_END =
+             new BadPacketException("Couldn't read all bytes from a packet. For more "
+-                    + "information, launch Waterfall with -Dwaterfall.packet-decode-logging=true");
++                    + "information, launch Advocatus with -Dwaterfall.packet-decode-logging=true");
+ 
+ 
+     private void doLengthSanityChecks(ByteBuf buf, DefinedPacket packet,
+diff --git a/proxy/src/main/java/net/md_5/bungee/BungeeCord.java b/proxy/src/main/java/net/md_5/bungee/BungeeCord.java
+index 07d74c67..15775e26 100644
+--- a/proxy/src/main/java/net/md_5/bungee/BungeeCord.java
++++ b/proxy/src/main/java/net/md_5/bungee/BungeeCord.java
+@@ -188,7 +188,7 @@ public class BungeeCord extends ProxyServer
+     public BungeeCord() throws IOException
+     {
+         // Java uses ! to indicate a resource inside of a jar/zip/other container. Running Bungee from within a directory that has a ! will cause this to muck up.
+-        Preconditions.checkState( new File( "." ).getAbsolutePath().indexOf( '!' ) == -1, "Cannot use Waterfall in directory with ! in path." );
++        Preconditions.checkState( new File( "." ).getAbsolutePath().indexOf( '!' ) == -1, "Cannot use Advocatus in directory with ! in path." );
+ 
+         try
+         {
+@@ -499,7 +499,7 @@ public class BungeeCord extends ProxyServer
+                     } catch (InterruptedException ignored) {}
+         }
+ 
+-        getLogger().info( "Thank you and goodbye" );
++        getLogger().info( "Camará carnal, gracias por tu preferncia. Te me cuidas, un beso en la pantunfla :*" );
+         // Need to close loggers after last message!
+         for ( Handler handler : getLogger().getHandlers() )
+         {
+@@ -539,7 +539,7 @@ public class BungeeCord extends ProxyServer
+     @Override
+     public String getName()
+     {
+-        return "Waterfall";
++        return "Advocatus";
+     }
+ 
+     @Override
+diff --git a/proxy/src/main/java/net/md_5/bungee/BungeeCordLauncher.java b/proxy/src/main/java/net/md_5/bungee/BungeeCordLauncher.java
+index 0db3d76a..8f21c90e 100644
+--- a/proxy/src/main/java/net/md_5/bungee/BungeeCordLauncher.java
++++ b/proxy/src/main/java/net/md_5/bungee/BungeeCordLauncher.java
+@@ -53,17 +53,17 @@ public class BungeeCordLauncher
+             deadline.add( Calendar.WEEK_OF_YEAR, -8 );
+             if ( buildDate.before( deadline.getTime() ) )
+             {
+-                System.err.println( "*** Hey! This build is potentially outdated :( ***" );
+-                System.err.println( "*** Please check for a new build from https://papermc.io/downloads ***" );
+-                System.err.println( "*** Should this build be outdated, you will get NO support for it. ***" );
+-                System.err.println( "*** Server will start in 10 seconds ***" );
++                System.err.println( "*** ¡Oye! Esta compilación está potencialmente desactualizada :( ***" );
++                System.err.println( "*** Compruebe si hay una nueva compilación en https://github.com/RoyalMind/Advocatus/actions ***" );
++                System.err.println( "*** Si esta compilación está desactualizada, NO obtendrá soporte para ella. ***" );
++                System.err.println( "*** El servidor se iniciará en 10 segundos ***" );
+                 Thread.sleep( TimeUnit.SECONDS.toMillis( 10 ) );
+             }
+         }
+ 
+         BungeeCord bungee = new BungeeCord();
+         ProxyServer.setInstance( bungee );
+-        bungee.getLogger().info( "Enabled Waterfall version " + bungee.getVersion() );
++        bungee.getLogger().info( "Enabled Advocatus version " + bungee.getVersion() );
+         bungee.start();
+ 
+         if ( !options.has( "noconsole" ) )
+diff --git a/proxy/src/main/java/net/md_5/bungee/UserConnection.java b/proxy/src/main/java/net/md_5/bungee/UserConnection.java
+index fc98b4b1..e48920d1 100644
+--- a/proxy/src/main/java/net/md_5/bungee/UserConnection.java
++++ b/proxy/src/main/java/net/md_5/bungee/UserConnection.java
+@@ -774,4 +774,12 @@ public final class UserConnection implements ProxiedPlayer
+         return entityRewrite == net.md_5.bungee.entitymap.EntityMap_Dummy.INSTANCE;
+     }
+     // Waterfall end
++
++    // Advocatus start
++
++    public int getVersion() { return this.getPendingConnection().getVersion(); }
++    public boolean supportsRGB() { return this.getVersion() >= 735; }
++    public boolean isPlayer() { return true; }
++
++    // Advocatus end
+ }
+diff --git a/proxy/src/main/java/net/md_5/bungee/command/CommandBungee.java b/proxy/src/main/java/net/md_5/bungee/command/CommandBungee.java
+index b26035cf..d7acff31 100644
+--- a/proxy/src/main/java/net/md_5/bungee/command/CommandBungee.java
++++ b/proxy/src/main/java/net/md_5/bungee/command/CommandBungee.java
+@@ -16,6 +16,10 @@ public class CommandBungee extends Command
+     @Override
+     public void execute(CommandSender sender, String[] args)
+     {
+-        sender.sendMessage( ChatColor.BLUE + "This server is running Waterfall version " + ProxyServer.getInstance().getVersion() + " by md_5" );
++        sender.sendMessage(ChatColor.translateAlternateColorCodes('&',"&aThis server is running &c" +
++                ProxyServer.getInstance().getName() +
++                "&a version &c " +
++                ProxyServer.getInstance().getVersion() +
++                "&a by &emd_5 &a& &eRoyalMind Development Team"));
+     }
+ }
+diff --git a/proxy/src/main/java/net/md_5/bungee/command/CommandReload.java b/proxy/src/main/java/net/md_5/bungee/command/CommandReload.java
+index 720d0c3b..acad702d 100644
+--- a/proxy/src/main/java/net/md_5/bungee/command/CommandReload.java
++++ b/proxy/src/main/java/net/md_5/bungee/command/CommandReload.java
+@@ -23,7 +23,7 @@ public class CommandReload extends Command
+         BungeeCord.getInstance().startListeners();
+         BungeeCord.getInstance().getPluginManager().callEvent( new ProxyReloadEvent( sender ) );
+ 
+-        sender.sendMessage( ChatColor.BOLD.toString() + ChatColor.RED.toString() + "Waterfall has been reloaded."
+-                + " This is NOT advisable and you will not be supported with any issues that arise! Please restart Waterfall ASAP." );
++        sender.sendMessage( ChatColor.BOLD.toString() + ChatColor.RED.toString() + "Advocatus has been reloaded."
++                + " This is NOT advisable and you will not be supported with any issues that arise! Please restart Advocatus ASAP." );
+     }
+ }
+diff --git a/proxy/src/main/java/net/md_5/bungee/command/ConsoleCommandSender.java b/proxy/src/main/java/net/md_5/bungee/command/ConsoleCommandSender.java
+index 33d7e5bb..03fc7b54 100644
+--- a/proxy/src/main/java/net/md_5/bungee/command/ConsoleCommandSender.java
++++ b/proxy/src/main/java/net/md_5/bungee/command/ConsoleCommandSender.java
+@@ -87,4 +87,11 @@ public final class ConsoleCommandSender implements CommandSender
+     {
+         return Collections.emptySet();
+     }
++
++    // Advocatus Start
++
++    @Override
++    public boolean isPlayer() { return false; }
++
++    // Advocatus End
+ }
+diff --git a/proxy/src/main/java/net/md_5/bungee/conf/YamlConfig.java b/proxy/src/main/java/net/md_5/bungee/conf/YamlConfig.java
+index 0644b8cd..b976b0f6 100644
+--- a/proxy/src/main/java/net/md_5/bungee/conf/YamlConfig.java
++++ b/proxy/src/main/java/net/md_5/bungee/conf/YamlConfig.java
+@@ -227,7 +227,7 @@ public class YamlConfig implements ConfigurationAdapter
+             Map<String, Object> val = entry.getValue();
+             String name = entry.getKey();
+             String addr = get( "address", "localhost:25565", val );
+-            String motd = ChatColor.translateAlternateColorCodes( '&', get( "motd", "&1Just another Waterfall - Forced Host", val ) );
++            String motd = ChatColor.translateAlternateColorCodes( '&', get( "motd", "&1Just another Advocatus - Forced Host", val ) );
+             boolean restricted = get( "restricted", false, val );
+             SocketAddress address = Util.getAddr( addr );
+             ServerInfo info = ProxyServer.getInstance().constructServerInfo( name, address, motd, restricted );
+@@ -253,7 +253,7 @@ public class YamlConfig implements ConfigurationAdapter
+ 
+         for ( Map<String, Object> val : base )
+         {
+-            String motd = get( "motd", "&1Another Bungee server", val );
++            String motd = get( "motd", "&1Another Advocatus server", val );
+             motd = ChatColor.translateAlternateColorCodes( '&', motd );
+ 
+             int maxPlayers = get( "max_players", 1, val );
+diff --git a/proxy/src/main/java/net/md_5/bungee/connection/DownstreamBridge.java b/proxy/src/main/java/net/md_5/bungee/connection/DownstreamBridge.java
+index 9e180c30..7974bbd2 100644
+--- a/proxy/src/main/java/net/md_5/bungee/connection/DownstreamBridge.java
++++ b/proxy/src/main/java/net/md_5/bungee/connection/DownstreamBridge.java
+@@ -30,6 +30,7 @@ import net.md_5.bungee.ServerConnection;
+ import net.md_5.bungee.ServerConnection.KeepAliveData;
+ import net.md_5.bungee.UserConnection;
+ import net.md_5.bungee.Util;
++import net.md_5.bungee.api.ChatColor;
+ import net.md_5.bungee.api.ProxyServer;
+ import net.md_5.bungee.api.chat.BaseComponent;
+ import net.md_5.bungee.api.chat.TextComponent;
+@@ -293,7 +294,8 @@ public class DownstreamBridge extends PacketHandler
+             Preconditions.checkState( !serverBrand.contains( bungee.getName() ), "Cannot connect proxy to itself!" );
+ 
+             brand = ByteBufAllocator.DEFAULT.heapBuffer();
+-            DefinedPacket.writeString( bungee.getName() + " <- " + serverBrand, brand ); // Waterfall
++            //DefinedPacket.writeString( bungee.getName() + " <- " + serverBrand, brand ); // Waterfall
++            DefinedPacket.writeString(ChatColor.YELLOW + "play.royalmind.net" + ChatColor.RESET, brand); // Advocatus
+             pluginMessage.setData( brand );
+             brand.release();
+             // changes in the packet are ignored so we need to send it manually
+diff --git a/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java b/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java
+index 0f1716c0..c9728a39 100644
+--- a/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java
++++ b/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java
+@@ -674,4 +674,10 @@ public class InitialHandler extends PacketHandler implements PendingConnection
+     {
+         return !ch.isClosed();
+     }
++
++    // Advocatus start
++
++    public boolean supportsRGB() { return this.getVersion() >= 735; }
++
++    // Advocatus end
+ }
+-- 
+2.33.0.windows.2
+
