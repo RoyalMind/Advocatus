@@ -1,4 +1,4 @@
-From 924f0c838746c44a17886e21158076f6bc623c9f Mon Sep 17 00:00:00 2001
+From 0408fcd6c77073688154e12194916279107b2039 Mon Sep 17 00:00:00 2001
 From: Carlos Gallegos <40046747+CharlyZest@users.noreply.github.com>
 Date: Thu, 28 Oct 2021 03:34:01 -0500
 Subject: [PATCH] Rebranding
@@ -24,7 +24,7 @@ index d5888311..af0636de 100644
 +    // Advocatus End
  }
 diff --git a/api/src/main/java/net/md_5/bungee/api/connection/ProxiedPlayer.java b/api/src/main/java/net/md_5/bungee/api/connection/ProxiedPlayer.java
-index 3dc32801..712ed3e6 100644
+index 684eb883..a604a52d 100644
 --- a/api/src/main/java/net/md_5/bungee/api/connection/ProxiedPlayer.java
 +++ b/api/src/main/java/net/md_5/bungee/api/connection/ProxiedPlayer.java
 @@ -387,4 +387,20 @@ public interface ProxiedPlayer extends Connection, CommandSender
@@ -96,7 +96,7 @@ index a50b52bf..dd6727d7 100755
  if [[ "$OSTYPE" == "darwin"* ]]; then
    PREFIX="osx-"
 diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/DefinedPacket.java b/protocol/src/main/java/net/md_5/bungee/protocol/DefinedPacket.java
-index 31a95495..012e1d0e 100644
+index a310844d..bba924d9 100644
 --- a/protocol/src/main/java/net/md_5/bungee/protocol/DefinedPacket.java
 +++ b/protocol/src/main/java/net/md_5/bungee/protocol/DefinedPacket.java
 @@ -290,10 +290,10 @@ public abstract class DefinedPacket
@@ -277,7 +277,7 @@ index 0644b8cd..b976b0f6 100644
  
              int maxPlayers = get( "max_players", 1, val );
 diff --git a/proxy/src/main/java/net/md_5/bungee/connection/DownstreamBridge.java b/proxy/src/main/java/net/md_5/bungee/connection/DownstreamBridge.java
-index 9e180c30..7974bbd2 100644
+index d3650ff8..90496d6b 100644
 --- a/proxy/src/main/java/net/md_5/bungee/connection/DownstreamBridge.java
 +++ b/proxy/src/main/java/net/md_5/bungee/connection/DownstreamBridge.java
 @@ -30,6 +30,7 @@ import net.md_5.bungee.ServerConnection;
@@ -288,7 +288,7 @@ index 9e180c30..7974bbd2 100644
  import net.md_5.bungee.api.ProxyServer;
  import net.md_5.bungee.api.chat.BaseComponent;
  import net.md_5.bungee.api.chat.TextComponent;
-@@ -293,7 +294,8 @@ public class DownstreamBridge extends PacketHandler
+@@ -294,7 +295,8 @@ public class DownstreamBridge extends PacketHandler
              Preconditions.checkState( !serverBrand.contains( bungee.getName() ), "Cannot connect proxy to itself!" );
  
              brand = ByteBufAllocator.DEFAULT.heapBuffer();
@@ -299,7 +299,7 @@ index 9e180c30..7974bbd2 100644
              brand.release();
              // changes in the packet are ignored so we need to send it manually
 diff --git a/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java b/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java
-index 0f1716c0..c9728a39 100644
+index 0fd58e83..4a9feb70 100644
 --- a/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java
 +++ b/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java
 @@ -674,4 +674,10 @@ public class InitialHandler extends PacketHandler implements PendingConnection
