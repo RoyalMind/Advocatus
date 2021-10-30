@@ -1,0 +1,56 @@
+name: Advocatus Verify
+on:
+  push:
+    branches:
+      - beta
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java: [16]
+      fail-fast: true
+    steps:
+      - uses: actions/checkout@v2
+      - name: Installing and configuring Java ${{ matrix.java }}
+        uses: actions/setup-java@v2
+        with:
+          java-version: ${{ matrix.java }}
+          distribution: 'adopt'
+
+      - name: Setting up Git
+        run: |
+          git config --global user.email "no-reply@github.com"
+          git config --global user.name "Github Actions"
+
+      - name: Assigning execute permissions to scripts
+        run: |
+          chmod +x advocatus
+          chmod +x scripts/*.sh
+
+      - name: Setting up Maven repositories
+        uses: s4u/maven-settings-action@v2.3.0
+        with:
+          servers: |
+            [{
+              "id": "royalmind",
+              "username": "${{ secrets.PACKAGES_USERNAME }}",
+              "password": "${{ secrets.PACKAGES_PASSWORD }}"
+            },
+            {
+              "id": "royalmind-snapshots",
+              "username": "${{ secrets.PACKAGES_USERNAME }}",
+              "password": "${{ secrets.PACKAGES_PASSWORD }}"
+            }]
+
+      - name: Applying patches to the project
+        run: ./advocatus p
+
+      - name: Compiling project
+        run: mvn clean compile test
+        
+      - name: Finishing verification
+        run: mvn clean
