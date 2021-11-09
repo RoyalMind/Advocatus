@@ -3,6 +3,16 @@ Advocatus
 
 Advocatus is Waterfall with additional features. Waterfall is a fork of the well-known [BungeeCord](https://github.com/SpigotMC/BungeeCord) server teleportation suite.
 
+<div align="center">
+
+<!-- Shields -->
+[![Discord](https://img.shields.io/discord/574658520859803654?color=7289DA&label=Discord&logo=discord&logoColor=7289DA)](https://discord.royalmind.net/)
+<br>
+[![Build](https://github.com/royalmind/advocatus/actions/workflows/build.yml/badge.svg)](https://github.com/royalmind/Advocatus/actions/workflows/build.yml)
+[![Sonatype Nexus (Repository)](https://img.shields.io/nexus/maven-public/net.royalmind.minecraft.software.advocatus/advocatus-api?label=Latest%20Version&server=https%3A%2F%2Fpackages.royalmind.net%2Fnexus)](https://packages.royalmind.net/#browse/browse:maven-public:net%2Froyalmind%2Fminecraft%2Fsoftware%2Fadvocatus%2Fadvocatus-api)
+[![GitHub last commit](https://img.shields.io/github/last-commit/royalmind/Advocatus?label=Last+commit)](https://github.com/royalmind/Advocatus/commits)
+</div>
+
 Advocatus focuses on three main areas:
 
 * **Stability**: Waterfall aims to be stable. We will achieve this through making the code base testable and discouraging practices that lead to proxy lag.
@@ -17,12 +27,3 @@ Advocatus has a goal of adding additional protocol versions.
 
 Advocatus will track upstream Waterfall and merge changes as needed.
 
-<div align="center">
-
-<!-- Shields -->
-[![Discord](https://img.shields.io/discord/574658520859803654?color=7289DA&label=Discord&logo=discord&logoColor=7289DA)](https://discord.royalmind.net/)
-<br>
-[![Build](https://github.com/royalmind/statelycore/actions/workflows/build.yml/badge.svg)](https://github.com/royalmind/StatelyCore/actions/workflows/build.yml)
-[![Sonatype Nexus (Repository)](https://img.shields.io/nexus/maven-public/net.royalmind.minecraft.software.advocatus/advocatus-api?label=Latest%20Version&server=https%3A%2F%2Fpackages.royalmind.net%2Fnexus)](https://packages.royalmind.net/#browse/browse:maven-public:net%2Froyalmind%2Fminecraft%2Fsoftware%2Fadvocatus%2Fadvocatus-api)
-[![GitHub last commit](https://img.shields.io/github/last-commit/royalmind/Advocatus?label=Last+commit)](https://github.com/royalmind/Advocatus/commits)
-</div>
