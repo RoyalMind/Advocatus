@@ -7,6 +7,9 @@ case "$1" in
     "p" | "patch")
         scripts/build.sh
     ;;
+    "u" | "f" | "fetch")
+        scripts/upstreamCommit.sh
+    ;;
     "m" | "up" | "merge")
         scripts/mergeUpstream.sh
     ;;
