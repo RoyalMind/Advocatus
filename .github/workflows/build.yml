@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: [16]
+        java: [17]
       fail-fast: true
     steps:
       - uses: actions/checkout@v2
@@ -51,10 +51,10 @@ jobs:
         run: ./advocatus p
 
       - name: Building artifacts for Java ${{ matrix.java }}
-        run: mvn clean package -Dbuild.number=${{ github.run_number }} -B
+        run: mvn clean package -Dbuild.number=${{ github.run_number }} -B -T 4
 
       - name: Deploying libraries to our maven repository
-        run: mvn deploy -Dbuild.number=${{ github.run_number }} -B -DaltDeploymentRepository=royalmind::default::https://packages.royalmind.net/repository/maven-public/
+        run: mvn deploy -Dbuild.number=${{ github.run_number }} -B -T 4
 
       # An artifact is generated in a compressed file according to each JDK build version.
       - name: Upload Artifact Advocatus Proxy for Java ${{ matrix.java }}
