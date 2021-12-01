@@ -1,13 +1,24 @@
-From e2c33ab1df2e3a3e9800e13bda70867889f9ab59 Mon Sep 17 00:00:00 2001
+From 1a7633c66e78df0e5b695c59d6527c5de2ae7aaa Mon Sep 17 00:00:00 2001
 From: Carlos Gallegos <40046747+CharlyZest@users.noreply.github.com>
 Date: Wed, 1 Dec 2021 02:51:35 -0600
 Subject: [PATCH] Added Colorizer 1.1.0
 
 
 diff --git a/pom.xml b/pom.xml
-index 7f293b9d..182dae51 100644
+index 7f293b9d..de47f1e0 100644
 --- a/pom.xml
 +++ b/pom.xml
+@@ -93,8 +93,8 @@
+         </repository>
+ 
+         <repository>
+-            <id>royalmind-snapshots</id>
+-            <url>https://packages.royalmind.net/repository/maven-snapshots/</url>
++            <id>royalmind</id>
++            <url>https://packages.royalmind.net/repository/maven-releases/</url>
+         </repository>
+     </repositories>
+ 
 @@ -133,9 +133,9 @@
              <scope>provided</scope>
          </dependency>
