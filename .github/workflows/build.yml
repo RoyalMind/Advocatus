@@ -51,7 +51,7 @@ jobs:
         run: ./advocatus p
 
       - name: Building artifacts for Java ${{ matrix.java }}
-        run: mvn clean javadoc:javadoc package -Dbuild.number=${{ github.run_number }} -B
+        run: mvn clean package -Dbuild.number=${{ github.run_number }} -B
 
       - name: Deploying libraries to our maven repository
         run: mvn deploy -Dbuild.number=${{ github.run_number }} -B -DaltDeploymentRepository=royalmind::default::https://packages.royalmind.net/repository/maven-public/
