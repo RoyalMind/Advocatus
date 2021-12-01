@@ -49,7 +49,7 @@ jobs:
         run: mvn clean javadoc:javadoc package -Dbuild.number=${{ github.run_number }} -B
 
       - name: Deploying libraries to our maven repository
-        run: mvn deploy -Dbuild.number=${{ github.run_number }} -B -DaltDeploymentRepository=royalmind::default::https://packages.royalmind.net/repository/maven-snapshots/
+        run: mvn deploy -Dbuild.number=${{ github.run_number }} -B -DaltDeploymentRepository=royalmind::default::https://packages.royalmind.net/repository/maven-releases/
 
       # An artifact is generated in a compressed file according to each JDK build version.
       - name: Upload Artifact Advocatus Proxy for Java ${{ matrix.java }}
