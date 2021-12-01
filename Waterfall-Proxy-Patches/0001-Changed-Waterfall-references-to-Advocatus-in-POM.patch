@@ -1,11 +1,11 @@
-From 45c40f194f88b41c932c4e9217e4d2e84392e533 Mon Sep 17 00:00:00 2001
+From b0655748504ce9602114bdab81d647326e4e2c83 Mon Sep 17 00:00:00 2001
 From: Carlos Gallegos <40046747+CharlyZest@users.noreply.github.com>
-Date: Thu, 28 Oct 2021 01:22:33 -0500
-Subject: [PATCH] Renamed Waterfall references to Advocatus in Maven pom.
+Date: Tue, 30 Nov 2021 18:46:38 -0600
+Subject: [PATCH] Changed Waterfall references to Advocatus in POM
 
 
 diff --git a/api/pom.xml b/api/pom.xml
-index 0680a5a5..78b7dcee 100644
+index 9b29dfca..1e99a4b2 100644
 --- a/api/pom.xml
 +++ b/api/pom.xml
 @@ -4,42 +4,42 @@
@@ -14,19 +14,19 @@ index 0680a5a5..78b7dcee 100644
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-parent</artifactId>
--        <version>1.17-R0.1-SNAPSHOT</version>
-+        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-        <version>1.18-R0.1-SNAPSHOT</version>
++        <groupId>net.royalmind.software.advocatus</groupId>
 +        <artifactId>advocatus-parent</artifactId>
-+        <version>1.0.3-SNAPSHOT</version>
++        <version>1.0.4</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
  
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-api</artifactId>
--    <version>1.17-R0.1-SNAPSHOT</version>
-+    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-    <version>1.18-R0.1-SNAPSHOT</version>
++    <groupId>net.royalmind.software.advocatus</groupId>
 +    <artifactId>advocatus-api</artifactId>
-+    <version>1.0.3-SNAPSHOT</version>
++    <version>1.0.4</version>
      <packaging>jar</packaging>
  
 -    <name>Waterfall-API</name>
@@ -37,7 +37,7 @@ index 0680a5a5..78b7dcee 100644
          <dependency>
 -            <groupId>io.github.waterfallmc</groupId>
 -            <artifactId>waterfall-chat</artifactId>
-+            <groupId>net.royalmind.minecraft.software.advocatus</groupId>
++            <groupId>net.royalmind.software.advocatus</groupId>
 +            <artifactId>advocatus-chat</artifactId>
              <version>${project.version}</version>
              <scope>compile</scope>
@@ -45,7 +45,7 @@ index 0680a5a5..78b7dcee 100644
          <dependency>
 -            <groupId>io.github.waterfallmc</groupId>
 -            <artifactId>waterfall-config</artifactId>
-+            <groupId>net.royalmind.minecraft.software.advocatus</groupId>
++            <groupId>net.royalmind.software.advocatus</groupId>
 +            <artifactId>advocatus-config</artifactId>
              <version>${project.version}</version>
              <scope>compile</scope>
@@ -53,7 +53,7 @@ index 0680a5a5..78b7dcee 100644
          <dependency>
 -            <groupId>io.github.waterfallmc</groupId>
 -            <artifactId>waterfall-event</artifactId>
-+            <groupId>net.royalmind.minecraft.software.advocatus</groupId>
++            <groupId>net.royalmind.software.advocatus</groupId>
 +            <artifactId>advocatus-event</artifactId>
              <version>${project.version}</version>
              <scope>compile</scope>
@@ -61,57 +61,50 @@ index 0680a5a5..78b7dcee 100644
          <dependency>
 -            <groupId>io.github.waterfallmc</groupId>
 -            <artifactId>waterfall-protocol</artifactId>
-+            <groupId>net.royalmind.minecraft.software.advocatus</groupId>
++            <groupId>net.royalmind.software.advocatus</groupId>
 +            <artifactId>advocatus-protocol</artifactId>
              <version>${project.version}</version>
              <scope>compile</scope>
          </dependency>
-@@ -76,7 +76,7 @@
-             <version>1.28</version>
-             <scope>compile</scope>
-         </dependency>
--        <!-- Waterfall - Add SLF4J -->
-+        <!-- Advocatus - Add SLF4J -->
-         <dependency>
-             <groupId>org.slf4j</groupId>
-             <artifactId>slf4j-api</artifactId>
 diff --git a/bootstrap/pom.xml b/bootstrap/pom.xml
-index 7a9e8258..532fa342 100644
+index 00ce099c..04eabbe2 100644
 --- a/bootstrap/pom.xml
 +++ b/bootstrap/pom.xml
-@@ -4,18 +4,18 @@
+@@ -4,19 +4,19 @@
      <modelVersion>4.0.0</modelVersion>
  
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-parent</artifactId>
--        <version>1.17-R0.1-SNAPSHOT</version>
-+        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-        <version>1.18-R0.1-SNAPSHOT</version>
++        <groupId>net.royalmind.software.advocatus</groupId>
 +        <artifactId>advocatus-parent</artifactId>
-+        <version>1.0.3-SNAPSHOT</version>
++        <version>1.0.4</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
  
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-bootstrap</artifactId>
--    <version>1.17-R0.1-SNAPSHOT</version>
-+    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-    <version>1.18-R0.1-SNAPSHOT</version>
++    <groupId>net.royalmind.software.advocatus</groupId>
 +    <artifactId>advocatus-bootstrap</artifactId>
-+    <version>1.0.3-SNAPSHOT</version>
++    <version>1.0.4</version>
      <packaging>jar</packaging>
  
 -    <name>Waterfall-Bootstrap</name>
+-    <description>Java 1.6 loader for Waterfall</description>
 +    <name>Advocatus-Bootstrap</name>
-     <description>Java 1.6 loader for Waterfall</description>
++    <description>Java 1.6 loader for Advocatus</description>
  
      <properties>
+         <maven.deploy.skip>true</maven.deploy.skip>
 @@ -29,15 +29,15 @@
  
      <dependencies>
          <dependency>
 -            <groupId>io.github.waterfallmc</groupId>
 -            <artifactId>waterfall-proxy</artifactId>
-+            <groupId>net.royalmind.minecraft.software.advocatus</groupId>
++            <groupId>net.royalmind.software.advocatus</groupId>
 +            <artifactId>advocatus-proxy</artifactId>
              <version>${project.version}</version>
              <scope>compile</scope>
@@ -125,28 +118,28 @@ index 7a9e8258..532fa342 100644
              <plugin>
                  <groupId>org.apache.maven.plugins</groupId>
 diff --git a/chat/pom.xml b/chat/pom.xml
-index cfa0e16e..25988777 100644
+index 0ad5dd16..080d99c8 100644
 --- a/chat/pom.xml
 +++ b/chat/pom.xml
-@@ -4,25 +4,25 @@
+@@ -4,19 +4,19 @@
      <modelVersion>4.0.0</modelVersion>
  
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-parent</artifactId>
--        <version>1.17-R0.1-SNAPSHOT</version>
-+        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-        <version>1.18-R0.1-SNAPSHOT</version>
++        <groupId>net.royalmind.software.advocatus</groupId>
 +        <artifactId>advocatus-parent</artifactId>
-+        <version>1.0.3-SNAPSHOT</version>
++        <version>1.0.4</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
  
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-chat</artifactId>
--    <version>1.17-R0.1-SNAPSHOT</version>
-+    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-    <version>1.18-R0.1-SNAPSHOT</version>
++    <groupId>net.royalmind.software.advocatus</groupId>
 +    <artifactId>advocatus-chat</artifactId>
-+    <version>1.0.3-SNAPSHOT</version>
++    <version>1.0.4</version>
      <packaging>jar</packaging>
  
 -    <name>Waterfall-Chat</name>
@@ -156,45 +149,40 @@ index cfa0e16e..25988777 100644
  
      <dependencies>
          <dependency>
-             <groupId>com.google.code.gson</groupId>
-             <artifactId>gson</artifactId>
--            <version>2.8.7</version> <!-- Waterfall - bump gson version -->
-+            <version>2.8.7</version> <!-- Advocatus - bump gson version -->
-             <scope>compile</scope>
-         </dependency>
-     </dependencies>
 diff --git a/config/pom.xml b/config/pom.xml
-index 67e2500f..233cc9bb 100644
+index 2caffc27..6b76f293 100644
 --- a/config/pom.xml
 +++ b/config/pom.xml
-@@ -4,18 +4,18 @@
+@@ -4,19 +4,19 @@
      <modelVersion>4.0.0</modelVersion>
  
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-parent</artifactId>
--        <version>1.17-R0.1-SNAPSHOT</version>
-+        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-        <version>1.18-R0.1-SNAPSHOT</version>
++        <groupId>net.royalmind.software.advocatus</groupId>
 +        <artifactId>advocatus-parent</artifactId>
-+        <version>1.0.3-SNAPSHOT</version>
++        <version>1.0.4</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
  
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-config</artifactId>
--    <version>1.17-R0.1-SNAPSHOT</version>
-+    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-    <version>1.18-R0.1-SNAPSHOT</version>
++    <groupId>net.royalmind.software.advocatus</groupId>
 +    <artifactId>advocatus-config</artifactId>
-+    <version>1.0.3-SNAPSHOT</version>
++    <version>1.0.4</version>
      <packaging>jar</packaging>
  
 -    <name>Waterfall-Config</name>
+-    <description>Generic java configuration API intended for use with Waterfall</description>
 +    <name>Advocatus-Config</name>
-     <description>Generic java configuration API intended for use with Waterfall</description>
++    <description>Generic java configuration API intended for use with Advocatus</description>
  
      <dependencies>
+         <dependency>
 diff --git a/event/pom.xml b/event/pom.xml
-index 563783e9..85d1e20e 100644
+index e2432463..a3f0644b 100644
 --- a/event/pom.xml
 +++ b/event/pom.xml
 @@ -4,17 +4,17 @@
@@ -203,27 +191,28 @@ index 563783e9..85d1e20e 100644
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-parent</artifactId>
--        <version>1.17-R0.1-SNAPSHOT</version>
-+        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-        <version>1.18-R0.1-SNAPSHOT</version>
++        <groupId>net.royalmind.software.advocatus</groupId>
 +        <artifactId>advocatus-parent</artifactId>
-+        <version>1.0.3-SNAPSHOT</version>
++        <version>1.0.4</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
  
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-event</artifactId>
--    <version>1.17-R0.1-SNAPSHOT</version>
-+    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-    <version>1.18-R0.1-SNAPSHOT</version>
++    <groupId>net.royalmind.software.advocatus</groupId>
 +    <artifactId>advocatus-event</artifactId>
-+    <version>1.0.3-SNAPSHOT</version>
++    <version>1.0.4</version>
      <packaging>jar</packaging>
  
 -    <name>Waterfall-Event</name>
+-    <description>Generic java event dispatching API intended for use with Waterfall.</description>
 +    <name>Advocatus-Event</name>
-     <description>Generic java event dispatching API intended for use with Waterfall.</description>
++    <description>Generic java event dispatching API intended for use with Advocatus.</description>
  </project>
 diff --git a/log/pom.xml b/log/pom.xml
-index 3663d6d9..6b4148e6 100644
+index 465ebbf2..4c2534e2 100644
 --- a/log/pom.xml
 +++ b/log/pom.xml
 @@ -4,19 +4,19 @@
@@ -232,19 +221,19 @@ index 3663d6d9..6b4148e6 100644
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-parent</artifactId>
--        <version>1.17-R0.1-SNAPSHOT</version>
-+        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-        <version>1.18-R0.1-SNAPSHOT</version>
++        <groupId>net.royalmind.software.advocatus</groupId>
 +        <artifactId>advocatus-parent</artifactId>
-+        <version>1.0.3-SNAPSHOT</version>
++        <version>1.0.4</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
  
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-log</artifactId>
--    <version>1.17-R0.1-SNAPSHOT</version>
-+    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-    <version>1.18-R0.1-SNAPSHOT</version>
++    <groupId>net.royalmind.software.advocatus</groupId>
 +    <artifactId>advocatus-log</artifactId>
-+    <version>1.0.3-SNAPSHOT</version>
++    <version>1.0.4</version>
      <packaging>jar</packaging>
  
 -    <name>Waterfall-Log</name>
@@ -260,13 +249,13 @@ index 3663d6d9..6b4148e6 100644
          <dependency>
 -            <groupId>io.github.waterfallmc</groupId>
 -            <artifactId>waterfall-chat</artifactId>
-+            <groupId>net.royalmind.minecraft.software.advocatus</groupId>
++            <groupId>net.royalmind.software.advocatus</groupId>
 +            <artifactId>advocatus-chat</artifactId>
              <version>${project.version}</version>
              <scope>compile</scope>
          </dependency>
 diff --git a/log4j/pom.xml b/log4j/pom.xml
-index 7ec6e530..76dae64c 100644
+index 34740637..e211b088 100644
 --- a/log4j/pom.xml
 +++ b/log4j/pom.xml
 @@ -3,19 +3,19 @@
@@ -275,19 +264,19 @@ index 7ec6e530..76dae64c 100644
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-parent</artifactId>
--        <version>1.17-R0.1-SNAPSHOT</version>
-+        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-        <version>1.18-R0.1-SNAPSHOT</version>
++        <groupId>net.royalmind.software.advocatus</groupId>
 +        <artifactId>advocatus-parent</artifactId>
-+        <version>1.0.3-SNAPSHOT</version>
++        <version>1.0.4</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
  
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-log4j</artifactId>
--    <version>1.17-R0.1-SNAPSHOT</version>
-+    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-    <version>1.18-R0.1-SNAPSHOT</version>
++    <groupId>net.royalmind.software.advocatus</groupId>
 +    <artifactId>advocatus-log4j</artifactId>
-+    <version>1.0.3-SNAPSHOT</version>
++    <version>1.0.4</version>
      <packaging>jar</packaging>
  
 -    <name>Waterfall-Log</name>
@@ -296,9 +285,9 @@ index 7ec6e530..76dae64c 100644
 +    <description>Simplistic and performant Log4j2 based logger and console API designed for use with Advocatus and Minecraft related applications.</description>
  
      <properties>
-         <log4j2.version>2.14.0</log4j2.version>
+         <log4j2.version>2.14.1</log4j2.version>
 diff --git a/module/cmd-alert/pom.xml b/module/cmd-alert/pom.xml
-index 11e990d9..349a8d3c 100644
+index b41791f1..37db8ccd 100644
 --- a/module/cmd-alert/pom.xml
 +++ b/module/cmd-alert/pom.xml
 @@ -4,15 +4,15 @@
@@ -307,24 +296,24 @@ index 11e990d9..349a8d3c 100644
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-module</artifactId>
--        <version>1.17-R0.1-SNAPSHOT</version>
-+        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-        <version>1.18-R0.1-SNAPSHOT</version>
++        <groupId>net.royalmind.software.advocatus</groupId>
 +        <artifactId>advocatus-module</artifactId>
-+        <version>1.0.3-SNAPSHOT</version>
++        <version>1.0.4</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
  
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-module-cmd-alert</artifactId>
--    <version>1.17-R0.1-SNAPSHOT</version>
-+    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-    <version>1.18-R0.1-SNAPSHOT</version>
++    <groupId>net.royalmind.software.advocatus</groupId>
 +    <artifactId>advocatus-module-cmd-alert</artifactId>
-+    <version>1.0.3-SNAPSHOT</version>
++    <version>1.0.4</version>
      <packaging>jar</packaging>
  
      <name>cmd_alert</name>
 diff --git a/module/cmd-find/pom.xml b/module/cmd-find/pom.xml
-index b732d67f..4850989f 100644
+index a17080ab..1da0c885 100644
 --- a/module/cmd-find/pom.xml
 +++ b/module/cmd-find/pom.xml
 @@ -4,15 +4,15 @@
@@ -333,24 +322,24 @@ index b732d67f..4850989f 100644
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-module</artifactId>
--        <version>1.17-R0.1-SNAPSHOT</version>
-+        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-        <version>1.18-R0.1-SNAPSHOT</version>
++        <groupId>net.royalmind.software.advocatus</groupId>
 +        <artifactId>advocatus-module</artifactId>
-+        <version>1.0.3-SNAPSHOT</version>
++        <version>1.0.4</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
  
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-module-cmd-find</artifactId>
--    <version>1.17-R0.1-SNAPSHOT</version>
-+    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-    <version>1.18-R0.1-SNAPSHOT</version>
++    <groupId>net.royalmind.software.advocatus</groupId>
 +    <artifactId>advocatus-module-cmd-find</artifactId>
-+    <version>1.0.3-SNAPSHOT</version>
++    <version>1.0.4</version>
      <packaging>jar</packaging>
  
      <name>cmd_find</name>
 diff --git a/module/cmd-list/pom.xml b/module/cmd-list/pom.xml
-index d17cb787..6ade0c16 100644
+index 16003086..85511830 100644
 --- a/module/cmd-list/pom.xml
 +++ b/module/cmd-list/pom.xml
 @@ -4,15 +4,15 @@
@@ -359,24 +348,24 @@ index d17cb787..6ade0c16 100644
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-module</artifactId>
--        <version>1.17-R0.1-SNAPSHOT</version>
-+        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-        <version>1.18-R0.1-SNAPSHOT</version>
++        <groupId>net.royalmind.software.advocatus</groupId>
 +        <artifactId>advocatus-module</artifactId>
-+        <version>1.0.3-SNAPSHOT</version>
++        <version>1.0.4</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
  
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-module-cmd-list</artifactId>
--    <version>1.17-R0.1-SNAPSHOT</version>
-+    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-    <version>1.18-R0.1-SNAPSHOT</version>
++    <groupId>net.royalmind.software.advocatus</groupId>
 +    <artifactId>advocatus-module-cmd-list</artifactId>
-+    <version>1.0.3-SNAPSHOT</version>
++    <version>1.0.4</version>
      <packaging>jar</packaging>
  
      <name>cmd_list</name>
 diff --git a/module/cmd-send/pom.xml b/module/cmd-send/pom.xml
-index d1972708..b9fd6258 100644
+index ba084281..881bc114 100644
 --- a/module/cmd-send/pom.xml
 +++ b/module/cmd-send/pom.xml
 @@ -4,15 +4,15 @@
@@ -385,24 +374,24 @@ index d1972708..b9fd6258 100644
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-module</artifactId>
--        <version>1.17-R0.1-SNAPSHOT</version>
-+        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-        <version>1.18-R0.1-SNAPSHOT</version>
++        <groupId>net.royalmind.software.advocatus</groupId>
 +        <artifactId>advocatus-module</artifactId>
-+        <version>1.0.3-SNAPSHOT</version>
++        <version>1.0.4</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
  
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-module-cmd-send</artifactId>
--    <version>1.17-R0.1-SNAPSHOT</version>
-+    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-    <version>1.18-R0.1-SNAPSHOT</version>
++    <groupId>net.royalmind.software.advocatus</groupId>
 +    <artifactId>advocatus-module-cmd-send</artifactId>
-+    <version>1.0.3-SNAPSHOT</version>
++    <version>1.0.4</version>
      <packaging>jar</packaging>
  
      <name>cmd_send</name>
 diff --git a/module/cmd-server/pom.xml b/module/cmd-server/pom.xml
-index 3b2c4952..36d3d106 100644
+index cb4d2932..fe063d92 100644
 --- a/module/cmd-server/pom.xml
 +++ b/module/cmd-server/pom.xml
 @@ -4,15 +4,15 @@
@@ -411,24 +400,24 @@ index 3b2c4952..36d3d106 100644
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-module</artifactId>
--        <version>1.17-R0.1-SNAPSHOT</version>
-+        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-        <version>1.18-R0.1-SNAPSHOT</version>
++        <groupId>net.royalmind.software.advocatus</groupId>
 +        <artifactId>advocatus-module</artifactId>
-+        <version>1.0.3-SNAPSHOT</version>
++        <version>1.0.4</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
  
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-module-cmd-server</artifactId>
--    <version>1.17-R0.1-SNAPSHOT</version>
-+    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-    <version>1.18-R0.1-SNAPSHOT</version>
++    <groupId>net.royalmind.software.advocatus</groupId>
 +    <artifactId>advocatus-module-cmd-server</artifactId>
-+    <version>1.0.3-SNAPSHOT</version>
++    <version>1.0.4</version>
      <packaging>jar</packaging>
  
      <name>cmd_server</name>
 diff --git a/module/pom.xml b/module/pom.xml
-index 0ef98d58..09a3240b 100644
+index 350a49b8..0d799bb3 100644
 --- a/module/pom.xml
 +++ b/module/pom.xml
 @@ -4,19 +4,19 @@
@@ -437,19 +426,19 @@ index 0ef98d58..09a3240b 100644
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-parent</artifactId>
--        <version>1.17-R0.1-SNAPSHOT</version>
-+        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-        <version>1.18-R0.1-SNAPSHOT</version>
++        <groupId>net.royalmind.software.advocatus</groupId>
 +        <artifactId>advocatus-parent</artifactId>
-+        <version>1.0.3-SNAPSHOT</version>
++        <version>1.0.4</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
  
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-module</artifactId>
--    <version>1.17-R0.1-SNAPSHOT</version>
-+    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-    <version>1.18-R0.1-SNAPSHOT</version>
++    <groupId>net.royalmind.software.advocatus</groupId>
 +    <artifactId>advocatus-module</artifactId>
-+    <version>1.0.3-SNAPSHOT</version>
++    <version>1.0.4</version>
      <packaging>pom</packaging>
  
 -    <name>Waterfall Modules</name>
@@ -464,7 +453,7 @@ index 0ef98d58..09a3240b 100644
  
      <properties>
 -        <module.author>WaterfallMC</module.author>
-+        <module.author>RoyalMind Development Team</module.author>
++        <module.author>RDT</module.author>
          <maven.deploy.skip>true</maven.deploy.skip>
          <maven.javadoc.skip>true</maven.javadoc.skip>
      </properties>
@@ -473,13 +462,13 @@ index 0ef98d58..09a3240b 100644
          <dependency>
 -            <groupId>io.github.waterfallmc</groupId>
 -            <artifactId>waterfall-api</artifactId>
-+            <groupId>net.royalmind.minecraft.software.advocatus</groupId>
++            <groupId>net.royalmind.software.advocatus</groupId>
 +            <artifactId>advocatus-api</artifactId>
              <version>${project.version}</version>
              <scope>compile</scope>
          </dependency>
 diff --git a/module/reconnect-yaml/pom.xml b/module/reconnect-yaml/pom.xml
-index b88398cf..559c6fa7 100644
+index d3476fc5..acf366e2 100644
 --- a/module/reconnect-yaml/pom.xml
 +++ b/module/reconnect-yaml/pom.xml
 @@ -4,15 +4,15 @@
@@ -488,24 +477,22 @@ index b88398cf..559c6fa7 100644
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-module</artifactId>
--        <version>1.17-R0.1-SNAPSHOT</version>
-+        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-        <version>1.18-R0.1-SNAPSHOT</version>
++        <groupId>net.royalmind.software.advocatus</groupId>
 +        <artifactId>advocatus-module</artifactId>
-+        <version>1.0.3-SNAPSHOT</version>
++        <version>1.0.4</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
  
--    <groupId>io.github.waterfallmc</groupId>
--    <artifactId>waterfall-module-reconnect-yaml</artifactId>
--    <version>1.17-R0.1-SNAPSHOT</version>
-+    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
-+    <artifactId>advocatus-module-reconnect-yaml</artifactId>
-+    <version>1.0.3-SNAPSHOT</version>
+     <groupId>net.md-5</groupId>
+     <artifactId>bungeecord-module-reconnect-yaml</artifactId>
+-    <version>1.18-R0.1-SNAPSHOT</version>
++    <version>1.0.4</version>
      <packaging>jar</packaging>
  
      <name>reconnect_yaml</name>
 diff --git a/native/pom.xml b/native/pom.xml
-index 652a869d..9b46d109 100644
+index 1eff2c93..f3fcef44 100644
 --- a/native/pom.xml
 +++ b/native/pom.xml
 @@ -4,19 +4,19 @@
@@ -514,19 +501,19 @@ index 652a869d..9b46d109 100644
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-parent</artifactId>
--        <version>1.17-R0.1-SNAPSHOT</version>
-+        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-        <version>1.18-R0.1-SNAPSHOT</version>
++        <groupId>net.royalmind.software.advocatus</groupId>
 +        <artifactId>advocatus-parent</artifactId>
-+        <version>1.0.3-SNAPSHOT</version>
++        <version>1.0.4</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
  
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-native</artifactId>
--    <version>1.17-R0.1-SNAPSHOT</version>
-+    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-    <version>1.18-R0.1-SNAPSHOT</version>
++    <groupId>net.royalmind.software.advocatus</groupId>
 +    <artifactId>advocatus-native</artifactId>
-+    <version>1.0.3-SNAPSHOT</version>
++    <version>1.0.4</version>
      <packaging>jar</packaging>
  
 -    <name>Waterfall-Native</name>
@@ -537,19 +524,16 @@ index 652a869d..9b46d109 100644
      <dependencies>
          <dependency>
 diff --git a/pom.xml b/pom.xml
-index 8d86e36c..92875a7a 100644
+index 94fad2cc..22b23d27 100644
 --- a/pom.xml
 +++ b/pom.xml
-@@ -1,51 +1,41 @@
--
- <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+@@ -4,48 +4,39 @@
      <modelVersion>4.0.0</modelVersion>
  
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-super</artifactId>
-+        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
++        <groupId>net.royalmind.software.advocatus</groupId>
 +        <artifactId>advocatus-super</artifactId>
          <version>dev-SNAPSHOT</version>
          <relativePath>../pom.xml</relativePath>
@@ -557,10 +541,10 @@ index 8d86e36c..92875a7a 100644
  
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-parent</artifactId>
--    <version>1.17-R0.1-SNAPSHOT</version>
-+    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-    <version>1.18-R0.1-SNAPSHOT</version>
++    <groupId>net.royalmind.software.advocatus</groupId>
 +    <artifactId>advocatus-parent</artifactId>
-+    <version>1.0.3-SNAPSHOT</version>
++    <version>1.0.4</version>
      <packaging>pom</packaging>
  
 -    <name>Waterfall-Parent</name>
@@ -590,8 +574,9 @@ index 8d86e36c..92875a7a 100644
      <developers>
          <developer>
 -            <id>Tux</id>
--        </developer>
--        <developer>
++            <id>CharlyZest</id>
+         </developer>
+         <developer>
 -            <id>Techcable</id>
 -        </developer>
 -        <developer>
@@ -599,15 +584,14 @@ index 8d86e36c..92875a7a 100644
 -        </developer>
 -        <developer>
 -            <id>jamierocks</id>
-+            <id>CharlyZest</id>
-         </developer>
-         <developer>
+-        </developer>
+-        <developer>
 -            <id>fuzzybot</id>
 +            <id>ImSrPanda</id>
          </developer>
      </developers>
  
-@@ -66,23 +56,23 @@
+@@ -66,23 +57,24 @@
      </modules>
  
      <scm>
@@ -628,9 +612,10 @@ index 8d86e36c..92875a7a 100644
          <repository>
 -            <id>papermc-releases</id>
 -            <url>https://papermc.io/repo/repository/maven-releases/</url>
-+            <id>royalmind</id>
++            <id>royalmind-releases</id>
 +            <url>https://packages.royalmind.net/repository/maven-releases/</url>
          </repository>
++        
          <snapshotRepository>
 -            <id>papermc-snapshots</id>
 -            <url>https://papermc.io/repo/repository/maven-snapshots/</url>
@@ -639,43 +624,19 @@ index 8d86e36c..92875a7a 100644
          </snapshotRepository>
      </distributionManagement>
  
-@@ -95,6 +85,13 @@
-         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-     </properties>
- 
-+    <repositories>
+@@ -99,6 +91,11 @@
+                 <enabled>true</enabled>
+             </snapshots>
+         </repository>
++
 +        <repository>
 +            <id>royalmind-snapshots</id>
 +            <url>https://packages.royalmind.net/repository/maven-snapshots/</url>
 +        </repository>
-+    </repositories>
-+
-     <dependencies>
-         <dependency>
-             <groupId>junit</groupId>
-@@ -120,6 +117,12 @@
-             <version>${lombok.version}</version>
-             <scope>provided</scope>
-         </dependency>
-+        <dependency>
-+            <groupId>net.royalmind.minecraft.library</groupId>
-+            <artifactId>Colorizer</artifactId>
-+            <version>1.0.2-SNAPSHOT</version>
-+            <scope>compile</scope>
-+        </dependency>
-     </dependencies>
+     </repositories>
  
-     <build>
-@@ -316,7 +319,7 @@
-                                     <!-- lombok does not add @return or @param which causes warnings, so ignore -->
-                                     <doclint>none</doclint>
-                                     <sourcepath>${project.build.directory}/delombok</sourcepath>
--                                    <additionalJOption>--no-module-directories</additionalJOption> <!-- Waterfall -->
-+                                    <additionalJOption>--no-module-directories</additionalJOption> <!-- Advocatus -->
-                                 </configuration>
-                             </execution>
-                         </executions>
-@@ -397,8 +400,8 @@
+     <properties>
+@@ -412,8 +409,8 @@
                                  </goals>
                                  <inherited>false</inherited>
                                  <configuration>
@@ -687,110 +648,85 @@ index 8d86e36c..92875a7a 100644
                                          api/target/generated-sources/delombok;
                                          chat/target/generated-sources/delombok
 diff --git a/protocol/pom.xml b/protocol/pom.xml
-index dbc0a3ab..e6041fee 100644
+index c62e0175..c7494241 100644
 --- a/protocol/pom.xml
 +++ b/protocol/pom.xml
+@@ -4,19 +4,19 @@
+     <modelVersion>4.0.0</modelVersion>
+ 
+     <parent>
+-        <groupId>io.github.waterfallmc</groupId>
+-        <artifactId>waterfall-parent</artifactId>
+-        <version>1.18-R0.1-SNAPSHOT</version>
++        <groupId>net.royalmind.software.advocatus</groupId>
++        <artifactId>advocatus-parent</artifactId>
++        <version>1.0.4</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+-    <groupId>io.github.waterfallmc</groupId>
+-    <artifactId>waterfall-protocol</artifactId>
+-    <version>1.18-R0.1-SNAPSHOT</version>
++    <groupId>net.royalmind.software.advocatus</groupId>
++    <artifactId>advocatus-protocol</artifactId>
++    <version>1.0.4</version>
+     <packaging>jar</packaging>
+ 
+-    <name>Waterfall-Protocol</name>
+-    <description>Minimal implementation of the Minecraft protocol for use in Waterfall</description>
++    <name>Advocatus-Protocol</name>
++    <description>Minimal implementation of the Minecraft protocol for use in Advocatus</description>
+ 
+     <dependencies>
+         <dependency>
+@@ -26,8 +26,8 @@
+             <scope>compile</scope>
+         </dependency>
+         <dependency>
+-            <groupId>io.github.waterfallmc</groupId>
+-            <artifactId>waterfall-chat</artifactId>
++            <groupId>net.royalmind.software.advocatus</groupId>
++            <artifactId>advocatus-chat</artifactId>
+             <version>${project.version}</version>
+             <scope>compile</scope>
+         </dependency>
+diff --git a/proxy/pom.xml b/proxy/pom.xml
+index 22c4f71b..f29f1558 100644
+--- a/proxy/pom.xml
++++ b/proxy/pom.xml
 @@ -4,18 +4,18 @@
      <modelVersion>4.0.0</modelVersion>
  
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-parent</artifactId>
--        <version>1.17-R0.1-SNAPSHOT</version>
-+        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-        <version>1.18-R0.1-SNAPSHOT</version>
++        <groupId>net.royalmind.software.advocatus</groupId>
 +        <artifactId>advocatus-parent</artifactId>
-+        <version>1.0.3-SNAPSHOT</version>
-         <relativePath>../pom.xml</relativePath>
-     </parent>
- 
--    <groupId>io.github.waterfallmc</groupId>
--    <artifactId>waterfall-protocol</artifactId>
--    <version>1.17-R0.1-SNAPSHOT</version>
-+    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
-+    <artifactId>advocatus-protocol</artifactId>
-+    <version>1.0.3-SNAPSHOT</version>
-     <packaging>jar</packaging>
- 
--    <name>Waterfall-Protocol</name>
-+    <name>Advocatus-Protocol</name>
-     <description>Minimal implementation of the Minecraft protocol for use in Waterfall</description>
- 
-     <!-- We really shouldn't depend on external repositories, but at least this is the Central staging one -->
-@@ -41,8 +41,8 @@
-             <scope>compile</scope>
-         </dependency>
-         <dependency>
--            <groupId>io.github.waterfallmc</groupId>
--            <artifactId>waterfall-chat</artifactId>
-+            <groupId>net.royalmind.minecraft.software.advocatus</groupId>
-+            <artifactId>advocatus-chat</artifactId>
-             <version>${project.version}</version>
-             <scope>compile</scope>
-         </dependency>
-diff --git a/proxy/pom.xml b/proxy/pom.xml
-index c3a2eeb6..7dd62163 100644
---- a/proxy/pom.xml
-+++ b/proxy/pom.xml
-@@ -4,20 +4,27 @@
-     <modelVersion>4.0.0</modelVersion>
- 
-     <parent>
--        <groupId>io.github.waterfallmc</groupId>
--        <artifactId>waterfall-parent</artifactId>
--        <version>1.17-R0.1-SNAPSHOT</version>
-+        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
-+        <artifactId>advocatus-parent</artifactId>
-+        <version>1.0.3-SNAPSHOT</version>
++        <version>1.0.4</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
  
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-proxy</artifactId>
--    <version>1.17-R0.1-SNAPSHOT</version>
-+    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-    <version>1.18-R0.1-SNAPSHOT</version>
++    <groupId>net.royalmind.software.advocatus</groupId>
 +    <artifactId>advocatus-proxy</artifactId>
-+    <version>1.0.3-SNAPSHOT</version>
++    <version>1.0.4</version>
      <packaging>jar</packaging>
  
 -    <name>Waterfall-Proxy</name>
 +    <name>Advocatus-Proxy</name>
      <description>Proxy component of the Elastic Portal Suite</description>
  
-+    <repositories>
-+        <repository>
-+            <id>jitpack.io</id>
-+            <url>https://jitpack.io</url>
-+        </repository>
-+    </repositories>
-+
      <properties>
-         <maven.deploy.skip>true</maven.deploy.skip>
-         <maven.javadoc.skip>true</maven.javadoc.skip>
-@@ -36,7 +43,7 @@
-             <version>${netty.version}</version>
-             <scope>compile</scope>
-         </dependency>
--        <!-- Waterfall Start - add Netty DNS resolver -->
-+        <!-- Advocatus Start - add Netty DNS resolver -->
-         <dependency>
-             <groupId>io.netty</groupId>
-             <artifactId>netty-resolver-dns</artifactId>
-@@ -49,7 +56,7 @@
-             <version>${netty.version}</version>
-             <classifier>osx-x86_64</classifier>
-         </dependency>
--        <!-- Waterfall End -->
-+        <!-- Advocatus End -->
-         <dependency>
-             <groupId>io.netty</groupId>
-             <artifactId>netty-handler</artifactId>
-@@ -64,32 +71,32 @@
+@@ -64,32 +64,32 @@
              <scope>compile</scope>
          </dependency>
          <dependency>
 -            <groupId>io.github.waterfallmc</groupId>
 -            <artifactId>waterfall-api</artifactId>
-+            <groupId>net.royalmind.minecraft.software.advocatus</groupId>
++            <groupId>net.royalmind.software.advocatus</groupId>
 +            <artifactId>advocatus-api</artifactId>
              <version>${project.version}</version>
              <scope>compile</scope>
@@ -798,7 +734,7 @@ index c3a2eeb6..7dd62163 100644
          <dependency>
 -            <groupId>io.github.waterfallmc</groupId>
 -            <artifactId>waterfall-log4j</artifactId>
-+            <groupId>net.royalmind.minecraft.software.advocatus</groupId>
++            <groupId>net.royalmind.software.advocatus</groupId>
 +            <artifactId>advocatus-log4j</artifactId>
              <version>${project.version}</version>
              <scope>compile</scope>
@@ -806,7 +742,7 @@ index c3a2eeb6..7dd62163 100644
          <dependency>
 -            <groupId>io.github.waterfallmc</groupId>
 -            <artifactId>waterfall-native</artifactId>
-+            <groupId>net.royalmind.minecraft.software.advocatus</groupId>
++            <groupId>net.royalmind.software.advocatus</groupId>
 +            <artifactId>advocatus-native</artifactId>
              <version>${project.version}</version>
              <scope>compile</scope>
@@ -814,7 +750,7 @@ index c3a2eeb6..7dd62163 100644
          <dependency>
 -            <groupId>io.github.waterfallmc</groupId>
 -            <artifactId>waterfall-protocol</artifactId>
-+            <groupId>net.royalmind.minecraft.software.advocatus</groupId>
++            <groupId>net.royalmind.software.advocatus</groupId>
 +            <artifactId>advocatus-protocol</artifactId>
              <version>${project.version}</version>
              <scope>compile</scope>
@@ -822,55 +758,13 @@ index c3a2eeb6..7dd62163 100644
          <dependency>
 -            <groupId>io.github.waterfallmc</groupId>
 -            <artifactId>waterfall-query</artifactId>
-+            <groupId>net.royalmind.minecraft.software.advocatus</groupId>
++            <groupId>net.royalmind.software.advocatus</groupId>
 +            <artifactId>advocatus-query</artifactId>
              <version>${project.version}</version>
              <scope>compile</scope>
          </dependency>
-@@ -131,7 +138,7 @@
-             <version>1.7.0</version>
-             <scope>runtime</scope>
-         </dependency>
--        <!-- Waterfall start - Console improvements - bring back slf4j-->
-+        <!-- Advocatus start - Console improvements - bring back slf4j-->
-         <dependency>
-             <groupId>org.slf4j</groupId>
-             <artifactId>slf4j-jdk14</artifactId>
-@@ -149,7 +156,13 @@
-             <version>3.12.1</version>
-             <scope>runtime</scope>
-         </dependency>
--        <!-- Waterfall end -->
-+        <dependency>
-+            <groupId>com.github.simplix-softworks</groupId>
-+            <artifactId>simplixstorage</artifactId>
-+            <version>3.2.3</version>
-+            <scope>compile</scope>
-+        </dependency>
-+        <!-- Advocatus end -->
-     </dependencies>
- 
-     <build>
-@@ -158,7 +171,7 @@
-                 <directory>src/main/resources</directory>
-                 <filtering>true</filtering>
-             </resource>
--            <!-- Waterfall start - copy license files into jar -->
-+            <!-- Advocatus start - copy license files into jar -->
-             <resource>
-                 <directory>../</directory>
-                 <includes>
-@@ -171,7 +184,7 @@
-                     <include>LICENSE.txt</include>
-                 </includes>
-             </resource>
--            <!-- Waterfall end -->
-+            <!-- Advocatus end -->
-         </resources>
-     </build>
- </project>
 diff --git a/query/pom.xml b/query/pom.xml
-index dea7d85f..c79c3b21 100644
+index 081bff62..088cbe57 100644
 --- a/query/pom.xml
 +++ b/query/pom.xml
 @@ -4,19 +4,19 @@
@@ -879,19 +773,19 @@ index dea7d85f..c79c3b21 100644
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-parent</artifactId>
--        <version>1.17-R0.1-SNAPSHOT</version>
-+        <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-        <version>1.18-R0.1-SNAPSHOT</version>
++        <groupId>net.royalmind.software.advocatus</groupId>
 +        <artifactId>advocatus-parent</artifactId>
-+        <version>1.0.3-SNAPSHOT</version>
++        <version>1.0.4</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
  
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-query</artifactId>
--    <version>1.17-R0.1-SNAPSHOT</version>
-+    <groupId>net.royalmind.minecraft.software.advocatus</groupId>
+-    <version>1.18-R0.1-SNAPSHOT</version>
++    <groupId>net.royalmind.software.advocatus</groupId>
 +    <artifactId>advocatus-query</artifactId>
-+    <version>1.0.3-SNAPSHOT</version>
++    <version>1.0.4</version>
      <packaging>jar</packaging>
  
 -    <name>Waterfall-Query</name>
@@ -907,7 +801,7 @@ index dea7d85f..c79c3b21 100644
          <dependency>
 -            <groupId>io.github.waterfallmc</groupId>
 -            <artifactId>waterfall-api</artifactId>
-+            <groupId>net.royalmind.minecraft.software.advocatus</groupId>
++            <groupId>net.royalmind.software.advocatus</groupId>
 +            <artifactId>advocatus-api</artifactId>
              <version>${project.version}</version>
              <scope>compile</scope>

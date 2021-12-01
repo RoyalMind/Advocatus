@@ -1,6 +1,6 @@
-From 0408fcd6c77073688154e12194916279107b2039 Mon Sep 17 00:00:00 2001
+From 81e5a644bbcf5db8dfd21d3b6a62aa4363c3c61b Mon Sep 17 00:00:00 2001
 From: Carlos Gallegos <40046747+CharlyZest@users.noreply.github.com>
-Date: Thu, 28 Oct 2021 03:34:01 -0500
+Date: Tue, 30 Nov 2021 19:18:26 -0600
 Subject: [PATCH] Rebranding
 
 
@@ -49,14 +49,14 @@ index 684eb883..a604a52d 100644
 +    // Advocatus End
  }
 diff --git a/api/src/main/java/net/md_5/bungee/api/plugin/Command.java b/api/src/main/java/net/md_5/bungee/api/plugin/Command.java
-index b4566327..cc176c24 100644
+index b4566327..771df017 100644
 --- a/api/src/main/java/net/md_5/bungee/api/plugin/Command.java
 +++ b/api/src/main/java/net/md_5/bungee/api/plugin/Command.java
 @@ -66,4 +66,16 @@ public abstract class Command
      {
          return permission == null || permission.isEmpty() || sender.hasPermission( permission );
      }
-+
++    
 +    // Advocatus Start
 +
 +    /**
@@ -70,31 +70,50 @@ index b4566327..cc176c24 100644
 +    // Advocatus End
  }
 diff --git a/bootstrap/src/main/java/net/md_5/bungee/Bootstrap.java b/bootstrap/src/main/java/net/md_5/bungee/Bootstrap.java
-index a4516ed9..bdca20ac 100644
+index a4516ed9..7a7e6ad9 100644
 --- a/bootstrap/src/main/java/net/md_5/bungee/Bootstrap.java
 +++ b/bootstrap/src/main/java/net/md_5/bungee/Bootstrap.java
-@@ -7,7 +7,7 @@ public class Bootstrap
+@@ -7,8 +7,8 @@ public class Bootstrap
      {
          if ( Float.parseFloat( System.getProperty( "java.class.version" ) ) < 52.0 )
          {
 -            System.err.println( "*** ERROR *** Waterfall requires Java 8 or above to function! Please download and install it!" );
-+            System.err.println( "*** ERROR *** Advocatus requires Java 8 or above to function! Please download and install it!" );
-             System.out.println( "You can check your Java version with the command: java -version" );
+-            System.out.println( "You can check your Java version with the command: java -version" );
++            System.err.println( "*** ERROR *** ¡Advocatus requiere Java 8 o superior para funcionar! ¡Descárguelo e instálelo!" );
++            System.out.println( "Puede verificar su versión de Java ejecutando el comando: \"java -version\" en la terminal." );
              return;
          }
-diff --git a/native/compile-native.sh b/native/compile-native.sh
-index a50b52bf..dd6727d7 100755
---- a/native/compile-native.sh
-+++ b/native/compile-native.sh
-@@ -8,7 +8,7 @@ echo "Compiling mbedtls"
- echo "Compiling zlib"
- (cd zlib && CFLAGS=-fPIC ./configure --static && make)
  
--# Waterfall - rewrite below to extend platform support
-+# Advocatus - rewrite below to extend platform support
+diff --git a/module/pom.xml b/module/pom.xml
+index 0d799bb3..0e7c6fe9 100644
+--- a/module/pom.xml
++++ b/module/pom.xml
+@@ -28,7 +28,7 @@
+     </modules>
  
- if [[ "$OSTYPE" == "darwin"* ]]; then
-   PREFIX="osx-"
+     <properties>
+-        <module.author>RDT</module.author>
++        <module.author>RoyalMind Development Team</module.author>
+         <maven.deploy.skip>true</maven.deploy.skip>
+         <maven.javadoc.skip>true</maven.javadoc.skip>
+     </properties>
+diff --git a/pom.xml b/pom.xml
+index 22b23d27..7f293b9d 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -132,6 +132,12 @@
+             <version>${lombok.version}</version>
+             <scope>provided</scope>
+         </dependency>
++        <dependency>
++            <groupId>net.royalmind.minecraft.library</groupId>
++            <artifactId>Colorizer</artifactId>
++            <version>1.0.2-SNAPSHOT</version>
++            <scope>compile</scope>
++        </dependency>
+     </dependencies>
+ 
+     <build>
 diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/DefinedPacket.java b/protocol/src/main/java/net/md_5/bungee/protocol/DefinedPacket.java
 index a310844d..bba924d9 100644
 --- a/protocol/src/main/java/net/md_5/bungee/protocol/DefinedPacket.java
@@ -134,7 +153,7 @@ index 01d35f41..d67acd55 100644
  
      private void doLengthSanityChecks(ByteBuf buf, DefinedPacket packet,
 diff --git a/proxy/src/main/java/net/md_5/bungee/BungeeCord.java b/proxy/src/main/java/net/md_5/bungee/BungeeCord.java
-index 07d74c67..15775e26 100644
+index 07d74c67..11a5cf21 100644
 --- a/proxy/src/main/java/net/md_5/bungee/BungeeCord.java
 +++ b/proxy/src/main/java/net/md_5/bungee/BungeeCord.java
 @@ -188,7 +188,7 @@ public class BungeeCord extends ProxyServer
@@ -151,7 +170,7 @@ index 07d74c67..15775e26 100644
          }
  
 -        getLogger().info( "Thank you and goodbye" );
-+        getLogger().info( "Camará carnal, gracias por tu preferncia. Te me cuidas, un beso en la pantunfla :*" );
++        getLogger().info( "Muy bien apreciable persona, gracias por tu preferncia. Te me cuidas, un beso en la pantunfla :*" );
          // Need to close loggers after last message!
          for ( Handler handler : getLogger().getHandlers() )
          {
@@ -165,7 +184,7 @@ index 07d74c67..15775e26 100644
  
      @Override
 diff --git a/proxy/src/main/java/net/md_5/bungee/BungeeCordLauncher.java b/proxy/src/main/java/net/md_5/bungee/BungeeCordLauncher.java
-index 0db3d76a..8f21c90e 100644
+index 0db3d76a..88b3ab13 100644
 --- a/proxy/src/main/java/net/md_5/bungee/BungeeCordLauncher.java
 +++ b/proxy/src/main/java/net/md_5/bungee/BungeeCordLauncher.java
 @@ -53,17 +53,17 @@ public class BungeeCordLauncher
@@ -177,8 +196,8 @@ index 0db3d76a..8f21c90e 100644
 -                System.err.println( "*** Should this build be outdated, you will get NO support for it. ***" );
 -                System.err.println( "*** Server will start in 10 seconds ***" );
 +                System.err.println( "*** ¡Oye! Esta compilación está potencialmente desactualizada :( ***" );
-+                System.err.println( "*** Compruebe si hay una nueva compilación en https://github.com/RoyalMind/Advocatus/actions ***" );
-+                System.err.println( "*** Si esta compilación está desactualizada, NO obtendrá soporte para ella. ***" );
++                System.err.println( "*** Comprueba si hay una nueva compilación en https://github.com/RoyalMind/Advocatus/actions ***" );
++                System.err.println( "*** Si esta compilación está desactualizada, NO obtendrás soporte para ella. ***" );
 +                System.err.println( "*** El servidor se iniciará en 10 segundos ***" );
                  Thread.sleep( TimeUnit.SECONDS.toMillis( 10 ) );
              }
@@ -192,14 +211,14 @@ index 0db3d76a..8f21c90e 100644
  
          if ( !options.has( "noconsole" ) )
 diff --git a/proxy/src/main/java/net/md_5/bungee/UserConnection.java b/proxy/src/main/java/net/md_5/bungee/UserConnection.java
-index fc98b4b1..e48920d1 100644
+index 871a2990..bc5e26f2 100644
 --- a/proxy/src/main/java/net/md_5/bungee/UserConnection.java
 +++ b/proxy/src/main/java/net/md_5/bungee/UserConnection.java
-@@ -774,4 +774,12 @@ public final class UserConnection implements ProxiedPlayer
+@@ -771,4 +771,12 @@ public final class UserConnection implements ProxiedPlayer
          return entityRewrite == net.md_5.bungee.entitymap.EntityMap_Dummy.INSTANCE;
      }
      // Waterfall end
-+
++    
 +    // Advocatus start
 +
 +    public int getVersion() { return this.getPendingConnection().getVersion(); }
@@ -225,7 +244,7 @@ index b26035cf..d7acff31 100644
      }
  }
 diff --git a/proxy/src/main/java/net/md_5/bungee/command/CommandReload.java b/proxy/src/main/java/net/md_5/bungee/command/CommandReload.java
-index 720d0c3b..acad702d 100644
+index 720d0c3b..7b0dacd8 100644
 --- a/proxy/src/main/java/net/md_5/bungee/command/CommandReload.java
 +++ b/proxy/src/main/java/net/md_5/bungee/command/CommandReload.java
 @@ -23,7 +23,7 @@ public class CommandReload extends Command
@@ -234,19 +253,19 @@ index 720d0c3b..acad702d 100644
  
 -        sender.sendMessage( ChatColor.BOLD.toString() + ChatColor.RED.toString() + "Waterfall has been reloaded."
 -                + " This is NOT advisable and you will not be supported with any issues that arise! Please restart Waterfall ASAP." );
-+        sender.sendMessage( ChatColor.BOLD.toString() + ChatColor.RED.toString() + "Advocatus has been reloaded."
-+                + " This is NOT advisable and you will not be supported with any issues that arise! Please restart Advocatus ASAP." );
++        sender.sendMessage( ChatColor.BOLD.toString() + ChatColor.RED.toString() + "\n\n\n\nAdvocatus ha sido recargado."
++                + " ¡Esto NO es aconsejable y no recibirá asistencia con los problemas que surjan! Reinicie Advocatus lo antes posible.\n\n\n\n" );
      }
  }
 diff --git a/proxy/src/main/java/net/md_5/bungee/command/ConsoleCommandSender.java b/proxy/src/main/java/net/md_5/bungee/command/ConsoleCommandSender.java
-index 33d7e5bb..03fc7b54 100644
+index 33d7e5bb..02aa3236 100644
 --- a/proxy/src/main/java/net/md_5/bungee/command/ConsoleCommandSender.java
 +++ b/proxy/src/main/java/net/md_5/bungee/command/ConsoleCommandSender.java
 @@ -87,4 +87,11 @@ public final class ConsoleCommandSender implements CommandSender
      {
          return Collections.emptySet();
      }
-+
++    
 +    // Advocatus Start
 +
 +    @Override
@@ -276,37 +295,15 @@ index 0644b8cd..b976b0f6 100644
              motd = ChatColor.translateAlternateColorCodes( '&', motd );
  
              int maxPlayers = get( "max_players", 1, val );
-diff --git a/proxy/src/main/java/net/md_5/bungee/connection/DownstreamBridge.java b/proxy/src/main/java/net/md_5/bungee/connection/DownstreamBridge.java
-index d3650ff8..90496d6b 100644
---- a/proxy/src/main/java/net/md_5/bungee/connection/DownstreamBridge.java
-+++ b/proxy/src/main/java/net/md_5/bungee/connection/DownstreamBridge.java
-@@ -30,6 +30,7 @@ import net.md_5.bungee.ServerConnection;
- import net.md_5.bungee.ServerConnection.KeepAliveData;
- import net.md_5.bungee.UserConnection;
- import net.md_5.bungee.Util;
-+import net.md_5.bungee.api.ChatColor;
- import net.md_5.bungee.api.ProxyServer;
- import net.md_5.bungee.api.chat.BaseComponent;
- import net.md_5.bungee.api.chat.TextComponent;
-@@ -294,7 +295,8 @@ public class DownstreamBridge extends PacketHandler
-             Preconditions.checkState( !serverBrand.contains( bungee.getName() ), "Cannot connect proxy to itself!" );
- 
-             brand = ByteBufAllocator.DEFAULT.heapBuffer();
--            DefinedPacket.writeString( bungee.getName() + " <- " + serverBrand, brand ); // Waterfall
-+            //DefinedPacket.writeString( bungee.getName() + " <- " + serverBrand, brand ); // Waterfall
-+            DefinedPacket.writeString(ChatColor.YELLOW + "play.royalmind.net" + ChatColor.RESET, brand); // Advocatus
-             pluginMessage.setData( brand );
-             brand.release();
-             // changes in the packet are ignored so we need to send it manually
 diff --git a/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java b/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java
-index 0fd58e83..4a9feb70 100644
+index 4afab05d..c3eb6ccb 100644
 --- a/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java
 +++ b/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java
-@@ -674,4 +674,10 @@ public class InitialHandler extends PacketHandler implements PendingConnection
-     {
-         return !ch.isClosed();
+@@ -701,4 +701,10 @@ public class InitialHandler extends PacketHandler implements PendingConnection
+             brandMessage = input;
+         }
      }
-+
++    
 +    // Advocatus start
 +
 +    public boolean supportsRGB() { return this.getVersion() >= 735; }
