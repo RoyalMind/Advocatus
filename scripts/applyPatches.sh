@@ -48,7 +48,7 @@ function applyPatch {
         enableCommitSigningIfNeeded
         exit 1
     else
-        echo "  Patches applied cleanly to $target"
+        echo "  Parches aplicados limpiamente a $target"
     fi
 }
 
