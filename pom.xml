@@ -17,6 +17,13 @@
         <module>Advocatus-Proxy</module>
     </modules>
 
+    <distributionManagement>
+        <snapshotRepository>
+            <id>royalmind-snapshots</id>
+            <url>https://packages.royalmind.net/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <build>
         <defaultGoal>clean install</defaultGoal>
     </build>
