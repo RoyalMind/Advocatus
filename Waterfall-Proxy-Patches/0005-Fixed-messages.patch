@@ -1,0 +1,35 @@
+From a23b278b12d6c30b29ac934c43ba965da89f1025 Mon Sep 17 00:00:00 2001
+From: Carlos Gallegos <40046747+CharlyZest@users.noreply.github.com>
+Date: Wed, 1 Dec 2021 21:47:31 -0600
+Subject: [PATCH] Fixed messages
+
+
+diff --git a/proxy/src/main/java/net/royalmind/software/advocatus/Advocatus.java b/proxy/src/main/java/net/royalmind/software/advocatus/Advocatus.java
+index 42f2cbd7..517a6104 100644
+--- a/proxy/src/main/java/net/royalmind/software/advocatus/Advocatus.java
++++ b/proxy/src/main/java/net/royalmind/software/advocatus/Advocatus.java
+@@ -75,16 +75,17 @@ public class Advocatus
+         String translation = "&c<translation '" + name + "' missing>&r";
+         try
+         {
+-            if (!MESSAGES_CACHE.containsKey(name))
++            if (MESSAGES_CACHE.containsKey(name)) translation = MESSAGES_CACHE.get(name);
++            else
+             {
+-                final String VALUE = customMessages != null && customMessages.contains( name )
++                translation = customMessages != null && customMessages.contains( name )
+                         ? customMessages.getString( name )
+                         : baseMessages.getString( name );
+ 
+-                translation = Colorizer.translate(( args.length == 0 ) ? VALUE : MessageFormat.format( VALUE, args ));
+                 MESSAGES_CACHE.put(name, translation);
+             }
+-            else { translation = MESSAGES_CACHE.get(name); }
++
++            translation = Colorizer.translate(( args.length == 0 ) ? translation : MessageFormat.format( translation, args ));
+         }
+         catch ( MissingResourceException ex ) { Logger.error("Fallo al cargar la traduccion de: \""+ name +"\"", ex); }
+ 
+-- 
+2.33.0.windows.2
+

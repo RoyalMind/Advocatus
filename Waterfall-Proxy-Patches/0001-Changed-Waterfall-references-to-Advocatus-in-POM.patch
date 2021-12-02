@@ -1,11 +1,11 @@
-From b0655748504ce9602114bdab81d647326e4e2c83 Mon Sep 17 00:00:00 2001
+From a4f5d536042666f819cb83c0e4b89c291c9bc85c Mon Sep 17 00:00:00 2001
 From: Carlos Gallegos <40046747+CharlyZest@users.noreply.github.com>
 Date: Tue, 30 Nov 2021 18:46:38 -0600
 Subject: [PATCH] Changed Waterfall references to Advocatus in POM
 
 
 diff --git a/api/pom.xml b/api/pom.xml
-index 9b29dfca..1e99a4b2 100644
+index 9b29dfca..670a349a 100644
 --- a/api/pom.xml
 +++ b/api/pom.xml
 @@ -4,42 +4,42 @@
@@ -20,7 +20,7 @@ index 9b29dfca..1e99a4b2 100644
 +        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
-
+ 
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-api</artifactId>
 -    <version>1.18-R0.1-SNAPSHOT</version>
@@ -28,11 +28,11 @@ index 9b29dfca..1e99a4b2 100644
 +    <artifactId>advocatus-api</artifactId>
 +    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
      <packaging>jar</packaging>
-
+ 
 -    <name>Waterfall-API</name>
 +    <name>Advocatus-API</name>
      <description>API implemented by the Elastic Portal Suite</description>
-
+ 
      <dependencies>
          <dependency>
 -            <groupId>io.github.waterfallmc</groupId>
@@ -67,12 +67,12 @@ index 9b29dfca..1e99a4b2 100644
              <scope>compile</scope>
          </dependency>
 diff --git a/bootstrap/pom.xml b/bootstrap/pom.xml
-index 00ce099c..04eabbe2 100644
+index 00ce099c..20bf1775 100644
 --- a/bootstrap/pom.xml
 +++ b/bootstrap/pom.xml
 @@ -4,19 +4,19 @@
      <modelVersion>4.0.0</modelVersion>
-
+ 
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-parent</artifactId>
@@ -82,7 +82,7 @@ index 00ce099c..04eabbe2 100644
 +        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
-
+ 
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-bootstrap</artifactId>
 -    <version>1.18-R0.1-SNAPSHOT</version>
@@ -90,16 +90,16 @@ index 00ce099c..04eabbe2 100644
 +    <artifactId>advocatus-bootstrap</artifactId>
 +    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
      <packaging>jar</packaging>
-
+ 
 -    <name>Waterfall-Bootstrap</name>
 -    <description>Java 1.6 loader for Waterfall</description>
 +    <name>Advocatus-Bootstrap</name>
 +    <description>Java 1.6 loader for Advocatus</description>
-
+ 
      <properties>
          <maven.deploy.skip>true</maven.deploy.skip>
 @@ -29,15 +29,15 @@
-
+ 
      <dependencies>
          <dependency>
 -            <groupId>io.github.waterfallmc</groupId>
@@ -110,7 +110,7 @@ index 00ce099c..04eabbe2 100644
              <scope>compile</scope>
          </dependency>
      </dependencies>
-
+ 
      <build>
 -        <finalName>Waterfall</finalName>
 +        <finalName>Advocatus</finalName>
@@ -118,12 +118,12 @@ index 00ce099c..04eabbe2 100644
              <plugin>
                  <groupId>org.apache.maven.plugins</groupId>
 diff --git a/chat/pom.xml b/chat/pom.xml
-index 0ad5dd16..080d99c8 100644
+index 0ad5dd16..fa333fb9 100644
 --- a/chat/pom.xml
 +++ b/chat/pom.xml
 @@ -4,19 +4,19 @@
      <modelVersion>4.0.0</modelVersion>
-
+ 
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-parent</artifactId>
@@ -133,7 +133,7 @@ index 0ad5dd16..080d99c8 100644
 +        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
-
+ 
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-chat</artifactId>
 -    <version>1.18-R0.1-SNAPSHOT</version>
@@ -141,21 +141,21 @@ index 0ad5dd16..080d99c8 100644
 +    <artifactId>advocatus-chat</artifactId>
 +    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
      <packaging>jar</packaging>
-
+ 
 -    <name>Waterfall-Chat</name>
 -    <description>Minecraft JSON chat API intended for use with Waterfall</description>
 +    <name>Advocatus-Chat</name>
 +    <description>Minecraft JSON chat API intended for use with Advocatus</description>
-
+ 
      <dependencies>
          <dependency>
 diff --git a/config/pom.xml b/config/pom.xml
-index 2caffc27..6b76f293 100644
+index 2caffc27..f80405d6 100644
 --- a/config/pom.xml
 +++ b/config/pom.xml
 @@ -4,19 +4,19 @@
      <modelVersion>4.0.0</modelVersion>
-
+ 
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-parent</artifactId>
@@ -165,7 +165,7 @@ index 2caffc27..6b76f293 100644
 +        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
-
+ 
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-config</artifactId>
 -    <version>1.18-R0.1-SNAPSHOT</version>
@@ -173,21 +173,21 @@ index 2caffc27..6b76f293 100644
 +    <artifactId>advocatus-config</artifactId>
 +    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
      <packaging>jar</packaging>
-
+ 
 -    <name>Waterfall-Config</name>
 -    <description>Generic java configuration API intended for use with Waterfall</description>
 +    <name>Advocatus-Config</name>
 +    <description>Generic java configuration API intended for use with Advocatus</description>
-
+ 
      <dependencies>
          <dependency>
 diff --git a/event/pom.xml b/event/pom.xml
-index e2432463..a3f0644b 100644
+index e2432463..458a5e90 100644
 --- a/event/pom.xml
 +++ b/event/pom.xml
 @@ -4,17 +4,17 @@
      <modelVersion>4.0.0</modelVersion>
-
+ 
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-parent</artifactId>
@@ -197,7 +197,7 @@ index e2432463..a3f0644b 100644
 +        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
-
+ 
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-event</artifactId>
 -    <version>1.18-R0.1-SNAPSHOT</version>
@@ -205,19 +205,19 @@ index e2432463..a3f0644b 100644
 +    <artifactId>advocatus-event</artifactId>
 +    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
      <packaging>jar</packaging>
-
+ 
 -    <name>Waterfall-Event</name>
 -    <description>Generic java event dispatching API intended for use with Waterfall.</description>
 +    <name>Advocatus-Event</name>
 +    <description>Generic java event dispatching API intended for use with Advocatus.</description>
  </project>
 diff --git a/log/pom.xml b/log/pom.xml
-index 465ebbf2..4c2534e2 100644
+index 465ebbf2..ac306a5b 100644
 --- a/log/pom.xml
 +++ b/log/pom.xml
 @@ -4,19 +4,19 @@
      <modelVersion>4.0.0</modelVersion>
-
+ 
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-parent</artifactId>
@@ -227,7 +227,7 @@ index 465ebbf2..4c2534e2 100644
 +        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
-
+ 
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-log</artifactId>
 -    <version>1.18-R0.1-SNAPSHOT</version>
@@ -235,12 +235,12 @@ index 465ebbf2..4c2534e2 100644
 +    <artifactId>advocatus-log</artifactId>
 +    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
      <packaging>jar</packaging>
-
+ 
 -    <name>Waterfall-Log</name>
 -    <description>Simplistic and performant java.util.Logger based logger and console API designed for use with Waterfall and Minecraft related applications.</description>
 +    <name>Advocatus-Log</name>
 +    <description>Simplistic and performant java.util.Logger based logger and console API designed for use with Advocatus and Minecraft related applications.</description>
-
+ 
      <dependencies>
          <dependency>
 @@ -26,8 +26,8 @@
@@ -255,12 +255,12 @@ index 465ebbf2..4c2534e2 100644
              <scope>compile</scope>
          </dependency>
 diff --git a/log4j/pom.xml b/log4j/pom.xml
-index 34740637..e211b088 100644
+index 34740637..cd818909 100644
 --- a/log4j/pom.xml
 +++ b/log4j/pom.xml
 @@ -3,19 +3,19 @@
      <modelVersion>4.0.0</modelVersion>
-
+ 
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-parent</artifactId>
@@ -270,7 +270,7 @@ index 34740637..e211b088 100644
 +        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
-
+ 
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-log4j</artifactId>
 -    <version>1.18-R0.1-SNAPSHOT</version>
@@ -278,21 +278,21 @@ index 34740637..e211b088 100644
 +    <artifactId>advocatus-log4j</artifactId>
 +    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
      <packaging>jar</packaging>
-
+ 
 -    <name>Waterfall-Log</name>
 -    <description>Simplistic and performant Log4j2 based logger and console API designed for use with Waterfall and Minecraft related applications.</description>
 +    <name>Advocatus-Log</name>
 +    <description>Simplistic and performant Log4j2 based logger and console API designed for use with Advocatus and Minecraft related applications.</description>
-
+ 
      <properties>
          <log4j2.version>2.14.1</log4j2.version>
 diff --git a/module/cmd-alert/pom.xml b/module/cmd-alert/pom.xml
-index b41791f1..37db8ccd 100644
+index b41791f1..5bf5d5f8 100644
 --- a/module/cmd-alert/pom.xml
 +++ b/module/cmd-alert/pom.xml
 @@ -4,15 +4,15 @@
      <modelVersion>4.0.0</modelVersion>
-
+ 
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-module</artifactId>
@@ -302,7 +302,7 @@ index b41791f1..37db8ccd 100644
 +        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
-
+ 
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-module-cmd-alert</artifactId>
 -    <version>1.18-R0.1-SNAPSHOT</version>
@@ -310,15 +310,15 @@ index b41791f1..37db8ccd 100644
 +    <artifactId>advocatus-module-cmd-alert</artifactId>
 +    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
      <packaging>jar</packaging>
-
+ 
      <name>cmd_alert</name>
 diff --git a/module/cmd-find/pom.xml b/module/cmd-find/pom.xml
-index a17080ab..1da0c885 100644
+index a17080ab..35f3272e 100644
 --- a/module/cmd-find/pom.xml
 +++ b/module/cmd-find/pom.xml
 @@ -4,15 +4,15 @@
      <modelVersion>4.0.0</modelVersion>
-
+ 
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-module</artifactId>
@@ -328,7 +328,7 @@ index a17080ab..1da0c885 100644
 +        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
-
+ 
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-module-cmd-find</artifactId>
 -    <version>1.18-R0.1-SNAPSHOT</version>
@@ -336,15 +336,15 @@ index a17080ab..1da0c885 100644
 +    <artifactId>advocatus-module-cmd-find</artifactId>
 +    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
      <packaging>jar</packaging>
-
+ 
      <name>cmd_find</name>
 diff --git a/module/cmd-list/pom.xml b/module/cmd-list/pom.xml
-index 16003086..85511830 100644
+index 16003086..ec8b4ebd 100644
 --- a/module/cmd-list/pom.xml
 +++ b/module/cmd-list/pom.xml
 @@ -4,15 +4,15 @@
      <modelVersion>4.0.0</modelVersion>
-
+ 
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-module</artifactId>
@@ -354,7 +354,7 @@ index 16003086..85511830 100644
 +        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
-
+ 
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-module-cmd-list</artifactId>
 -    <version>1.18-R0.1-SNAPSHOT</version>
@@ -362,15 +362,15 @@ index 16003086..85511830 100644
 +    <artifactId>advocatus-module-cmd-list</artifactId>
 +    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
      <packaging>jar</packaging>
-
+ 
      <name>cmd_list</name>
 diff --git a/module/cmd-send/pom.xml b/module/cmd-send/pom.xml
-index ba084281..881bc114 100644
+index ba084281..66dd5394 100644
 --- a/module/cmd-send/pom.xml
 +++ b/module/cmd-send/pom.xml
 @@ -4,15 +4,15 @@
      <modelVersion>4.0.0</modelVersion>
-
+ 
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-module</artifactId>
@@ -380,7 +380,7 @@ index ba084281..881bc114 100644
 +        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
-
+ 
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-module-cmd-send</artifactId>
 -    <version>1.18-R0.1-SNAPSHOT</version>
@@ -388,15 +388,15 @@ index ba084281..881bc114 100644
 +    <artifactId>advocatus-module-cmd-send</artifactId>
 +    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
      <packaging>jar</packaging>
-
+ 
      <name>cmd_send</name>
 diff --git a/module/cmd-server/pom.xml b/module/cmd-server/pom.xml
-index cb4d2932..fe063d92 100644
+index cb4d2932..e51041ff 100644
 --- a/module/cmd-server/pom.xml
 +++ b/module/cmd-server/pom.xml
 @@ -4,15 +4,15 @@
      <modelVersion>4.0.0</modelVersion>
-
+ 
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-module</artifactId>
@@ -406,7 +406,7 @@ index cb4d2932..fe063d92 100644
 +        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
-
+ 
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-module-cmd-server</artifactId>
 -    <version>1.18-R0.1-SNAPSHOT</version>
@@ -414,15 +414,15 @@ index cb4d2932..fe063d92 100644
 +    <artifactId>advocatus-module-cmd-server</artifactId>
 +    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
      <packaging>jar</packaging>
-
+ 
      <name>cmd_server</name>
 diff --git a/module/pom.xml b/module/pom.xml
-index 350a49b8..0d799bb3 100644
+index 350a49b8..0b4fec03 100644
 --- a/module/pom.xml
 +++ b/module/pom.xml
 @@ -4,19 +4,19 @@
      <modelVersion>4.0.0</modelVersion>
-
+ 
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-parent</artifactId>
@@ -432,7 +432,7 @@ index 350a49b8..0d799bb3 100644
 +        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
-
+ 
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-module</artifactId>
 -    <version>1.18-R0.1-SNAPSHOT</version>
@@ -440,24 +440,24 @@ index 350a49b8..0d799bb3 100644
 +    <artifactId>advocatus-module</artifactId>
 +    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
      <packaging>pom</packaging>
-
+ 
 -    <name>Waterfall Modules</name>
 -    <description>Parent project for all Waterfall modules.</description>
 +    <name>Advocatus Modules</name>
 +    <description>Parent project for all Advocatus modules.</description>
-
+ 
      <modules>
          <module>cmd-alert</module>
 @@ -28,15 +28,15 @@
      </modules>
-
+ 
      <properties>
 -        <module.author>WaterfallMC</module.author>
 +        <module.author>RDT</module.author>
          <maven.deploy.skip>true</maven.deploy.skip>
          <maven.javadoc.skip>true</maven.javadoc.skip>
      </properties>
-
+ 
      <dependencies>
          <dependency>
 -            <groupId>io.github.waterfallmc</groupId>
@@ -468,12 +468,12 @@ index 350a49b8..0d799bb3 100644
              <scope>compile</scope>
          </dependency>
 diff --git a/module/reconnect-yaml/pom.xml b/module/reconnect-yaml/pom.xml
-index d3476fc5..acf366e2 100644
+index d3476fc5..cdbcee7e 100644
 --- a/module/reconnect-yaml/pom.xml
 +++ b/module/reconnect-yaml/pom.xml
 @@ -4,15 +4,15 @@
      <modelVersion>4.0.0</modelVersion>
-
+ 
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-module</artifactId>
@@ -483,21 +483,21 @@ index d3476fc5..acf366e2 100644
 +        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
-
+ 
      <groupId>net.md-5</groupId>
      <artifactId>bungeecord-module-reconnect-yaml</artifactId>
 -    <version>1.18-R0.1-SNAPSHOT</version>
 +    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
      <packaging>jar</packaging>
-
+ 
      <name>reconnect_yaml</name>
 diff --git a/native/pom.xml b/native/pom.xml
-index 1eff2c93..f3fcef44 100644
+index 1eff2c93..ef08b8a3 100644
 --- a/native/pom.xml
 +++ b/native/pom.xml
 @@ -4,19 +4,19 @@
      <modelVersion>4.0.0</modelVersion>
-
+ 
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-parent</artifactId>
@@ -507,7 +507,7 @@ index 1eff2c93..f3fcef44 100644
 +        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
-
+ 
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-native</artifactId>
 -    <version>1.18-R0.1-SNAPSHOT</version>
@@ -515,21 +515,21 @@ index 1eff2c93..f3fcef44 100644
 +    <artifactId>advocatus-native</artifactId>
 +    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
      <packaging>jar</packaging>
-
+ 
 -    <name>Waterfall-Native</name>
 -    <description>Optional native code to speed up and enhance Waterfall functionality.</description>
 +    <name>Advocatus-Native</name>
 +    <description>Optional native code to speed up and enhance Advocatus functionality.</description>
-
+ 
      <dependencies>
          <dependency>
 diff --git a/pom.xml b/pom.xml
-index 94fad2cc..22b23d27 100644
+index 94fad2cc..bdcc41cf 100644
 --- a/pom.xml
 +++ b/pom.xml
 @@ -4,48 +4,39 @@
      <modelVersion>4.0.0</modelVersion>
-
+ 
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-super</artifactId>
@@ -538,7 +538,7 @@ index 94fad2cc..22b23d27 100644
          <version>dev-SNAPSHOT</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
-
+ 
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-parent</artifactId>
 -    <version>1.18-R0.1-SNAPSHOT</version>
@@ -546,7 +546,7 @@ index 94fad2cc..22b23d27 100644
 +    <artifactId>advocatus-parent</artifactId>
 +    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
      <packaging>pom</packaging>
-
+ 
 -    <name>Waterfall-Parent</name>
 -    <description>Parent project for all Waterfall modules.</description>
 -    <url>https://github.com/WaterfallMC/Waterfall</url>
@@ -570,7 +570,7 @@ index 94fad2cc..22b23d27 100644
              <distribution>repo</distribution>
          </license>
      </licenses>
-
+ 
      <developers>
          <developer>
 -            <id>Tux</id>
@@ -590,10 +590,10 @@ index 94fad2cc..22b23d27 100644
 +            <id>ImSrPanda</id>
          </developer>
      </developers>
-
+ 
 @@ -66,23 +57,24 @@
      </modules>
-
+ 
      <scm>
 -        <connection>scm:git:git@github.com:com:WaterfallMC/Waterfall.git</connection>
 -        <developerConnection>scm:git:git@github.com:WaterfallMC/Waterfall.git</developerConnection>
@@ -607,7 +607,7 @@ index 94fad2cc..22b23d27 100644
 -        <url>https://github.com/PaperMC/Waterfall/issues</url>
 +        <url>https://github.com/RoyalMind/Advocatus/issues</url>
      </issueManagement>
-
+ 
      <distributionManagement>
          <repository>
 -            <id>papermc-releases</id>
@@ -623,7 +623,7 @@ index 94fad2cc..22b23d27 100644
 +            <url>https://packages.royalmind.net/repository/maven-snapshots/</url>
          </snapshotRepository>
      </distributionManagement>
-
+ 
 @@ -99,6 +91,11 @@
                  <enabled>true</enabled>
              </snapshots>
@@ -634,7 +634,7 @@ index 94fad2cc..22b23d27 100644
 +            <url>https://packages.royalmind.net/repository/maven-snapshots/</url>
 +        </repository>
      </repositories>
-
+ 
      <properties>
 @@ -412,8 +409,8 @@
                                  </goals>
@@ -648,12 +648,12 @@ index 94fad2cc..22b23d27 100644
                                          api/target/generated-sources/delombok;
                                          chat/target/generated-sources/delombok
 diff --git a/protocol/pom.xml b/protocol/pom.xml
-index c62e0175..c7494241 100644
+index c62e0175..e163d3bb 100644
 --- a/protocol/pom.xml
 +++ b/protocol/pom.xml
 @@ -4,19 +4,19 @@
      <modelVersion>4.0.0</modelVersion>
-
+ 
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-parent</artifactId>
@@ -663,7 +663,7 @@ index c62e0175..c7494241 100644
 +        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
-
+ 
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-protocol</artifactId>
 -    <version>1.18-R0.1-SNAPSHOT</version>
@@ -671,12 +671,12 @@ index c62e0175..c7494241 100644
 +    <artifactId>advocatus-protocol</artifactId>
 +    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
      <packaging>jar</packaging>
-
+ 
 -    <name>Waterfall-Protocol</name>
 -    <description>Minimal implementation of the Minecraft protocol for use in Waterfall</description>
 +    <name>Advocatus-Protocol</name>
 +    <description>Minimal implementation of the Minecraft protocol for use in Advocatus</description>
-
+ 
      <dependencies>
          <dependency>
 @@ -26,8 +26,8 @@
@@ -691,12 +691,12 @@ index c62e0175..c7494241 100644
              <scope>compile</scope>
          </dependency>
 diff --git a/proxy/pom.xml b/proxy/pom.xml
-index 22c4f71b..f29f1558 100644
+index 22c4f71b..92f944a4 100644
 --- a/proxy/pom.xml
 +++ b/proxy/pom.xml
 @@ -4,18 +4,18 @@
      <modelVersion>4.0.0</modelVersion>
-
+ 
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-parent</artifactId>
@@ -706,7 +706,7 @@ index 22c4f71b..f29f1558 100644
 +        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
          <relativePath>../pom.xml</relativePath>
      </parent>
-
+ 
 -    <groupId>io.github.waterfallmc</groupId>
 -    <artifactId>waterfall-proxy</artifactId>
 -    <version>1.18-R0.1-SNAPSHOT</version>
@@ -714,11 +714,11 @@ index 22c4f71b..f29f1558 100644
 +    <artifactId>advocatus-proxy</artifactId>
 +    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
      <packaging>jar</packaging>
-
+ 
 -    <name>Waterfall-Proxy</name>
 +    <name>Advocatus-Proxy</name>
      <description>Proxy component of the Elastic Portal Suite</description>
-
+ 
      <properties>
 @@ -64,32 +64,32 @@
              <scope>compile</scope>
@@ -764,12 +764,12 @@ index 22c4f71b..f29f1558 100644
              <scope>compile</scope>
          </dependency>
 diff --git a/query/pom.xml b/query/pom.xml
-index 081bff62..088cbe57 100644
+index 081bff62..7a25a375 100644
 --- a/query/pom.xml
 +++ b/query/pom.xml
 @@ -4,19 +4,19 @@
      <modelVersion>4.0.0</modelVersion>
-
+ 
      <parent>
 -        <groupId>io.github.waterfallmc</groupId>
 -        <artifactId>waterfall-parent</artifactId>
