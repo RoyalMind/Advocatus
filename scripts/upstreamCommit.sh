@@ -12,7 +12,7 @@ advocatus=$(changelog Waterfall)
 updated=""
 logsuffix=""
 if [ ! -z "$advocatus" ]; then
-    logsuffix="$logsuffix\n\nAdvocatus Changes:\n$advocatus"
+    logsuffix="$logsuffix\n\nCambios de Waterfall:\n$advocatus"
     if [ -z "$updated" ]; then updated="Waterfall"; else updated="$updated/Waterfall"; fi
 fi
 disclaimer="Upstream ha publicado actualizaciones que parecen aplicarse y compilarse correctamente. \nEsta actualización no ha sido probada por PaperMC o RoyalMind y, como con CUALQUIER actualización, haga sus propias pruebas."
@@ -21,7 +21,7 @@ if [ ! -z "$1" ]; then
     disclaimer="$@"
 fi
 
-log="${UP_LOG_PREFIX}Actualizado Upstream ($updated)\n\n${disclaimer}${logsuffix}"
+log="${UP_LOG_PREFIX}Upstream Actualizado ($updated)\n\n${disclaimer}${logsuffix}"
 
 echo -e "$log" | git commit -F -
 
