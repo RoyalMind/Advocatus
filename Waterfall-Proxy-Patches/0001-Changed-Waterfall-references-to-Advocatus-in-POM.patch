@@ -1,11 +1,11 @@
-From 054dd69bf1e5f0e3ddd1f06e9ef54560c4eb286a Mon Sep 17 00:00:00 2001
+From 1ebeda6a98fd947084f3ccbc8c22d8acbbc03905 Mon Sep 17 00:00:00 2001
 From: Carlos Gallegos <40046747+CharlyZest@users.noreply.github.com>
 Date: Tue, 30 Nov 2021 18:46:38 -0600
 Subject: [PATCH] Changed Waterfall references to Advocatus in POM
 
 
 diff --git a/api/pom.xml b/api/pom.xml
-index 9b29dfca..670a349a 100644
+index 379b6023..15890d72 100644
 --- a/api/pom.xml
 +++ b/api/pom.xml
 @@ -4,42 +4,42 @@
@@ -150,7 +150,7 @@ index 0ad5dd16..fa333fb9 100644
      <dependencies>
          <dependency>
 diff --git a/config/pom.xml b/config/pom.xml
-index 2caffc27..f80405d6 100644
+index 7d32ea69..0b93878a 100644
 --- a/config/pom.xml
 +++ b/config/pom.xml
 @@ -4,19 +4,19 @@
@@ -255,7 +255,7 @@ index 465ebbf2..ac306a5b 100644
              <scope>compile</scope>
          </dependency>
 diff --git a/log4j/pom.xml b/log4j/pom.xml
-index d3512fca..e4090ff2 100644
+index 39e2fa42..1e324822 100644
 --- a/log4j/pom.xml
 +++ b/log4j/pom.xml
 @@ -3,19 +3,19 @@
@@ -285,7 +285,7 @@ index d3512fca..e4090ff2 100644
 +    <description>Simplistic and performant Log4j2 based logger and console API designed for use with Advocatus and Minecraft related applications.</description>
  
      <properties>
-         <log4j2.version>2.16.0</log4j2.version>
+         <log4j2.version>2.17.0</log4j2.version>
 diff --git a/module/cmd-alert/pom.xml b/module/cmd-alert/pom.xml
 index b41791f1..5bf5d5f8 100644
 --- a/module/cmd-alert/pom.xml
@@ -524,7 +524,7 @@ index 1eff2c93..ef08b8a3 100644
      <dependencies>
          <dependency>
 diff --git a/pom.xml b/pom.xml
-index 94fad2cc..bdcc41cf 100644
+index 505d1d14..475536c2 100644
 --- a/pom.xml
 +++ b/pom.xml
 @@ -4,48 +4,39 @@
@@ -591,7 +591,7 @@ index 94fad2cc..bdcc41cf 100644
          </developer>
      </developers>
  
-@@ -66,23 +57,24 @@
+@@ -66,26 +57,47 @@
      </modules>
  
      <scm>
@@ -624,19 +624,30 @@ index 94fad2cc..bdcc41cf 100644
          </snapshotRepository>
      </distributionManagement>
  
-@@ -99,6 +91,11 @@
-                 <enabled>true</enabled>
-             </snapshots>
-         </repository>
++    <!-- We really shouldn't depend on external repositories, but at least this is the Central staging one -->
++    <repositories>
++        <repository>
++            <id>sonatype-nexus-snapshots</id>
++            <name>Sonatype Nexus Snapshots</name>
++            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
++            <releases>
++                <enabled>false</enabled>
++            </releases>
++            <snapshots>
++                <enabled>true</enabled>
++            </snapshots>
++        </repository>
 +
 +        <repository>
 +            <id>royalmind-snapshots</id>
 +            <url>https://packages.royalmind.net/repository/maven-snapshots/</url>
 +        </repository>
-     </repositories>
- 
++    </repositories>
++
      <properties>
-@@ -412,8 +409,8 @@
+         <build.number>unknown</build.number>
+         <lombok.version>1.18.22</lombok.version>
+@@ -397,8 +409,8 @@
                                  </goals>
                                  <inherited>false</inherited>
                                  <configuration>
@@ -648,7 +659,7 @@ index 94fad2cc..bdcc41cf 100644
                                          api/target/generated-sources/delombok;
                                          chat/target/generated-sources/delombok
 diff --git a/protocol/pom.xml b/protocol/pom.xml
-index c62e0175..e163d3bb 100644
+index a783d9b0..0ae89995 100644
 --- a/protocol/pom.xml
 +++ b/protocol/pom.xml
 @@ -4,19 +4,19 @@
@@ -677,9 +688,9 @@ index c62e0175..e163d3bb 100644
 +    <name>Advocatus-Protocol</name>
 +    <description>Minimal implementation of the Minecraft protocol for use in Advocatus</description>
  
-     <dependencies>
-         <dependency>
-@@ -26,8 +26,8 @@
+     <!-- We really shouldn't depend on external repositories, but at least this is the Central staging one -->
+     <repositories>
+@@ -41,8 +41,8 @@
              <scope>compile</scope>
          </dependency>
          <dependency>
@@ -691,7 +702,7 @@ index c62e0175..e163d3bb 100644
              <scope>compile</scope>
          </dependency>
 diff --git a/proxy/pom.xml b/proxy/pom.xml
-index 22c4f71b..92f944a4 100644
+index cca0ef95..bb5474b3 100644
 --- a/proxy/pom.xml
 +++ b/proxy/pom.xml
 @@ -4,18 +4,18 @@
