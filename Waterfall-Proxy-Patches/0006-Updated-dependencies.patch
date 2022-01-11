@@ -1,0 +1,479 @@
+From e5df0f9512d3afcc3302d6bd13648846fcb91268 Mon Sep 17 00:00:00 2001
+From: Carlos Gallegos <40046747+CharlyZest@users.noreply.github.com>
+Date: Mon, 10 Jan 2022 23:57:23 -0600
+Subject: [PATCH] Updated dependencies
+
+
+diff --git a/api/pom.xml b/api/pom.xml
+index 15890d72..e06e3978 100644
+--- a/api/pom.xml
++++ b/api/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+-        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-api</artifactId>
+-    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>Advocatus-API</name>
+diff --git a/bootstrap/pom.xml b/bootstrap/pom.xml
+index 20bf1775..e0555ac0 100644
+--- a/bootstrap/pom.xml
++++ b/bootstrap/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+-        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-bootstrap</artifactId>
+-    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>Advocatus-Bootstrap</name>
+diff --git a/chat/pom.xml b/chat/pom.xml
+index fa333fb9..4e8b11b9 100644
+--- a/chat/pom.xml
++++ b/chat/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+-        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-chat</artifactId>
+-    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>Advocatus-Chat</name>
+diff --git a/config/pom.xml b/config/pom.xml
+index 0b93878a..e48367f3 100644
+--- a/config/pom.xml
++++ b/config/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+-        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-config</artifactId>
+-    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>Advocatus-Config</name>
+diff --git a/event/pom.xml b/event/pom.xml
+index 458a5e90..b6302c63 100644
+--- a/event/pom.xml
++++ b/event/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+-        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-event</artifactId>
+-    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>Advocatus-Event</name>
+diff --git a/log/pom.xml b/log/pom.xml
+index ac306a5b..18b27c51 100644
+--- a/log/pom.xml
++++ b/log/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+-        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-log</artifactId>
+-    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>Advocatus-Log</name>
+diff --git a/log4j/pom.xml b/log4j/pom.xml
+index 2d21430a..11b55a28 100644
+--- a/log4j/pom.xml
++++ b/log4j/pom.xml
+@@ -5,13 +5,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+-        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-log4j</artifactId>
+-    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>Advocatus-Log</name>
+diff --git a/module/cmd-alert/pom.xml b/module/cmd-alert/pom.xml
+index 5bf5d5f8..709c5ced 100644
+--- a/module/cmd-alert/pom.xml
++++ b/module/cmd-alert/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-module</artifactId>
+-        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-module-cmd-alert</artifactId>
+-    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>cmd_alert</name>
+diff --git a/module/cmd-find/pom.xml b/module/cmd-find/pom.xml
+index 35f3272e..0e02f2e4 100644
+--- a/module/cmd-find/pom.xml
++++ b/module/cmd-find/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-module</artifactId>
+-        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-module-cmd-find</artifactId>
+-    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>cmd_find</name>
+diff --git a/module/cmd-list/pom.xml b/module/cmd-list/pom.xml
+index ec8b4ebd..9e803c88 100644
+--- a/module/cmd-list/pom.xml
++++ b/module/cmd-list/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-module</artifactId>
+-        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-module-cmd-list</artifactId>
+-    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>cmd_list</name>
+diff --git a/module/cmd-send/pom.xml b/module/cmd-send/pom.xml
+index 66dd5394..c1851934 100644
+--- a/module/cmd-send/pom.xml
++++ b/module/cmd-send/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-module</artifactId>
+-        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-module-cmd-send</artifactId>
+-    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>cmd_send</name>
+diff --git a/module/cmd-server/pom.xml b/module/cmd-server/pom.xml
+index e51041ff..e22c299b 100644
+--- a/module/cmd-server/pom.xml
++++ b/module/cmd-server/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-module</artifactId>
+-        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-module-cmd-server</artifactId>
+-    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>cmd_server</name>
+diff --git a/module/pom.xml b/module/pom.xml
+index 9d08be06..ca63a3d9 100644
+--- a/module/pom.xml
++++ b/module/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+-        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-module</artifactId>
+-    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+     <packaging>pom</packaging>
+ 
+     <name>Advocatus Modules</name>
+diff --git a/module/reconnect-yaml/pom.xml b/module/reconnect-yaml/pom.xml
+index cdbcee7e..24566d9d 100644
+--- a/module/reconnect-yaml/pom.xml
++++ b/module/reconnect-yaml/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-module</artifactId>
+-        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.md-5</groupId>
+     <artifactId>bungeecord-module-reconnect-yaml</artifactId>
+-    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>reconnect_yaml</name>
+diff --git a/native/pom.xml b/native/pom.xml
+index ef08b8a3..a66d92d2 100644
+--- a/native/pom.xml
++++ b/native/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+-        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-native</artifactId>
+-    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>Advocatus-Native</name>
+diff --git a/pom.xml b/pom.xml
+index 7a5f3b4c..9989601f 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -12,7 +12,7 @@
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-parent</artifactId>
+-    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+     <packaging>pom</packaging>
+ 
+     <name>Advocatus-Parent</name>
+@@ -135,7 +135,7 @@
+         <dependency>
+             <groupId>net.royalmind.library</groupId>
+             <artifactId>Colorizer</artifactId>
+-            <version>1.1.0</version>
++            <version>2.0.0-SNAPSHOT</version>
+             <scope>compile</scope>
+         </dependency>
+     </dependencies>
+@@ -289,7 +289,7 @@
+                     <plugin>
+                         <groupId>org.projectlombok</groupId>
+                         <artifactId>lombok-maven-plugin</artifactId>
+-                        <version>1.18.20.0</version>
++                        <version>1.18.22.0</version>
+                         <executions>
+                             <execution>
+                                 <phase>package</phase>
+diff --git a/protocol/pom.xml b/protocol/pom.xml
+index 0ae89995..43ef9523 100644
+--- a/protocol/pom.xml
++++ b/protocol/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+-        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-protocol</artifactId>
+-    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>Advocatus-Protocol</name>
+diff --git a/proxy/pom.xml b/proxy/pom.xml
+index 3544b5f3..1291506d 100644
+--- a/proxy/pom.xml
++++ b/proxy/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+-        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-proxy</artifactId>
+-    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>Advocatus-Proxy</name>
+diff --git a/proxy/src/main/java/net/royalmind/software/advocatus/Advocatus.java b/proxy/src/main/java/net/royalmind/software/advocatus/Advocatus.java
+index 517a6104..e10508d2 100644
+--- a/proxy/src/main/java/net/royalmind/software/advocatus/Advocatus.java
++++ b/proxy/src/main/java/net/royalmind/software/advocatus/Advocatus.java
+@@ -85,7 +85,7 @@ public class Advocatus
+                 MESSAGES_CACHE.put(name, translation);
+             }
+ 
+-            translation = Colorizer.translate(( args.length == 0 ) ? translation : MessageFormat.format( translation, args ));
++            translation = Colorizer.decorate(( args.length == 0 ) ? translation : MessageFormat.format( translation, args ));
+         }
+         catch ( MissingResourceException ex ) { Logger.error("Fallo al cargar la traduccion de: \""+ name +"\"", ex); }
+ 
+diff --git a/proxy/src/main/java/net/royalmind/software/advocatus/util/Logger.java b/proxy/src/main/java/net/royalmind/software/advocatus/util/Logger.java
+index 1fc6d22a..54f9ebd5 100644
+--- a/proxy/src/main/java/net/royalmind/software/advocatus/util/Logger.java
++++ b/proxy/src/main/java/net/royalmind/software/advocatus/util/Logger.java
+@@ -20,7 +20,7 @@ public class Logger
+ 
+         for (int length = split.length, i = 0; i < length; ++i)
+         {
+-            Logger.logger.info(Colorizer.translate("" + split[i]));
++            Logger.logger.info(Colorizer.transale("" + split[i]));
+         }
+     }
+ 
+@@ -34,7 +34,7 @@ public class Logger
+ 
+         for (int length = split.length, i = 0; i < length; ++i)
+         {
+-            Logger.logger.warning(Colorizer.translate("" + split[i]));
++            Logger.logger.warning(Colorizer.transale("" + split[i]));
+         }
+     }
+ 
+@@ -47,7 +47,7 @@ public class Logger
+         final String[] split = String.format(texto, array).split("\n");
+ 
+         for (int length = split.length, i = 0; i < length; ++i) {
+-            Logger.logger.severe(Colorizer.translate("" + split[i]));
++            Logger.logger.severe(Colorizer.transale("" + split[i]));
+         }
+     }
+ 
+@@ -70,7 +70,7 @@ public class Logger
+      */
+     public static void error(final String texto, final Exception exception)
+     {
+-        logger.log(Level.SEVERE, Colorizer.translate("&c[ERROR] &r" + texto + "\t&cDetalle: " + exception.toString()));
++        logger.log(Level.SEVERE, Colorizer.transale("&c[ERROR] &r" + texto + "\t&cDetalle: " + exception.toString()));
+     }
+ 
+     /*
+@@ -79,7 +79,15 @@ public class Logger
+      */
+     public static void debug(final String texto, final Object... array)
+     {
+-        if (Settings.DEBUGMODE) { info(String.format(texto, array), new Object[0]); }
++        if (Settings.DEBUGMODE)
++        {
++            final String[] split = String.format(texto, array).split("\n");
++
++            for (int length = split.length, i = 0; i < length; ++i)
++            {
++                Logger.logger.info(Colorizer.decorate("" + split[i]));
++            }
++        }
+     }
+ 
+     /*
+@@ -91,7 +99,7 @@ public class Logger
+         if (Settings.DEBUGMODE) { error(String.format(texto, array), new Object[0]); }
+     }
+ 
+-    public static String getLine() { return Colorizer.translate("&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a="); }
++    public static String getLine() { return Colorizer.transale("&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a="); }
+ 
+     static { Logger.logger = BungeeCord.getInstance().getLogger(); }
+ }
+diff --git a/query/pom.xml b/query/pom.xml
+index 7a25a375..945a937e 100644
+--- a/query/pom.xml
++++ b/query/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+-        <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-query</artifactId>
+-    <version>1.18-R0.1-v1.0.4-SNAPSHOT</version>
++    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>Advocatus-Query</name>
+-- 
+2.33.0.windows.2
+
