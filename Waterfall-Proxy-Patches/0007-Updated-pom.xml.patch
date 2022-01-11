@@ -1,0 +1,34 @@
+From 596d56a1ff44aab3cce88382112e8dfeb5100942 Mon Sep 17 00:00:00 2001
+From: Carlos Gallegos <40046747+CharlyZest@users.noreply.github.com>
+Date: Tue, 11 Jan 2022 01:02:25 -0600
+Subject: [PATCH] Updated pom.xml
+
+
+diff --git a/pom.xml b/pom.xml
+index 9989601f..666e6929 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -93,9 +93,19 @@
+         </repository>
+ 
+         <repository>
+-            <id>royalmind</id>
++            <id>exceptionflug</id>
++            <url>https://mvn.exceptionflug.de/repository/exceptionflug-public/</url>
++        </repository>
++
++        <repository>
++            <id>royalmind-releases</id>
+             <url>https://packages.royalmind.net/repository/maven-releases/</url>
+         </repository>
++
++        <repository>
++            <id>royalmind-snapshots</id>
++            <url>https://packages.royalmind.net/repository/maven-snapshots/</url>
++        </repository>
+     </repositories>
+ 
+     <properties>
+-- 
+2.33.0.windows.2
+
