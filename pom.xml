@@ -18,9 +18,14 @@
     </modules>
 
     <distributionManagement>
+        <repository>
+            <id>royalmind-releases</id>
+            <url>https://repo.royalmind.net/repository/maven-releases/</url>
+        </repository>
+
         <snapshotRepository>
             <id>royalmind-snapshots</id>
-            <url>https://repo.royalmind.net/repository/maven-releases/</url>
+            <url>https://repo.royalmind.net/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
     <ciManagement>
