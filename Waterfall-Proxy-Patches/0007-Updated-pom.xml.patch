@@ -1,14 +1,336 @@
-From 7ec4f2cb30fcb60afedbb884b49a7c205d5e3a67 Mon Sep 17 00:00:00 2001
+From 755830e8505b2ceb0f1e76363cb1fe39e06d90e3 Mon Sep 17 00:00:00 2001
 From: Carlos Gallegos <40046747+CharlyZest@users.noreply.github.com>
 Date: Tue, 11 Jan 2022 01:02:25 -0600
 Subject: [PATCH] Updated pom.xml
 
 
+diff --git a/api/pom.xml b/api/pom.xml
+index e06e3978..6826721c 100644
+--- a/api/pom.xml
++++ b/api/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+-        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++        <version>1.18-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-api</artifactId>
+-    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++    <version>1.18-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>Advocatus-API</name>
+diff --git a/bootstrap/pom.xml b/bootstrap/pom.xml
+index e0555ac0..88ea4fb1 100644
+--- a/bootstrap/pom.xml
++++ b/bootstrap/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+-        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++        <version>1.18-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-bootstrap</artifactId>
+-    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++    <version>1.18-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>Advocatus-Bootstrap</name>
+diff --git a/chat/pom.xml b/chat/pom.xml
+index 4e8b11b9..21a0c040 100644
+--- a/chat/pom.xml
++++ b/chat/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+-        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++        <version>1.18-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-chat</artifactId>
+-    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++    <version>1.18-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>Advocatus-Chat</name>
+diff --git a/config/pom.xml b/config/pom.xml
+index e48367f3..b77d1d60 100644
+--- a/config/pom.xml
++++ b/config/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+-        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++        <version>1.18-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-config</artifactId>
+-    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++    <version>1.18-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>Advocatus-Config</name>
+diff --git a/event/pom.xml b/event/pom.xml
+index b6302c63..e57ef068 100644
+--- a/event/pom.xml
++++ b/event/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+-        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++        <version>1.18-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-event</artifactId>
+-    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++    <version>1.18-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>Advocatus-Event</name>
+diff --git a/log/pom.xml b/log/pom.xml
+index 18b27c51..8981b958 100644
+--- a/log/pom.xml
++++ b/log/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+-        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++        <version>1.18-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-log</artifactId>
+-    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++    <version>1.18-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>Advocatus-Log</name>
+diff --git a/log4j/pom.xml b/log4j/pom.xml
+index 11b55a28..c5d2b9f0 100644
+--- a/log4j/pom.xml
++++ b/log4j/pom.xml
+@@ -5,13 +5,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+-        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++        <version>1.18-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-log4j</artifactId>
+-    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++    <version>1.18-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>Advocatus-Log</name>
+diff --git a/module/cmd-alert/pom.xml b/module/cmd-alert/pom.xml
+index 709c5ced..468d7bd7 100644
+--- a/module/cmd-alert/pom.xml
++++ b/module/cmd-alert/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-module</artifactId>
+-        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++        <version>1.18-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-module-cmd-alert</artifactId>
+-    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++    <version>1.18-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>cmd_alert</name>
+diff --git a/module/cmd-find/pom.xml b/module/cmd-find/pom.xml
+index 0e02f2e4..04797c5d 100644
+--- a/module/cmd-find/pom.xml
++++ b/module/cmd-find/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-module</artifactId>
+-        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++        <version>1.18-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-module-cmd-find</artifactId>
+-    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++    <version>1.18-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>cmd_find</name>
+diff --git a/module/cmd-list/pom.xml b/module/cmd-list/pom.xml
+index 9e803c88..e845f980 100644
+--- a/module/cmd-list/pom.xml
++++ b/module/cmd-list/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-module</artifactId>
+-        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++        <version>1.18-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-module-cmd-list</artifactId>
+-    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++    <version>1.18-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>cmd_list</name>
+diff --git a/module/cmd-send/pom.xml b/module/cmd-send/pom.xml
+index c1851934..74e7ae29 100644
+--- a/module/cmd-send/pom.xml
++++ b/module/cmd-send/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-module</artifactId>
+-        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++        <version>1.18-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-module-cmd-send</artifactId>
+-    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++    <version>1.18-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>cmd_send</name>
+diff --git a/module/cmd-server/pom.xml b/module/cmd-server/pom.xml
+index e22c299b..b3587567 100644
+--- a/module/cmd-server/pom.xml
++++ b/module/cmd-server/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-module</artifactId>
+-        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++        <version>1.18-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-module-cmd-server</artifactId>
+-    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++    <version>1.18-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>cmd_server</name>
+diff --git a/module/pom.xml b/module/pom.xml
+index ca63a3d9..05570371 100644
+--- a/module/pom.xml
++++ b/module/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+-        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++        <version>1.18-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-module</artifactId>
+-    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++    <version>1.18-R0.1-SNAPSHOT</version>
+     <packaging>pom</packaging>
+ 
+     <name>Advocatus Modules</name>
+diff --git a/module/reconnect-yaml/pom.xml b/module/reconnect-yaml/pom.xml
+index 24566d9d..1940d622 100644
+--- a/module/reconnect-yaml/pom.xml
++++ b/module/reconnect-yaml/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-module</artifactId>
+-        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++        <version>1.18-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.md-5</groupId>
+     <artifactId>bungeecord-module-reconnect-yaml</artifactId>
+-    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++    <version>1.18-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>reconnect_yaml</name>
+diff --git a/native/pom.xml b/native/pom.xml
+index a66d92d2..2f2d4632 100644
+--- a/native/pom.xml
++++ b/native/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+-        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++        <version>1.18-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-native</artifactId>
+-    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++    <version>1.18-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>Advocatus-Native</name>
 diff --git a/pom.xml b/pom.xml
-index 9989601f..d16e74a2 100644
+index 9989601f..a9a6f242 100644
 --- a/pom.xml
 +++ b/pom.xml
-@@ -69,12 +69,12 @@
+@@ -12,7 +12,7 @@
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-parent</artifactId>
+-    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++    <version>1.18-R0.1-SNAPSHOT</version>
+     <packaging>pom</packaging>
+ 
+     <name>Advocatus-Parent</name>
+@@ -57,10 +57,11 @@
+     </modules>
+ 
+     <scm>
+-        <connection>scm:git:git@github.com:com:RoyalMind/Advocatus.git</connection>
++        <connection>scm:git:git@github.com:RoyalMind/Advocatus.git</connection>
+         <developerConnection>scm:git:git@github.com:RoyalMind/Advocatus.git</developerConnection>
+         <url>git@github.com:RoyalMind/Advocatus.git</url>
+     </scm>
++
+     <issueManagement>
+         <system>GitHub</system>
+         <url>https://github.com/RoyalMind/Advocatus/issues</url>
+@@ -69,12 +70,12 @@
      <distributionManagement>
          <repository>
              <id>royalmind-releases</id>
@@ -23,7 +345,7 @@ index 9989601f..d16e74a2 100644
          </snapshotRepository>
      </distributionManagement>
  
-@@ -93,8 +93,18 @@
+@@ -93,8 +94,18 @@
          </repository>
  
          <repository>
@@ -44,7 +366,7 @@ index 9989601f..d16e74a2 100644
          </repository>
      </repositories>
  
-@@ -251,9 +261,9 @@
+@@ -251,9 +262,9 @@
              </build>
          </profile>
          <profile>
@@ -56,6 +378,46 @@ index 9989601f..d16e74a2 100644
              </activation>
              <build>
                  <pluginManagement>
+diff --git a/protocol/pom.xml b/protocol/pom.xml
+index 43ef9523..de35bcb6 100644
+--- a/protocol/pom.xml
++++ b/protocol/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+-        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++        <version>1.18-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-protocol</artifactId>
+-    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++    <version>1.18-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>Advocatus-Protocol</name>
+diff --git a/proxy/pom.xml b/proxy/pom.xml
+index 1291506d..c7b2d44d 100644
+--- a/proxy/pom.xml
++++ b/proxy/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+-        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++        <version>1.18-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-proxy</artifactId>
+-    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++    <version>1.18-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>Advocatus-Proxy</name>
 diff --git a/proxy/src/main/java/net/royalmind/software/advocatus/util/Logger.java b/proxy/src/main/java/net/royalmind/software/advocatus/util/Logger.java
 index 54f9ebd5..9c11de11 100644
 --- a/proxy/src/main/java/net/royalmind/software/advocatus/util/Logger.java
@@ -103,6 +465,26 @@ index 54f9ebd5..9c11de11 100644
 -}
 +}
 \ No newline at end of file
+diff --git a/query/pom.xml b/query/pom.xml
+index 945a937e..396a950e 100644
+--- a/query/pom.xml
++++ b/query/pom.xml
+@@ -6,13 +6,13 @@
+     <parent>
+         <groupId>net.royalmind.software.advocatus</groupId>
+         <artifactId>advocatus-parent</artifactId>
+-        <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++        <version>1.18-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>net.royalmind.software.advocatus</groupId>
+     <artifactId>advocatus-query</artifactId>
+-    <version>1.18-R0.1-v1.0.5-SNAPSHOT</version>
++    <version>1.18-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+     <name>Advocatus-Query</name>
 -- 
 2.33.0.windows.2
 

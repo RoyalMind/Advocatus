@@ -1,4 +1,4 @@
-From 81e5a644bbcf5db8dfd21d3b6a62aa4363c3c61b Mon Sep 17 00:00:00 2001
+From fdeb82ed81348d0d6a03385959d7427c227c214d Mon Sep 17 00:00:00 2001
 From: Carlos Gallegos <40046747+CharlyZest@users.noreply.github.com>
 Date: Tue, 30 Nov 2021 19:18:26 -0600
 Subject: [PATCH] Rebranding
@@ -85,7 +85,7 @@ index a4516ed9..7a7e6ad9 100644
          }
  
 diff --git a/module/pom.xml b/module/pom.xml
-index 0d799bb3..0e7c6fe9 100644
+index 0b4fec03..9d08be06 100644
 --- a/module/pom.xml
 +++ b/module/pom.xml
 @@ -28,7 +28,7 @@
@@ -98,7 +98,7 @@ index 0d799bb3..0e7c6fe9 100644
          <maven.javadoc.skip>true</maven.javadoc.skip>
      </properties>
 diff --git a/pom.xml b/pom.xml
-index 22b23d27..7f293b9d 100644
+index 475536c2..c9385226 100644
 --- a/pom.xml
 +++ b/pom.xml
 @@ -132,6 +132,12 @@
@@ -132,7 +132,7 @@ index a310844d..bba924d9 100644
      public int expectedMaxLength(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion) {
          return -1;
 diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/MinecraftDecoder.java b/protocol/src/main/java/net/md_5/bungee/protocol/MinecraftDecoder.java
-index 01d35f41..d67acd55 100644
+index ac83e325..09408157 100644
 --- a/protocol/src/main/java/net/md_5/bungee/protocol/MinecraftDecoder.java
 +++ b/protocol/src/main/java/net/md_5/bungee/protocol/MinecraftDecoder.java
 @@ -105,13 +105,13 @@ public class MinecraftDecoder extends MessageToMessageDecoder<ByteBuf>
@@ -211,10 +211,10 @@ index 0db3d76a..88b3ab13 100644
  
          if ( !options.has( "noconsole" ) )
 diff --git a/proxy/src/main/java/net/md_5/bungee/UserConnection.java b/proxy/src/main/java/net/md_5/bungee/UserConnection.java
-index 871a2990..bc5e26f2 100644
+index 4a858f31..ff73da14 100644
 --- a/proxy/src/main/java/net/md_5/bungee/UserConnection.java
 +++ b/proxy/src/main/java/net/md_5/bungee/UserConnection.java
-@@ -771,4 +771,12 @@ public final class UserConnection implements ProxiedPlayer
+@@ -768,4 +768,12 @@ public final class UserConnection implements ProxiedPlayer
          return entityRewrite == net.md_5.bungee.entitymap.EntityMap_Dummy.INSTANCE;
      }
      // Waterfall end
