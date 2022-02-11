@@ -1,4 +1,4 @@
-From a794ebf76117914ad3128513b241e9183feaea1e Mon Sep 17 00:00:00 2001
+From add7809eb6312f1c19977082768640f818d8c02a Mon Sep 17 00:00:00 2001
 From: Carlos Gallegos <40046747+CharlyZest@users.noreply.github.com>
 Date: Wed, 1 Dec 2021 03:27:22 -0600
 Subject: [PATCH] Separate package with sources of Advocatus.
@@ -107,10 +107,10 @@ index 11a5cf21..a8120fe5 100644
 +    /* Advocatus End */
  }
 diff --git a/proxy/src/main/java/net/md_5/bungee/connection/DownstreamBridge.java b/proxy/src/main/java/net/md_5/bungee/connection/DownstreamBridge.java
-index d3650ff8..71076f3f 100644
+index 97c4b210..2cb8d589 100644
 --- a/proxy/src/main/java/net/md_5/bungee/connection/DownstreamBridge.java
 +++ b/proxy/src/main/java/net/md_5/bungee/connection/DownstreamBridge.java
-@@ -26,6 +26,7 @@ import java.util.List;
+@@ -24,6 +24,7 @@ import java.util.List;
  import java.util.Map;
  import java.util.Objects; // Waterfall
  import lombok.RequiredArgsConstructor;
@@ -118,7 +118,7 @@ index d3650ff8..71076f3f 100644
  import net.md_5.bungee.ServerConnection;
  import net.md_5.bungee.ServerConnection.KeepAliveData;
  import net.md_5.bungee.UserConnection;
-@@ -294,7 +295,7 @@ public class DownstreamBridge extends PacketHandler
+@@ -299,7 +300,7 @@ public class DownstreamBridge extends PacketHandler
              Preconditions.checkState( !serverBrand.contains( bungee.getName() ), "Cannot connect proxy to itself!" );
  
              brand = ByteBufAllocator.DEFAULT.heapBuffer();
