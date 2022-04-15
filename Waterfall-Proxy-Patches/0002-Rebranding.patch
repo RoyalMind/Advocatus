@@ -1,4 +1,4 @@
-From fdeb82ed81348d0d6a03385959d7427c227c214d Mon Sep 17 00:00:00 2001
+From 4bfef2e94fa9b5243c8c16b8517de99870bcde73 Mon Sep 17 00:00:00 2001
 From: Carlos Gallegos <40046747+CharlyZest@users.noreply.github.com>
 Date: Tue, 30 Nov 2021 19:18:26 -0600
 Subject: [PATCH] Rebranding
@@ -153,7 +153,7 @@ index ac83e325..09408157 100644
  
      private void doLengthSanityChecks(ByteBuf buf, DefinedPacket packet,
 diff --git a/proxy/src/main/java/net/md_5/bungee/BungeeCord.java b/proxy/src/main/java/net/md_5/bungee/BungeeCord.java
-index 07d74c67..11a5cf21 100644
+index 9ef2b77a..5b45d2a6 100644
 --- a/proxy/src/main/java/net/md_5/bungee/BungeeCord.java
 +++ b/proxy/src/main/java/net/md_5/bungee/BungeeCord.java
 @@ -188,7 +188,7 @@ public class BungeeCord extends ProxyServer
@@ -172,9 +172,9 @@ index 07d74c67..11a5cf21 100644
 -        getLogger().info( "Thank you and goodbye" );
 +        getLogger().info( "Muy bien apreciable persona, gracias por tu preferncia. Te me cuidas, un beso en la pantunfla :*" );
          // Need to close loggers after last message!
-         for ( Handler handler : getLogger().getHandlers() )
-         {
-@@ -539,7 +539,7 @@ public class BungeeCord extends ProxyServer
+         org.apache.logging.log4j.LogManager.shutdown(); // Waterfall
+ 
+@@ -536,7 +536,7 @@ public class BungeeCord extends ProxyServer
      @Override
      public String getName()
      {
@@ -211,10 +211,10 @@ index 0db3d76a..88b3ab13 100644
  
          if ( !options.has( "noconsole" ) )
 diff --git a/proxy/src/main/java/net/md_5/bungee/UserConnection.java b/proxy/src/main/java/net/md_5/bungee/UserConnection.java
-index 4a858f31..ff73da14 100644
+index 0d6aff64..dd4536d5 100644
 --- a/proxy/src/main/java/net/md_5/bungee/UserConnection.java
 +++ b/proxy/src/main/java/net/md_5/bungee/UserConnection.java
-@@ -768,4 +768,12 @@ public final class UserConnection implements ProxiedPlayer
+@@ -772,4 +772,12 @@ public final class UserConnection implements ProxiedPlayer
          return entityRewrite == net.md_5.bungee.entitymap.EntityMap_Dummy.INSTANCE;
      }
      // Waterfall end
