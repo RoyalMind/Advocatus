@@ -1,11 +1,11 @@
-From add7809eb6312f1c19977082768640f818d8c02a Mon Sep 17 00:00:00 2001
+From 21487969ad088a7985ded488204467e17d42ca01 Mon Sep 17 00:00:00 2001
 From: Carlos Gallegos <40046747+CharlyZest@users.noreply.github.com>
 Date: Wed, 1 Dec 2021 03:27:22 -0600
 Subject: [PATCH] Separate package with sources of Advocatus.
 
 
 diff --git a/proxy/src/main/java/net/md_5/bungee/BungeeCord.java b/proxy/src/main/java/net/md_5/bungee/BungeeCord.java
-index 11a5cf21..a8120fe5 100644
+index 5b45d2a6..d539e13a 100644
 --- a/proxy/src/main/java/net/md_5/bungee/BungeeCord.java
 +++ b/proxy/src/main/java/net/md_5/bungee/BungeeCord.java
 @@ -93,6 +93,7 @@ import net.md_5.bungee.protocol.packet.PluginMessage;
@@ -47,7 +47,7 @@ index 11a5cf21..a8120fe5 100644
                      } else
                      {
                          getLogger().log( Level.WARNING, "Could not bind to host " + info.getSocketAddress(), future.cause() );
-@@ -537,10 +538,7 @@ public class BungeeCord extends ProxyServer
+@@ -534,10 +535,7 @@ public class BungeeCord extends ProxyServer
      }
  
      @Override
@@ -59,7 +59,7 @@ index 11a5cf21..a8120fe5 100644
  
      @Override
      public String getVersion()
-@@ -550,33 +548,11 @@ public class BungeeCord extends ProxyServer
+@@ -547,33 +545,11 @@ public class BungeeCord extends ProxyServer
  
      public void reloadMessages()
      {
@@ -95,7 +95,7 @@ index 11a5cf21..a8120fe5 100644
  
      @Override
      @SuppressWarnings("unchecked")
-@@ -813,4 +789,10 @@ public class BungeeCord extends ProxyServer
+@@ -810,4 +786,10 @@ public class BungeeCord extends ProxyServer
      {
          return new BungeeTitle();
      }

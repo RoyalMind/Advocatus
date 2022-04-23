@@ -51,56 +51,56 @@ jobs:
         run: ./advocatus p
 
       - name: Building artifacts for Java ${{ matrix.java }}
-        run: mvn clean package -Dbuild.number=${{ github.run_number }} -B -T 4
+        run: mvn clean package -Dbuild.number=${{ github.run_number }} -B
 
       - name: Deploying libraries to our maven repository
-        run: mvn deploy -Dbuild.number=${{ github.run_number }} -B -T 4
+        run: mvn clean deploy -Dbuild.number=${{ github.run_number }} -B
 
       # An artifact is generated in a compressed file according to each JDK build version.
       - name: Upload Artifact Advocatus Proxy for Java ${{ matrix.java }}
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: Java-JDK${{ matrix.java }} Advocatus Build ${{ github.run_number }}
+          name: JDK-${{ matrix.java }} Advocatus Build ${{ github.run_number }}
           path: Advocatus-Proxy/bootstrap/target/Advocatus.jar
 
       # cmd_alert
       - name: Upload Artifact Advocatus cmd-alert for Java ${{ matrix.java }}
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: Java-JDK${{ matrix.java }} Advocatus modules Build ${{ github.run_number }}
+          name: JDK-${{ matrix.java }} Advocatus modules Build ${{ github.run_number }}
           path: Advocatus-Proxy/module/cmd-alert/target/cmd_alert.jar
 
       # cmd_find.jar
       - name: Upload Artifact Advocatus cmd_find for Java ${{ matrix.java }}
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: Java-JDK${{ matrix.java }} Advocatus modules Build ${{ github.run_number }}
+          name: JDK-${{ matrix.java }} Advocatus modules Build ${{ github.run_number }}
           path: Advocatus-Proxy/module/cmd-find/target/cmd_find.jar
 
       # cmd_list.jar
       - name: Upload Artifact Advocatus cmd-list for Java ${{ matrix.java }}
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: Java-JDK${{ matrix.java }} Advocatus modules Build ${{ github.run_number }}
+          name: JDK-${{ matrix.java }} Advocatus modules Build ${{ github.run_number }}
           path: Advocatus-Proxy/module/cmd-list/target/cmd_list.jar
 
       # cmd_send.jar
       - name: Upload Artifact Advocatus cmd-send for Java ${{ matrix.java }}
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: Java-JDK${{ matrix.java }} Advocatus modules Build ${{ github.run_number }}
+          name: JDK-${{ matrix.java }} Advocatus modules Build ${{ github.run_number }}
           path: Advocatus-Proxy/module/cmd-send/target/cmd_send.jar
 
       # cmd_server.jar
       - name: Upload Artifact Advocatus cmd_server for Java ${{ matrix.java }}
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: Java-JDK${{ matrix.java }} Advocatus modules Build ${{ github.run_number }}
+          name: JDK-${{ matrix.java }} Advocatus modules Build ${{ github.run_number }}
           path: Advocatus-Proxy/module/cmd-server/target/cmd_server.jar
 
       # reconnect_yaml.jar
       - name: Upload Artifact Advocatus reconnect_yaml for Java ${{ matrix.java }}
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: Java-JDK${{ matrix.java }} Advocatus modules Build ${{ github.run_number }}
+          name: JDK-${{ matrix.java }} Advocatus modules Build ${{ github.run_number }}
           path: Advocatus-Proxy/module/reconnect-yaml/target/reconnect_yaml.jar

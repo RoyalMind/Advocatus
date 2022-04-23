@@ -47,7 +47,7 @@ jobs:
         run: ./advocatus p
 
       - name: Compiling project
-        run: mvn clean compile test
+        run: mvn clean compile test -B
         
       - name: Finishing verification
         run: mvn clean
