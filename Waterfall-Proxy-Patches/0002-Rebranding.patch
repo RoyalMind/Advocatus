@@ -1,4 +1,4 @@
-From 4bfef2e94fa9b5243c8c16b8517de99870bcde73 Mon Sep 17 00:00:00 2001
+From bbf440433babb1c192eccf0cf24eb12c07051770 Mon Sep 17 00:00:00 2001
 From: Carlos Gallegos <40046747+CharlyZest@users.noreply.github.com>
 Date: Tue, 30 Nov 2021 19:18:26 -0600
 Subject: [PATCH] Rebranding
@@ -211,10 +211,10 @@ index 0db3d76a..88b3ab13 100644
  
          if ( !options.has( "noconsole" ) )
 diff --git a/proxy/src/main/java/net/md_5/bungee/UserConnection.java b/proxy/src/main/java/net/md_5/bungee/UserConnection.java
-index 0d6aff64..dd4536d5 100644
+index 7c52ee9a..503d5db9 100644
 --- a/proxy/src/main/java/net/md_5/bungee/UserConnection.java
 +++ b/proxy/src/main/java/net/md_5/bungee/UserConnection.java
-@@ -772,4 +772,12 @@ public final class UserConnection implements ProxiedPlayer
+@@ -769,4 +769,12 @@ public final class UserConnection implements ProxiedPlayer
          return entityRewrite == net.md_5.bungee.entitymap.EntityMap_Dummy.INSTANCE;
      }
      // Waterfall end
