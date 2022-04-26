@@ -1,4 +1,4 @@
-From 4ef8898153b990337f66f4bae289e91430d6594f Mon Sep 17 00:00:00 2001
+From ed9625082817f8aca086a756682ca09235d5a1c5 Mon Sep 17 00:00:00 2001
 From: Carlos Gallegos <40046747+CharlyZest@users.noreply.github.com>
 Date: Tue, 11 Jan 2022 01:02:25 -0600
 Subject: [PATCH] Updated pom.xml
@@ -428,7 +428,7 @@ index 1291506d..c7b2d44d 100644
  
      <name>Advocatus-Proxy</name>
 diff --git a/proxy/src/main/java/net/royalmind/software/advocatus/util/Logger.java b/proxy/src/main/java/net/royalmind/software/advocatus/util/Logger.java
-index 54f9ebd5..9c11de11 100644
+index 54f9ebd5..b881b9d9 100644
 --- a/proxy/src/main/java/net/royalmind/software/advocatus/util/Logger.java
 +++ b/proxy/src/main/java/net/royalmind/software/advocatus/util/Logger.java
 @@ -20,7 +20,7 @@ public class Logger
@@ -467,8 +467,12 @@ index 54f9ebd5..9c11de11 100644
      }
  
      /*
-@@ -102,4 +102,4 @@ public class Logger
-     public static String getLine() { return Colorizer.transale("&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a="); }
+@@ -99,7 +99,7 @@ public class Logger
+         if (Settings.DEBUGMODE) { error(String.format(texto, array), new Object[0]); }
+     }
+ 
+-    public static String getLine() { return Colorizer.transale("&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a="); }
++    public static String getLine() { return Colorizer.translate("&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a="); }
  
      static { Logger.logger = BungeeCord.getInstance().getLogger(); }
 -}
