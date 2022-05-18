@@ -1,4 +1,4 @@
-From 16c952645ce1d6466ec61150bdf2b3af6b0a7c01 Mon Sep 17 00:00:00 2001
+From c2f4bd5c36adb33b0b0cde9855ad5e1ac376927d Mon Sep 17 00:00:00 2001
 From: Carlos Gallegos <40046747+CharlyZest@users.noreply.github.com>
 Date: Tue, 30 Nov 2021 18:46:38 -0600
 Subject: [PATCH] Changed Waterfall references to Advocatus in POM
@@ -255,7 +255,7 @@ index 465ebbf2..ac306a5b 100644
              <scope>compile</scope>
          </dependency>
 diff --git a/log4j/pom.xml b/log4j/pom.xml
-index 127d0c14..2d21430a 100644
+index 24a5f780..7423553b 100644
 --- a/log4j/pom.xml
 +++ b/log4j/pom.xml
 @@ -3,19 +3,19 @@
@@ -285,7 +285,7 @@ index 127d0c14..2d21430a 100644
 +    <description>Simplistic and performant Log4j2 based logger and console API designed for use with Advocatus and Minecraft related applications.</description>
  
      <properties>
-         <log4j2.version>2.17.1</log4j2.version>
+         <log4j2.version>2.17.2</log4j2.version>
 diff --git a/module/cmd-alert/pom.xml b/module/cmd-alert/pom.xml
 index b41791f1..5bf5d5f8 100644
 --- a/module/cmd-alert/pom.xml
@@ -702,7 +702,7 @@ index a783d9b0..0ae89995 100644
              <scope>compile</scope>
          </dependency>
 diff --git a/proxy/pom.xml b/proxy/pom.xml
-index cca0ef95..bb5474b3 100644
+index 23bfa61d..44998e75 100644
 --- a/proxy/pom.xml
 +++ b/proxy/pom.xml
 @@ -4,18 +4,18 @@

@@ -1,4 +1,4 @@
-From bbf440433babb1c192eccf0cf24eb12c07051770 Mon Sep 17 00:00:00 2001
+From ae86f4019a4f99df94ae9cd489ffa919e1a704be Mon Sep 17 00:00:00 2001
 From: Carlos Gallegos <40046747+CharlyZest@users.noreply.github.com>
 Date: Tue, 30 Nov 2021 19:18:26 -0600
 Subject: [PATCH] Rebranding
@@ -296,10 +296,10 @@ index 0644b8cd..b976b0f6 100644
  
              int maxPlayers = get( "max_players", 1, val );
 diff --git a/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java b/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java
-index 4afab05d..c3eb6ccb 100644
+index bba6d324..985183ad 100644
 --- a/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java
 +++ b/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java
-@@ -701,4 +701,10 @@ public class InitialHandler extends PacketHandler implements PendingConnection
+@@ -702,4 +702,10 @@ public class InitialHandler extends PacketHandler implements PendingConnection
              brandMessage = input;
          }
      }
