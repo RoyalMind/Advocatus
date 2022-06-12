@@ -28,6 +28,7 @@
             <url>https://repo.royalmind.net/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
+
     <ciManagement>
         <system>jenkins</system>
         <url>https://ci.royalmind.net/job/Advocatus</url>
