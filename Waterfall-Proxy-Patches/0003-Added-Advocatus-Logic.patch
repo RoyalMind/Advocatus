@@ -1,11 +1,146 @@
-From 21487969ad088a7985ded488204467e17d42ca01 Mon Sep 17 00:00:00 2001
+From 65fa7f0638adf04720519be9f64a4cb1daecba2f Mon Sep 17 00:00:00 2001
 From: Carlos Gallegos <40046747+CharlyZest@users.noreply.github.com>
-Date: Wed, 1 Dec 2021 03:27:22 -0600
-Subject: [PATCH] Separate package with sources of Advocatus.
+Date: Sun, 12 Jun 2022 01:07:57 -0500
+Subject: [PATCH] Added Advocatus Logic
 
 
+diff --git a/pom.xml b/pom.xml
+index 84243548..88376685 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -57,10 +57,11 @@
+     </modules>
+ 
+     <scm>
+-        <connection>scm:git@github.com:RoyalMind/Advocatus.git</connection>
++        <connection>scm:git:git@github.com:RoyalMind/Advocatus.git</connection>
+         <developerConnection>scm:git@github.com:RoyalMind/Advocatus.git</developerConnection>
+         <url>git@github.com:RoyalMind/Advocatus.git</url>
+     </scm>
++
+     <issueManagement>
+         <system>GitHub</system>
+         <url>https://github.com/RoyalMind/Advocatus/issues</url>
+@@ -92,6 +93,11 @@
+             </snapshots>
+         </repository>
+ 
++        <repository>
++            <id>exceptionflug</id>
++            <url>https://mvn.exceptionflug.de/repository/exceptionflug-public/</url>
++        </repository>
++
+         <repository>
+             <id>royalmind-snapshots</id>
+             <url>https://repo.royalmind.net/repository/maven-snapshots/</url>
+@@ -133,9 +139,9 @@
+             <scope>provided</scope>
+         </dependency>
+         <dependency>
+-            <groupId>net.royalmind.minecraft.library</groupId>
++            <groupId>net.royalmind.library</groupId>
+             <artifactId>Colorizer</artifactId>
+-            <version>1.0.2-SNAPSHOT</version>
++            <version>2.0.1-SNAPSHOT</version>
+             <scope>compile</scope>
+         </dependency>
+     </dependencies>
+@@ -171,33 +177,6 @@
+                     <doclint>none</doclint>
+                 </configuration>
+             </plugin>
+-            <!-- Alow manging of import orders to allow avoiding conflicts
+-             <plugin>
+-                <groupId>org.apache.maven.plugins</groupId>
+-                <artifactId>maven-checkstyle-plugin</artifactId>
+-                <version>3.1.2</version>
+-                <executions>
+-                    <execution>
+-                        <phase>process-classes</phase>
+-                        <goals>
+-                            <goal>check</goal>
+-                        </goals>
+-                    </execution>
+-                </executions>
+-                <configuration>
+-                    <configLocation>checkstyle.xml</configLocation>
+-                    <includeResources>false</includeResources>
+-                    <includeTestSourceDirectory>true</includeTestSourceDirectory>
+-                </configuration>
+-                <dependencies>
+-                    <dependency>
+-                        <groupId>com.puppycrawl.tools</groupId>
+-                        <artifactId>checkstyle</artifactId>
+-                        <version>8.45.1</version>
+-                    </dependency>
+-                </dependencies>
+-            </plugin>
+-            -->
+             <plugin>
+                 <groupId>org.codehaus.mojo</groupId>
+                 <artifactId>animal-sniffer-maven-plugin</artifactId>
+@@ -251,9 +230,9 @@
+             </build>
+         </profile>
+         <profile>
+-            <id>jdk-15-javadoc</id>
++            <id>jdk-16-javadoc</id>
+             <activation>
+-                <jdk>[15,)</jdk>
++                <jdk>[16,)</jdk>
+             </activation>
+             <build>
+                 <pluginManagement>
+diff --git a/proxy/pom.xml b/proxy/pom.xml
+index 2b2a4180..4443c93c 100644
+--- a/proxy/pom.xml
++++ b/proxy/pom.xml
+@@ -18,6 +18,13 @@
+     <name>Advocatus-Proxy</name>
+     <description>Proxy component of the Elastic Portal Suite</description>
+ 
++    <repositories>
++        <repository>
++            <id>jitpack.io</id>
++            <url>https://jitpack.io</url>
++        </repository>
++    </repositories>
++
+     <properties>
+         <maven.deploy.skip>true</maven.deploy.skip>
+         <maven.javadoc.skip>true</maven.javadoc.skip>
+@@ -93,13 +100,6 @@
+             <version>${project.version}</version>
+             <scope>compile</scope>
+         </dependency>
+-        <!-- // Waterfall - We already bundle an slf4j impl
+-        <dependency>
+-            <groupId>net.md-5</groupId>
+-            <artifactId>bungeecord-slf4j</artifactId>
+-            <version>${project.version}</version>
+-            <scope>compile</scope>
+-        </dependency> // Waterfall - We already bundle an slf4j impl -->
+         <dependency>
+             <groupId>net.sf.jopt-simple</groupId>
+             <artifactId>jopt-simple</artifactId>
+@@ -150,6 +150,15 @@
+             <scope>runtime</scope>
+         </dependency>
+         <!-- Waterfall end -->
++
++        <!-- Advocatus start -->
++        <dependency>
++            <groupId>com.github.simplix-softworks</groupId>
++            <artifactId>simplixstorage</artifactId>
++            <version>3.2.4</version>
++            <scope>compile</scope>
++        </dependency>
++        <!-- Advocatus end -->
+     </dependencies>
+ 
+     <!-- Waterfall start - copy license files into jar -->
 diff --git a/proxy/src/main/java/net/md_5/bungee/BungeeCord.java b/proxy/src/main/java/net/md_5/bungee/BungeeCord.java
-index 5b45d2a6..d539e13a 100644
+index 5b45d2a6..f350e138 100644
 --- a/proxy/src/main/java/net/md_5/bungee/BungeeCord.java
 +++ b/proxy/src/main/java/net/md_5/bungee/BungeeCord.java
 @@ -93,6 +93,7 @@ import net.md_5.bungee.protocol.packet.PluginMessage;
@@ -43,26 +178,16 @@ index 5b45d2a6..d539e13a 100644
                      {
                          listeners.add( future.channel() );
 -                        getLogger().log( Level.INFO, "Listening on {0}", info.getSocketAddress() );
-+                        getLogger().log( Level.INFO, "Listening on PORT {0}", info.getSocketAddress() );
++                        getLogger().log( Level.INFO, "Listening on PORT: {0}", info.getSocketAddress() );
                      } else
                      {
                          getLogger().log( Level.WARNING, "Could not bind to host " + info.getSocketAddress(), future.cause() );
-@@ -534,10 +535,7 @@ public class BungeeCord extends ProxyServer
+@@ -545,35 +546,10 @@ public class BungeeCord extends ProxyServer
+         return ( BungeeCord.class.getPackage().getImplementationVersion() == null ) ? "unknown" : BungeeCord.class.getPackage().getImplementationVersion();
      }
  
-     @Override
--    public String getName()
+-    public void reloadMessages()
 -    {
--        return "Advocatus";
--    }
-+    public String getName() { return Advocatus.getInstance().getName(); }
- 
-     @Override
-     public String getVersion()
-@@ -547,33 +545,11 @@ public class BungeeCord extends ProxyServer
- 
-     public void reloadMessages()
-     {
 -        File file = new File( "messages.properties" );
 -        if ( file.isFile() )
 -        {
@@ -74,8 +199,8 @@ index 5b45d2a6..d539e13a 100644
 -                getLogger().log( Level.SEVERE, "Could not load custom messages.properties", ex );
 -            }
 -        }
-+        Advocatus.getInstance().loadCustomBundle();
-     }
+-    }
++    public void reloadMessages() { Advocatus.getInstance().loadCustomBundle(); }
  
      @Override
 -    public String getTranslation(String name, Object... args)
@@ -128,11 +253,11 @@ index 97c4b210..2cb8d589 100644
              brand.release();
              // changes in the packet are ignored so we need to send it manually
 diff --git a/proxy/src/main/java/net/royalmind/software/advocatus/Advocatus.java b/proxy/src/main/java/net/royalmind/software/advocatus/Advocatus.java
-index 75d05ece..42f2cbd7 100644
---- a/proxy/src/main/java/net/royalmind/software/advocatus/Advocatus.java
+new file mode 100644
+index 00000000..58cbc317
+--- /dev/null
 +++ b/proxy/src/main/java/net/royalmind/software/advocatus/Advocatus.java
-@@ -1,2 +1,97 @@
--package net.royalmind.software.advocatus;public class Advocatus {
+@@ -0,0 +1,96 @@
 +package net.royalmind.software.advocatus;
 +
 +import java.io.File;
@@ -170,7 +295,7 @@ index 75d05ece..42f2cbd7 100644
 +
 +    public void loadCustomBundle()
 +    {
-+        final String customMessagesFileName = "messages-es";
++        final String customMessagesFileName = "messages-es.yml";
 +        try
 +        {
 +            File file = new File( baseConfigDir, customMessagesFileName );
@@ -210,16 +335,15 @@ index 75d05ece..42f2cbd7 100644
 +        String translation = "&c<translation '" + name + "' missing>&r";
 +        try
 +        {
-+            if (!MESSAGES_CACHE.containsKey(name))
++            if (MESSAGES_CACHE.containsKey(name)) translation = MESSAGES_CACHE.get(name);
++            else
 +            {
-+                final String VALUE = customMessages != null && customMessages.contains( name )
++                translation = customMessages != null && customMessages.contains( name )
 +                        ? customMessages.getString( name )
 +                        : baseMessages.getString( name );
-+
-+                translation = Colorizer.translate(( args.length == 0 ) ? VALUE : MessageFormat.format( VALUE, args ));
-+                MESSAGES_CACHE.put(name, translation);
 +            }
-+            else { translation = MESSAGES_CACHE.get(name); }
++
++            translation = Colorizer.decorate(( args.length == 0 ) ? translation : MessageFormat.format( translation, args ));
 +        }
 +        catch ( MissingResourceException ex ) { Logger.error("Fallo al cargar la traduccion de: \""+ name +"\"", ex); }
 +
@@ -229,13 +353,13 @@ index 75d05ece..42f2cbd7 100644
 +    public String getName() { return FORK_NAME; }
 +
 +    public static Advocatus getInstance() { return INSTANCE == null ? new Advocatus() : INSTANCE; }
- }
++}
 diff --git a/proxy/src/main/java/net/royalmind/software/advocatus/config/ConfigValue.java b/proxy/src/main/java/net/royalmind/software/advocatus/config/ConfigValue.java
-index 66edfe4d..6896de8a 100644
---- a/proxy/src/main/java/net/royalmind/software/advocatus/config/ConfigValue.java
+new file mode 100644
+index 00000000..5ef6e0d0
+--- /dev/null
 +++ b/proxy/src/main/java/net/royalmind/software/advocatus/config/ConfigValue.java
-@@ -1,2 +1,13 @@
--package net.royalmind.software.advocatus.config;public @interface ConfigValue {
+@@ -0,0 +1,10 @@
 +package net.royalmind.software.advocatus.config;
 +
 +import java.lang.annotation.ElementType;
@@ -245,16 +369,13 @@ index 66edfe4d..6896de8a 100644
 +
 +@Target({ ElementType.METHOD, ElementType.FIELD })
 +@Retention(RetentionPolicy.RUNTIME)
-+public @interface ConfigValue
-+{
-+    String value();
- }
++public @interface ConfigValue { String value(); }
 diff --git a/proxy/src/main/java/net/royalmind/software/advocatus/config/Settings.java b/proxy/src/main/java/net/royalmind/software/advocatus/config/Settings.java
-index c5b5083a..cfbba315 100644
---- a/proxy/src/main/java/net/royalmind/software/advocatus/config/Settings.java
+new file mode 100644
+index 00000000..cfbba315
+--- /dev/null
 +++ b/proxy/src/main/java/net/royalmind/software/advocatus/config/Settings.java
-@@ -1,2 +1,16 @@
--package net.royalmind.software.advocatus.config;public class Settings {
+@@ -0,0 +1,16 @@
 +package net.royalmind.software.advocatus.config;
 +
 +public class Settings
@@ -270,20 +391,20 @@ index c5b5083a..cfbba315 100644
 +        Settings.VERSION = 1;
 +        Settings.DEBUGMODE = true;
 +    }
- }
++}
 diff --git a/proxy/src/main/java/net/royalmind/software/advocatus/util/Logger.java b/proxy/src/main/java/net/royalmind/software/advocatus/util/Logger.java
-index 900387b0..1fc6d22a 100644
---- a/proxy/src/main/java/net/royalmind/software/advocatus/util/Logger.java
+new file mode 100644
+index 00000000..8475a7cb
+--- /dev/null
 +++ b/proxy/src/main/java/net/royalmind/software/advocatus/util/Logger.java
-@@ -1,2 +1,97 @@
--package net.royalmind.software.advocatus.util;public class Logger {
+@@ -0,0 +1,97 @@
 +package net.royalmind.software.advocatus.util;
 +
 +import java.util.logging.Level;
-+
 +import net.md_5.bungee.BungeeCord;
 +import net.royalmind.library.colorizer.Colorizer;
 +import net.royalmind.software.advocatus.config.Settings;
++
 +
 +public class Logger
 +{
@@ -299,7 +420,7 @@ index 900387b0..1fc6d22a 100644
 +
 +        for (int length = split.length, i = 0; i < length; ++i)
 +        {
-+            Logger.logger.info(Colorizer.translate("" + split[i]));
++            Logger.logger.info(Colorizer.decorate("" + split[i]));
 +        }
 +    }
 +
@@ -313,7 +434,7 @@ index 900387b0..1fc6d22a 100644
 +
 +        for (int length = split.length, i = 0; i < length; ++i)
 +        {
-+            Logger.logger.warning(Colorizer.translate("" + split[i]));
++            Logger.logger.warning(Colorizer.decorate("" + split[i]));
 +        }
 +    }
 +
@@ -326,7 +447,7 @@ index 900387b0..1fc6d22a 100644
 +        final String[] split = String.format(texto, array).split("\n");
 +
 +        for (int length = split.length, i = 0; i < length; ++i) {
-+            Logger.logger.severe(Colorizer.translate("" + split[i]));
++            Logger.logger.severe(Colorizer.decorate("" + split[i]));
 +        }
 +    }
 +
@@ -349,7 +470,7 @@ index 900387b0..1fc6d22a 100644
 +     */
 +    public static void error(final String texto, final Exception exception)
 +    {
-+        logger.log(Level.SEVERE, Colorizer.translate("&c[ERROR] &r" + texto + "\t&cDetalle: " + exception.toString()));
++        logger.log(Level.SEVERE, Colorizer.decorate("&c[ERROR] &r" + texto + "\t&cDetalle: " + exception.toString()));
 +    }
 +
 +    /*
@@ -373,10 +494,11 @@ index 900387b0..1fc6d22a 100644
 +    public static String getLine() { return Colorizer.translate("&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a=&e-&a="); }
 +
 +    static { Logger.logger = BungeeCord.getInstance().getLogger(); }
- }
++}
 diff --git a/proxy/src/main/resources/messages-es.properties b/proxy/src/main/resources/messages-es.properties
-index e69de29b..d4d3132a 100644
---- a/proxy/src/main/resources/messages-es.properties
+new file mode 100644
+index 00000000..82357faa
+--- /dev/null
 +++ b/proxy/src/main/resources/messages-es.properties
 @@ -0,0 +1,40 @@
 +alert=&8[&4Anuncio&8]&r 
@@ -388,9 +510,9 @@ index e69de29b..d4d3132a 100644
 +current_server=&6Actualmente estas conectado a {0}.
 +fallback_kick=&cNo se pudo conectar a un servidor predeterminado o alternativo. Vuelve a intentarlo mas tarde={0}
 +fallback_lobby=&cNo se pudo conectar al servidor de destino, se le ha trasladado a un servidor de reserva.
-+timeout=&eServidor no accesible (tiempo de espera). ¿Desconectado? ¿Direccion/puerto/cortafuegos configurados incorrectamente?
++timeout=&eServidor no accesible (tiempo de espera). ¡Desconectado? ¡Direccion/puerto/cortafuegos configurados incorrectamente?
 +lost_connection=&r[&e&lRoyal&6&lMind &f&lNetwork&r] Conexion perdida con nuestros servidores.
-+mojang_fail=Se produjo un error al contactar con los servidores de inicio de sesion de Mojang, ¿Estan inactivos? :(
++mojang_fail=Se produjo un error al contactar con los servidores de inicio de sesion de Mojang, ¡Estan inactivos? :(
 +no_permission=&c¡No tienes permiso para ejecutar este comando!
 +no_server=&cEl servidor especificado no existe.
 +no_server_permission=&cNo tienes permiso para acceder a este servidor.
@@ -418,7 +540,7 @@ index e69de29b..d4d3132a 100644
 +command_perms_permission=&9- {0}
 +command_ip=&9La IP de {0} es {1}
 +illegal_chat_characters=&cCaracteres ilegales en el chat ({0})
-+brand-name=&e&oplay.royalmind.net
++brand-name=&e&oplay.royalmind.net&r
 \ No newline at end of file
 -- 
 2.33.0.windows.2

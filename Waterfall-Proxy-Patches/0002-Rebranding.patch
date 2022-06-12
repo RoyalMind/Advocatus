@@ -1,4 +1,4 @@
-From ae86f4019a4f99df94ae9cd489ffa919e1a704be Mon Sep 17 00:00:00 2001
+From ad00a676a9228a984dd1f8fcc70d3c1693651dea Mon Sep 17 00:00:00 2001
 From: Carlos Gallegos <40046747+CharlyZest@users.noreply.github.com>
 Date: Tue, 30 Nov 2021 19:18:26 -0600
 Subject: [PATCH] Rebranding
@@ -85,7 +85,7 @@ index a4516ed9..7a7e6ad9 100644
          }
  
 diff --git a/module/pom.xml b/module/pom.xml
-index 0b4fec03..9d08be06 100644
+index c5567fdd..1b3005ef 100644
 --- a/module/pom.xml
 +++ b/module/pom.xml
 @@ -28,7 +28,7 @@
@@ -98,7 +98,7 @@ index 0b4fec03..9d08be06 100644
          <maven.javadoc.skip>true</maven.javadoc.skip>
      </properties>
 diff --git a/pom.xml b/pom.xml
-index 475536c2..c9385226 100644
+index 6ebb77a3..84243548 100644
 --- a/pom.xml
 +++ b/pom.xml
 @@ -132,6 +132,12 @@
@@ -115,10 +115,10 @@ index 475536c2..c9385226 100644
  
      <build>
 diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/DefinedPacket.java b/protocol/src/main/java/net/md_5/bungee/protocol/DefinedPacket.java
-index a310844d..bba924d9 100644
+index bafef27c..77b863e1 100644
 --- a/protocol/src/main/java/net/md_5/bungee/protocol/DefinedPacket.java
 +++ b/protocol/src/main/java/net/md_5/bungee/protocol/DefinedPacket.java
-@@ -290,10 +290,10 @@ public abstract class DefinedPacket
+@@ -357,10 +357,10 @@ public abstract class DefinedPacket
      // Waterfall start: Additional DoS mitigations, courtesy of Velocity
      private static final OverflowPacketException STRING_TOO_LONG_EXCEPTION
              = new OverflowPacketException("A string was longer than allowed. For more "
@@ -211,10 +211,10 @@ index 0db3d76a..88b3ab13 100644
  
          if ( !options.has( "noconsole" ) )
 diff --git a/proxy/src/main/java/net/md_5/bungee/UserConnection.java b/proxy/src/main/java/net/md_5/bungee/UserConnection.java
-index 7c52ee9a..503d5db9 100644
+index b44d13e5..396bc8ea 100644
 --- a/proxy/src/main/java/net/md_5/bungee/UserConnection.java
 +++ b/proxy/src/main/java/net/md_5/bungee/UserConnection.java
-@@ -769,4 +769,12 @@ public final class UserConnection implements ProxiedPlayer
+@@ -786,4 +786,12 @@ public final class UserConnection implements ProxiedPlayer
          return entityRewrite == net.md_5.bungee.entitymap.EntityMap_Dummy.INSTANCE;
      }
      // Waterfall end
@@ -296,10 +296,10 @@ index 0644b8cd..b976b0f6 100644
  
              int maxPlayers = get( "max_players", 1, val );
 diff --git a/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java b/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java
-index bba6d324..985183ad 100644
+index ed1fe41a..8e98012f 100644
 --- a/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java
 +++ b/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java
-@@ -702,4 +702,10 @@ public class InitialHandler extends PacketHandler implements PendingConnection
+@@ -728,4 +728,10 @@ public class InitialHandler extends PacketHandler implements PendingConnection
              brandMessage = input;
          }
      }
