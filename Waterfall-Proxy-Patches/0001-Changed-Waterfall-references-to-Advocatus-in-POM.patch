@@ -1,4 +1,4 @@
-From e2a1cbdec9e3d7c28b6fbad3b78c4a24bf76f743 Mon Sep 17 00:00:00 2001
+From 19b04f906b7e729efb26410be05ffb97c8c695ac Mon Sep 17 00:00:00 2001
 From: Carlos Gallegos <40046747+CharlyZest@users.noreply.github.com>
 Date: Tue, 30 Nov 2021 18:46:38 -0600
 Subject: [PATCH] Changed Waterfall references to Advocatus in POM
@@ -114,7 +114,7 @@ index 688f1b99..bdc1a5e7 100644
              <plugin>
                  <groupId>org.apache.maven.plugins</groupId>
 diff --git a/chat/pom.xml b/chat/pom.xml
-index 3ac27114..a8c3be2c 100644
+index 1a8b097d..89fb4e74 100644
 --- a/chat/pom.xml
 +++ b/chat/pom.xml
 @@ -4,19 +4,19 @@
@@ -144,7 +144,7 @@ index 3ac27114..a8c3be2c 100644
      <dependencies>
          <dependency>
 diff --git a/config/pom.xml b/config/pom.xml
-index ac721ee3..e548276c 100644
+index 0b48084a..7e32a78d 100644
 --- a/config/pom.xml
 +++ b/config/pom.xml
 @@ -4,19 +4,19 @@
@@ -318,6 +318,29 @@ index c4ad20de..3a0c154f 100644
      <version>1.19-R0.1-SNAPSHOT</version>
      <packaging>jar</packaging>
  
+diff --git a/module/cmd-kick/pom.xml b/module/cmd-kick/pom.xml
+index 17d3dc71..66888a8f 100644
+--- a/module/cmd-kick/pom.xml
++++ b/module/cmd-kick/pom.xml
+@@ -4,14 +4,14 @@
+     <modelVersion>4.0.0</modelVersion>
+ 
+     <parent>
+-        <groupId>io.github.waterfallmc</groupId>
+-        <artifactId>waterfall-module</artifactId>
++        <groupId>net.royalmind.software.advocatus</groupId>
++        <artifactId>advocatus-module</artifactId>
+         <version>1.19-R0.1-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+-    <groupId>io.github.waterfallmc</groupId>
+-    <artifactId>waterfall-module-cmd-kick</artifactId>
++    <groupId>net.royalmind.software.advocatus</groupId>
++    <artifactId>advocatus-module-cmd-kick</artifactId>
+     <version>1.19-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
 diff --git a/module/cmd-list/pom.xml b/module/cmd-list/pom.xml
 index 9e22202d..69c2a930 100644
 --- a/module/cmd-list/pom.xml
@@ -388,7 +411,7 @@ index 86faab24..b616c4e2 100644
      <packaging>jar</packaging>
  
 diff --git a/module/pom.xml b/module/pom.xml
-index b4283e43..c5567fdd 100644
+index 0de7979e..bd5df19e 100644
 --- a/module/pom.xml
 +++ b/module/pom.xml
 @@ -4,19 +4,19 @@
@@ -417,7 +440,7 @@ index b4283e43..c5567fdd 100644
  
      <modules>
          <module>cmd-alert</module>
-@@ -28,15 +28,15 @@
+@@ -29,15 +29,15 @@
      </modules>
  
      <properties>
@@ -663,7 +686,7 @@ index 93ae5952..ca4bfa22 100644
              <scope>compile</scope>
          </dependency>
 diff --git a/proxy/pom.xml b/proxy/pom.xml
-index d81bf730..2b2a4180 100644
+index 1036a2e7..adcb8dff 100644
 --- a/proxy/pom.xml
 +++ b/proxy/pom.xml
 @@ -4,18 +4,18 @@
@@ -690,7 +713,7 @@ index d81bf730..2b2a4180 100644
      <description>Proxy component of the Elastic Portal Suite</description>
  
      <properties>
-@@ -64,32 +64,32 @@
+@@ -71,32 +71,32 @@
              <scope>compile</scope>
          </dependency>
          <dependency>
@@ -775,5 +798,5 @@ index 72eb14e2..38356ec5 100644
              <scope>compile</scope>
          </dependency>
 -- 
-2.33.0.windows.2
+2.37.1.windows.1
 

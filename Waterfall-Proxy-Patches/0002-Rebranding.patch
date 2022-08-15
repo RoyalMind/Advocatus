@@ -1,4 +1,4 @@
-From ad00a676a9228a984dd1f8fcc70d3c1693651dea Mon Sep 17 00:00:00 2001
+From aa848b9fe582e7e42771e6f46f9c93d98e2aa067 Mon Sep 17 00:00:00 2001
 From: Carlos Gallegos <40046747+CharlyZest@users.noreply.github.com>
 Date: Tue, 30 Nov 2021 19:18:26 -0600
 Subject: [PATCH] Rebranding
@@ -85,10 +85,10 @@ index a4516ed9..7a7e6ad9 100644
          }
  
 diff --git a/module/pom.xml b/module/pom.xml
-index c5567fdd..1b3005ef 100644
+index bd5df19e..8cb6cd90 100644
 --- a/module/pom.xml
 +++ b/module/pom.xml
-@@ -28,7 +28,7 @@
+@@ -29,7 +29,7 @@
      </modules>
  
      <properties>
@@ -274,7 +274,7 @@ index 33d7e5bb..02aa3236 100644
 +    // Advocatus End
  }
 diff --git a/proxy/src/main/java/net/md_5/bungee/conf/YamlConfig.java b/proxy/src/main/java/net/md_5/bungee/conf/YamlConfig.java
-index 0644b8cd..b976b0f6 100644
+index 0dd69778..06e149fd 100644
 --- a/proxy/src/main/java/net/md_5/bungee/conf/YamlConfig.java
 +++ b/proxy/src/main/java/net/md_5/bungee/conf/YamlConfig.java
 @@ -227,7 +227,7 @@ public class YamlConfig implements ConfigurationAdapter
@@ -296,10 +296,10 @@ index 0644b8cd..b976b0f6 100644
  
              int maxPlayers = get( "max_players", 1, val );
 diff --git a/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java b/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java
-index ed1fe41a..8e98012f 100644
+index 975b6996..4ba1e056 100644
 --- a/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java
 +++ b/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java
-@@ -728,4 +728,10 @@ public class InitialHandler extends PacketHandler implements PendingConnection
+@@ -775,4 +775,10 @@ public class InitialHandler extends PacketHandler implements PendingConnection
              brandMessage = input;
          }
      }
@@ -311,5 +311,5 @@ index ed1fe41a..8e98012f 100644
 +    // Advocatus end
  }
 -- 
-2.33.0.windows.2
+2.37.1.windows.1
 
