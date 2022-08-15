@@ -1,4 +1,4 @@
-From 65fa7f0638adf04720519be9f64a4cb1daecba2f Mon Sep 17 00:00:00 2001
+From 51044633e7771ffe613cafd558c2c21d3be26924 Mon Sep 17 00:00:00 2001
 From: Carlos Gallegos <40046747+CharlyZest@users.noreply.github.com>
 Date: Sun, 12 Jun 2022 01:07:57 -0500
 Subject: [PATCH] Added Advocatus Logic
@@ -92,7 +92,7 @@ index 84243548..88376685 100644
              <build>
                  <pluginManagement>
 diff --git a/proxy/pom.xml b/proxy/pom.xml
-index 2b2a4180..4443c93c 100644
+index adcb8dff..0787c82d 100644
 --- a/proxy/pom.xml
 +++ b/proxy/pom.xml
 @@ -18,6 +18,13 @@
@@ -109,7 +109,7 @@ index 2b2a4180..4443c93c 100644
      <properties>
          <maven.deploy.skip>true</maven.deploy.skip>
          <maven.javadoc.skip>true</maven.javadoc.skip>
-@@ -93,13 +100,6 @@
+@@ -100,13 +107,6 @@
              <version>${project.version}</version>
              <scope>compile</scope>
          </dependency>
@@ -123,7 +123,7 @@ index 2b2a4180..4443c93c 100644
          <dependency>
              <groupId>net.sf.jopt-simple</groupId>
              <artifactId>jopt-simple</artifactId>
-@@ -150,6 +150,15 @@
+@@ -157,6 +157,15 @@
              <scope>runtime</scope>
          </dependency>
          <!-- Waterfall end -->
@@ -140,7 +140,7 @@ index 2b2a4180..4443c93c 100644
  
      <!-- Waterfall start - copy license files into jar -->
 diff --git a/proxy/src/main/java/net/md_5/bungee/BungeeCord.java b/proxy/src/main/java/net/md_5/bungee/BungeeCord.java
-index 5b45d2a6..f350e138 100644
+index 5b45d2a6..a328a072 100644
 --- a/proxy/src/main/java/net/md_5/bungee/BungeeCord.java
 +++ b/proxy/src/main/java/net/md_5/bungee/BungeeCord.java
 @@ -93,6 +93,7 @@ import net.md_5.bungee.protocol.packet.PluginMessage;
@@ -160,7 +160,7 @@ index 5b45d2a6..f350e138 100644
              } else
              {
 -                logger.info( "Using standard Java JCE cipher." );
-+                logger.info( "Usando cifrado estándar de Java JCE." );
++                logger.info( "Usando cifrado estÃ¡ndar de Java JCE." );
              }
              if ( CompressFactory.zlib.load() )
              {
@@ -169,7 +169,7 @@ index 5b45d2a6..f350e138 100644
              } else
              {
 -                logger.info( "Using standard Java compressor." );
-+                logger.info( "Utilizando el compresor estándar de Java." );
++                logger.info( "Utilizando el compresor estÃ¡ndar de Java." );
              }
          }
      }
@@ -232,7 +232,7 @@ index 5b45d2a6..f350e138 100644
 +    /* Advocatus End */
  }
 diff --git a/proxy/src/main/java/net/md_5/bungee/connection/DownstreamBridge.java b/proxy/src/main/java/net/md_5/bungee/connection/DownstreamBridge.java
-index 97c4b210..2cb8d589 100644
+index 59d204ce..7765790f 100644
 --- a/proxy/src/main/java/net/md_5/bungee/connection/DownstreamBridge.java
 +++ b/proxy/src/main/java/net/md_5/bungee/connection/DownstreamBridge.java
 @@ -24,6 +24,7 @@ import java.util.List;
@@ -243,7 +243,7 @@ index 97c4b210..2cb8d589 100644
  import net.md_5.bungee.ServerConnection;
  import net.md_5.bungee.ServerConnection.KeepAliveData;
  import net.md_5.bungee.UserConnection;
-@@ -299,7 +300,7 @@ public class DownstreamBridge extends PacketHandler
+@@ -300,7 +301,7 @@ public class DownstreamBridge extends PacketHandler
              Preconditions.checkState( !serverBrand.contains( bungee.getName() ), "Cannot connect proxy to itself!" );
  
              brand = ByteBufAllocator.DEFAULT.heapBuffer();
@@ -394,7 +394,7 @@ index 00000000..cfbba315
 +}
 diff --git a/proxy/src/main/java/net/royalmind/software/advocatus/util/Logger.java b/proxy/src/main/java/net/royalmind/software/advocatus/util/Logger.java
 new file mode 100644
-index 00000000..8475a7cb
+index 00000000..c440eab5
 --- /dev/null
 +++ b/proxy/src/main/java/net/royalmind/software/advocatus/util/Logger.java
 @@ -0,0 +1,97 @@
@@ -411,7 +411,7 @@ index 00000000..8475a7cb
 +    public static java.util.logging.Logger logger;
 +
 +    /*
-+     * Registra un mensaje de información en el log.
++     * Registra un mensaje de informaciÃ³n en el log.
 +     * @param texto Mensaje informativo.
 +     */
 +    public static void info(final String texto, final Object... array)
@@ -474,7 +474,7 @@ index 00000000..8475a7cb
 +    }
 +
 +    /*
-+     * Registra un mensaje de depuración en el log.
++     * Registra un mensaje de depuraciÃ³n en el log.
 +     * @param texto Mensaje informativo.
 +     */
 +    public static void debug(final String texto, final Object... array)
@@ -483,7 +483,7 @@ index 00000000..8475a7cb
 +    }
 +
 +    /*
-+     * Registra un mensaje de depuración en el log.
++     * Registra un mensaje de depuraciÃ³n en el log.
 +     * @param texto Mensaje informativo.
 +     */
 +    public static void debugError(final String texto, final Object... array)
@@ -497,28 +497,28 @@ index 00000000..8475a7cb
 +}
 diff --git a/proxy/src/main/resources/messages-es.properties b/proxy/src/main/resources/messages-es.properties
 new file mode 100644
-index 00000000..82357faa
+index 00000000..925396f8
 --- /dev/null
 +++ b/proxy/src/main/resources/messages-es.properties
 @@ -0,0 +1,40 @@
 +alert=&8[&4Anuncio&8]&r 
-+already_connected=&c�Ya esta conectado al servidor!
++already_connected=&c¡Ya esta conectado al servidor!
 +already_connected_proxy=&cYa estas conectado a este proxy!
-+already_connecting=&c�Ya esta conectando a este servidor!
++already_connecting=&c¡Ya esta conectando a este servidor!
 +command_list=&a[{0}] &e({1})=&r{2}
 +connect_kick=&cNo se pudo conectar a &e{0}&c={1}
 +current_server=&6Actualmente estas conectado a {0}.
 +fallback_kick=&cNo se pudo conectar a un servidor predeterminado o alternativo. Vuelve a intentarlo mas tarde={0}
 +fallback_lobby=&cNo se pudo conectar al servidor de destino, se le ha trasladado a un servidor de reserva.
-+timeout=&eServidor no accesible (tiempo de espera). �Desconectado? �Direccion/puerto/cortafuegos configurados incorrectamente?
++timeout=&eServidor no accesible (tiempo de espera). ¡Desconectado? ¡Direccion/puerto/cortafuegos configurados incorrectamente?
 +lost_connection=&r[&e&lRoyal&6&lMind &f&lNetwork&r] Conexion perdida con nuestros servidores.
-+mojang_fail=Se produjo un error al contactar con los servidores de inicio de sesion de Mojang, �Estan inactivos? :(
-+no_permission=&c�No tienes permiso para ejecutar este comando!
++mojang_fail=Se produjo un error al contactar con los servidores de inicio de sesion de Mojang, ¡Estan inactivos? :(
++no_permission=&c¡No tienes permiso para ejecutar este comando!
 +no_server=&cEl servidor especificado no existe.
 +no_server_permission=&cNo tienes permiso para acceder a este servidor.
 +outdated_client=Cliente desactualizado! Por favor usa la version {0}
-+outdated_server=�Servidor desactualizado! Todavia estoy en {0}
-+proxy_full=�El servidor esta lleno!
++outdated_server=¡Servidor desactualizado! Todavia estoy en {0}
++proxy_full=¡El servidor esta lleno!
 +restart=&r[&e&lRoyal&6&lMind &f&lNetwork&r] Reiniciando network
 +server_list=&6Puede conectarse a los siguientes servidores en este momento=
 +server_went_down=&cEl servidor en el que estaba anteriormente se cayo, se ha conectado a un servidor de reserva
@@ -543,5 +543,5 @@ index 00000000..82357faa
 +brand-name=&e&oplay.royalmind.net&r
 \ No newline at end of file
 -- 
-2.33.0.windows.2
+2.37.1.windows.1
 
