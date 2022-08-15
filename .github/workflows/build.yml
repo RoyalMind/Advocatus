@@ -100,6 +100,13 @@ jobs:
           name: JDK-${{ matrix.java }} Advocatus modules Build ${{ github.run_number }}
           path: Advocatus-Proxy/module/cmd-server/target/cmd_server.jar
 
+      # cmd_kick.jar
+      - name: Upload Artifact Advocatus cmd_kick for Java ${{ matrix.java }}
+        uses: actions/upload-artifact@v2.2.4
+        with:
+          name: JDK-${{ matrix.java }} Advocatus modules Build ${{ github.run_number }}
+          path: Advocatus-Proxy/module/cmd-kick/target/cmd_kick.jar
+
       # reconnect_yaml.jar
       - name: Upload Artifact Advocatus reconnect_yaml for Java ${{ matrix.java }}
         uses: actions/upload-artifact@v2.2.4
