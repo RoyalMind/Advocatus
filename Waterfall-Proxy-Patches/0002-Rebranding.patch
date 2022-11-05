@@ -1,4 +1,4 @@
-From aa848b9fe582e7e42771e6f46f9c93d98e2aa067 Mon Sep 17 00:00:00 2001
+From d6dcbc280f5dc9a10d20484e9cd030ff15fa2d43 Mon Sep 17 00:00:00 2001
 From: Carlos Gallegos <40046747+CharlyZest@users.noreply.github.com>
 Date: Tue, 30 Nov 2021 19:18:26 -0600
 Subject: [PATCH] Rebranding
@@ -98,7 +98,7 @@ index bd5df19e..8cb6cd90 100644
          <maven.javadoc.skip>true</maven.javadoc.skip>
      </properties>
 diff --git a/pom.xml b/pom.xml
-index 6ebb77a3..84243548 100644
+index 6b297885..a5ec6756 100644
 --- a/pom.xml
 +++ b/pom.xml
 @@ -132,6 +132,12 @@
@@ -115,10 +115,10 @@ index 6ebb77a3..84243548 100644
  
      <build>
 diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/DefinedPacket.java b/protocol/src/main/java/net/md_5/bungee/protocol/DefinedPacket.java
-index bafef27c..77b863e1 100644
+index 561a9522..e8e5ee37 100644
 --- a/protocol/src/main/java/net/md_5/bungee/protocol/DefinedPacket.java
 +++ b/protocol/src/main/java/net/md_5/bungee/protocol/DefinedPacket.java
-@@ -357,10 +357,10 @@ public abstract class DefinedPacket
+@@ -352,10 +352,10 @@ public abstract class DefinedPacket
      // Waterfall start: Additional DoS mitigations, courtesy of Velocity
      private static final OverflowPacketException STRING_TOO_LONG_EXCEPTION
              = new OverflowPacketException("A string was longer than allowed. For more "
@@ -184,7 +184,7 @@ index 9ef2b77a..5b45d2a6 100644
  
      @Override
 diff --git a/proxy/src/main/java/net/md_5/bungee/BungeeCordLauncher.java b/proxy/src/main/java/net/md_5/bungee/BungeeCordLauncher.java
-index 0db3d76a..88b3ab13 100644
+index 96a9998d..19357c09 100644
 --- a/proxy/src/main/java/net/md_5/bungee/BungeeCordLauncher.java
 +++ b/proxy/src/main/java/net/md_5/bungee/BungeeCordLauncher.java
 @@ -53,17 +53,17 @@ public class BungeeCordLauncher
@@ -194,12 +194,13 @@ index 0db3d76a..88b3ab13 100644
 -                System.err.println( "*** Hey! This build is potentially outdated :( ***" );
 -                System.err.println( "*** Please check for a new build from https://papermc.io/downloads ***" );
 -                System.err.println( "*** Should this build be outdated, you will get NO support for it. ***" );
--                System.err.println( "*** Server will start in 10 seconds ***" );
+-                //System.err.println( "*** Server will start in 10 seconds ***" );
+-                //Thread.sleep( TimeUnit.SECONDS.toMillis( 10 ) );
 +                System.err.println( "*** ¡Oye! Esta compilación está potencialmente desactualizada :( ***" );
 +                System.err.println( "*** Comprueba si hay una nueva compilación en https://github.com/RoyalMind/Advocatus/actions ***" );
 +                System.err.println( "*** Si esta compilación está desactualizada, NO obtendrás soporte para ella. ***" );
 +                System.err.println( "*** El servidor se iniciará en 10 segundos ***" );
-                 Thread.sleep( TimeUnit.SECONDS.toMillis( 10 ) );
++                Thread.sleep( TimeUnit.SECONDS.toMillis( 5 ) );
              }
          }
  
@@ -311,5 +312,5 @@ index 975b6996..4ba1e056 100644
 +    // Advocatus end
  }
 -- 
-2.37.1.windows.1
+2.38.1.windows.1
 
